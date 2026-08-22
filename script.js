@@ -169,273 +169,6 @@
   }
 
   /* ====================================================================== *
-   * 4. TRAINING TRACKER
-   *    Ten skill categories, 0-100 each. Persisted per rider.
-   *    Levels: 0 未開始 / 1 學習中 / 2 進步中 / 3 已掌握 / 4 出發水準
-   * ====================================================================== */
-  var SKILLS = [
-    ["balance",   "平衡與站姿",       "Balance & stance",        70],
-    ["heel",      "後刃控制",         "Heel-side control",       80],
-    ["toe",       "前刃控制",         "Toe-side control",        80],
-    ["sturn",     "連續 S-Turn",      "Linked S-Turn",           75],
-    ["speed",     "速度控制",         "Speed control",           75],
-    ["lift",      "上落纜車信心",     "Lift confidence",         85],
-    ["green",     "綠線信心",         "Green run confidence",    85],
-    ["red",       "初級紅線準備度",   "Easy red readiness",      45],
-    ["powder",    "粉雪準備度",       "Powder readiness",        30],
-    ["fitness",   "體能與耐力",       "Fitness & endurance",     70]
-  ];
-  var BANDS = [
-    [0,   "未開始",   "Not started", "pb-0"],
-    [1,   "學習中",   "Learning",    "pb-1"],
-    [35,  "進步中",   "Improving",   "pb-2"],
-    [65,  "已掌握",   "Comfortable", "pb-3"],
-    [88,  "出發水準", "Trip-ready",  "pb-4"]
-  ];
-  function band(v) {
-    var b = BANDS[0];
-    for (var i = 0; i < BANDS.length; i++) if (v >= BANDS[i][0]) b = BANDS[i];
-    return b;
-  }
-  var LEVELS = ["完全新手", "新手", "新手偏進步", "初級中段", "中級偏下", "中級"];
-  var RIDERS = ["lawrence", "anson"];
-
-  function trKey(r) { return NS + "training:" + r; }
-
-  function defaultTraining(r) {
-    var s = {};
-    SKILLS.forEach(function (k) { s[k[0]] = 0; });
-    return { rider: r, updated: "", date: "", level: "", confidence: "", fear: "",
-             notes: "", hard: "", better: "", skills: s };
-  }
-
-  function loadTraining(r) {
-    var d = getJSON(trKey(r), null);
-    if (!d || typeof d !== "object") return defaultTraining(r);
-    var base = defaultTraining(r);
-    Object.keys(base).forEach(function (k) { if (k !== "skills" && d[k] != null) base[k] = d[k]; });
-    if (d.skills) SKILLS.forEach(function (s) {
-      var v = parseInt(d.skills[s[0]], 10);
-      if (!isNaN(v)) base.skills[s[0]] = Math.max(0, Math.min(100, v));
-    });
-    return base;
-  }
-
-  function renderProgress(r, data) {
-    var host = $("#prog-" + r);
-    if (!host) return;
-    host.innerHTML = "";
-    var totalNow = 0, totalTgt = 0;
-    SKILLS.forEach(function (s) {
-      var key = s[0], v = data.skills[key] || 0, tgt = s[3];
-      totalNow += v; totalTgt += tgt;
-      var b = band(v);
-      var item = el("div", "prog-item");
-      var top = el("div", "prog-top");
-      var nm = el("div", "prog-name");
-      nm.appendChild(document.createTextNode(s[1] + " "));
-      nm.appendChild(el("span", "en", s[2]));
-      top.appendChild(nm);
-      var bd = el("span", "prog-badge " + b[3], b[1]);
-      top.appendChild(bd);
-      item.appendChild(top);
-      var track = el("div", "prog-track");
-      var fill = el("div", "prog-fill" + (v >= tgt ? " done" : ""));
-      fill.style.width = Math.max(v, 1.5) + "%";
-      track.appendChild(fill);
-      var mark = el("div", "prog-target");
-      mark.style.left = tgt + "%";
-      mark.title = "出發前目標 " + tgt + "%";
-      track.appendChild(mark);
-      item.appendChild(track);
-      var sc = el("div", "prog-scale");
-      sc.appendChild(el("span", null, "現時 " + v + "%"));
-      sc.appendChild(el("span", null, "目標 " + tgt + "%" + (v >= tgt ? " · 已達標" : " · 差 " + (tgt - v) + "%")));
-      item.appendChild(sc);
-      host.appendChild(item);
-    });
-
-    var pct = Math.round(totalNow / totalTgt * 100);
-    pct = Math.max(0, Math.min(100, pct));
-    var sum = $("#summary-" + r);
-    if (sum) {
-      var lvIdx = Math.min(LEVELS.length - 1, Math.floor(pct / 100 * (LEVELS.length - 0.01)));
-      var cells = [
-        ["現時估算水準", data.level ? data.level : (pct === 0 ? "未提交" : LEVELS[lvIdx]), ""],
-        ["出發前目標水準", "初級中段", "能在綠線連續 S-Turn、控速自如"],
-        ["整體準備度", pct + "%", pct === 0 ? "請先提交一次更新" : "距離目標 " + (100 - pct) + "%"],
-        ["最近更新", data.date || "未提交", data.updated ? "儲存於 " + data.updated : "資料只存在此瀏覽器"]
-      ];
-      sum.innerHTML = "";
-      cells.forEach(function (c) {
-        var cell = el("div", "level-cell");
-        cell.appendChild(el("div", "info-label", c[0]));
-        var lv = el("div", "lv");
-        lv.appendChild(document.createTextNode(c[1]));
-        if (c[2]) { lv.appendChild(document.createElement("br")); lv.appendChild(el("small", null, c[2])); }
-        cell.appendChild(lv);
-        sum.appendChild(cell);
-      });
-    }
-
-    var adv = $("#advice-" + r);
-    if (adv) {
-      var weakest = SKILLS.slice().sort(function (a, b2) {
-        return (data.skills[a[0]] - a[3]) - (data.skills[b2[0]] - b2[3]);
-      }).slice(0, 3);
-      adv.innerHTML = "";
-      if (pct === 0) {
-        adv.appendChild(el("p", "map-meta", "提交一次訓練更新之後，這裏會根據落後最多的項目自動給出下一步練習重點。"));
-      } else {
-        adv.appendChild(el("p", "map-meta", "落後目標最多的三項：" +
-          weakest.map(function (w) { return w[1] + "（" + w[2] + "）"; }).join("、") + "。優先在這三項上花時間。"));
-        var ul = el("ul", "bullets");
-        weakest.forEach(function (w) {
-          var li = el("li");
-          li.appendChild(el("strong", null, w[1] + "："));
-          li.appendChild(document.createTextNode(DRILLS[w[0]] || "在緩坡上重複練習，直到動作變成本能。"));
-          ul.appendChild(li);
-        });
-        adv.appendChild(ul);
-        var lesson = el("p", "map-meta");
-        lesson.appendChild(el("strong", null, "Myoko 課程建議："));
-        lesson.appendChild(document.createTextNode(" " + lessonFor(pct)));
-        adv.appendChild(lesson);
-      }
-    }
-  }
-
-  var DRILLS = {
-    balance: "在平地做 skating 與 one-foot glide，各 10 分鐘；然後在緩坡練 straight running，膝蓋保持彎曲、視線望遠。",
-    heel:   "緩坡做 heel-side falling leaf 橫向滑行，左右各 20 次，重點是用腳踝而非上身控刃。",
-    toe:    "緩坡做 toe-side falling leaf，膝蓋前推、髖部貼向山坡，左右各 20 次。多數人前刃較弱，要刻意多練。",
-    sturn:  "在寬闊綠線做 garland 練習，再連成大彎 S-Turn；數拍子維持節奏，不要在轉彎中途停。",
-    speed:  "練 J-turn 收尾控速，全程不用坐低煞停；在同一條線上刻意做快、中、慢三種速度。",
-    lift:   "刻意多坐幾趟纜車，練上落動作；上落前先確認後腳綁帶鬆緊與站位。",
-    green:  "同一條綠線連續滑 5 趟不停，逐趟收窄轉彎幅度。",
-    red:    "先在綠線最陡的一段練穩，再選一條短紅線，用 falling leaf 落一次、再用 S-Turn 落一次。",
-    powder: "在鬆雪邊緣練後腳略加重、轉彎放慢；先在淺雪區適應，不要一開始就進林間。",
-    fitness: "每週 3 次下肢與核心訓練：wall sit、深蹲、側平板各 3 組；加 20 分鐘有氧維持連滑 4 日的耐力。"
-  };
-  function lessonFor(pct) {
-    if (pct < 25) return "初學者小組課或私人課，先建立基本控刃與停止。Day 1 在 Kurohime 安排半日至全日課程最合適。";
-    if (pct < 50) return "初級進階課程，重點在連續 S-Turn 與控速。Day 1 Kurohime 半日私人課，之後自行練習。";
-    if (pct < 75) return "中級課程或針對性私人課，可開始碰 carving 與初級紅線。";
-    return "carving 技術課或粉雪入門課，體能與基本功已足夠應付 Myoko 大部分綠線與初級紅線。";
-  }
-
-  function bindTrainingForm(r) {
-    var form = $("#form-" + r);
-    if (!form) return;
-    var data = loadTraining(r);
-
-    SKILLS.forEach(function (s) {
-      var rng = $("#" + r + "-" + s[0]);
-      if (!rng) return;
-      rng.value = data.skills[s[0]];
-      var out = $("#" + r + "-" + s[0] + "-val");
-      function show() {
-        var v = parseInt(rng.value, 10);
-        if (out) out.textContent = v + "%";
-      }
-      show();
-      rng.addEventListener("input", show);
-    });
-
-    ["date", "level", "confidence", "fear", "notes", "hard", "better"].forEach(function (f) {
-      var n = $("#" + r + "-" + f);
-      if (n && data[f]) n.value = data[f];
-    });
-    var dn = $("#" + r + "-date");
-    if (dn && !dn.value) dn.value = today();
-
-    renderProgress(r, data);
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var out = defaultTraining(r);
-      ["date", "level", "confidence", "fear", "notes", "hard", "better"].forEach(function (f) {
-        var n = $("#" + r + "-" + f);
-        out[f] = n ? n.value : "";
-      });
-      SKILLS.forEach(function (s) {
-        var n = $("#" + r + "-" + s[0]);
-        out.skills[s[0]] = n ? parseInt(n.value, 10) || 0 : 0;
-      });
-      out.updated = new Date().toISOString().slice(0, 16).replace("T", " ");
-      var ok = setJSON(trKey(r), out);
-      renderProgress(r, out);
-      toast(ok ? (r === "lawrence" ? "Lawrence" : "Anson") + " 的訓練更新已儲存於此瀏覽器"
-               : "瀏覽器不允許儲存，請用匯出 JSON", ok ? "check-circle" : "alert-triangle");
-    });
-
-    var exp = $("#export-" + r);
-    if (exp) exp.addEventListener("click", function () {
-      download(r + "-progress-" + today() + ".json",
-               JSON.stringify(loadTraining(r), null, 2));
-      toast("已匯出 " + r + "-progress.json", "download");
-    });
-
-    var cp = $("#copy-" + r);
-    if (cp) cp.addEventListener("click", function () {
-      var d = loadTraining(r);
-      var name = r === "lawrence" ? "Lawrence" : "Anson";
-      var lines = ["【" + name + " 訓練更新 " + (d.date || today()) + "】"];
-      if (d.level) lines.push("自評水準：" + d.level);
-      if (d.confidence) lines.push("信心度：" + d.confidence);
-      if (d.fear) lines.push("跌倒／恐懼感：" + d.fear);
-      SKILLS.forEach(function (s) { lines.push(s[1] + "（" + s[2] + "）：" + (d.skills[s[0]] || 0) + "%"); });
-      if (d.notes) lines.push("練習筆記：" + d.notes);
-      if (d.hard) lines.push("覺得困難：" + d.hard);
-      if (d.better) lines.push("有進步：" + d.better);
-      var text = lines.join("\n");
-      var ta = el("textarea");
-      ta.value = text;
-      ta.style.position = "fixed"; ta.style.opacity = "0";
-      document.body.appendChild(ta); ta.select();
-      var done = false;
-      try { done = document.execCommand("copy"); } catch (e) {}
-      document.body.removeChild(ta);
-      if (navigator.clipboard && !done) {
-        navigator.clipboard.writeText(text).then(function () {
-          toast("摘要已複製，貼給 Perplexity 就可以", "clipboard");
-        });
-      } else {
-        toast(done ? "摘要已複製，貼給 Perplexity 就可以" : "請手動選取複製", "clipboard");
-      }
-    });
-  }
-
-  function initTrainingIO() {
-    var imp = $("#import-training");
-    if (imp) imp.addEventListener("change", function () {
-      var f = imp.files && imp.files[0];
-      if (!f) return;
-      var fr = new FileReader();
-      fr.onload = function () {
-        try {
-          var d = JSON.parse(fr.result);
-          var r = (d.rider || "").toLowerCase();
-          if (RIDERS.indexOf(r) < 0) { toast("JSON 內找不到 rider 欄位", "alert-triangle"); return; }
-          setJSON(trKey(r), d);
-          toast("已匯入 " + r + " 的進度，重新載入頁面查看", "upload");
-          setTimeout(function () { location.reload(); }, 900);
-        } catch (e) { toast("JSON 格式不正確", "alert-triangle"); }
-      };
-      fr.readAsText(f);
-      imp.value = "";
-    });
-
-    var rst = $("#reset-training");
-    if (rst) rst.addEventListener("click", function () {
-      if (!confirm("清除兩位 rider 儲存在此瀏覽器的訓練進度？此操作無法復原。")) return;
-      RIDERS.forEach(function (r) { del(trKey(r)); });
-      toast("訓練進度已清除", "rotate-ccw");
-      setTimeout(function () { location.reload(); }, 700);
-    });
-  }
-
-  /* ====================================================================== *
    * 5. GEAR MAGAZINE FILTERS
    * ====================================================================== */
   function initGearFilters() {
@@ -489,6 +222,13 @@
   var PRIOS = ["必需 Essential", "建議 Recommended", "有更好 Nice to have"];
   var STATES = ["要買 Need to buy", "研究中 Researching", "已下單 Ordered",
                 "已買 Purchased", "已收拾 Packed", "略過 Skip"];
+
+  // row selects are narrow; show only the Chinese half, full text stays in title
+  function shortLabel(v) {
+    var m = /^([^A-Za-z]+)/.exec(v);
+    var t = m ? m[1].trim() : v;
+    return t.length ? t : v;
+  }
 
   function seed() {
     var s = [];
@@ -614,8 +354,9 @@
           [["cat", CATS], ["state", STATES], ["prio", PRIOS]].forEach(function (pair) {
             var sel = el("select");
             pair[1].forEach(function (v) {
-              var op = el("option", null, v);
+              var op = el("option", null, shortLabel(v));
               op.value = v;
+              op.title = v;
               if (it[pair[0]] === v) op.selected = true;
               sel.appendChild(op);
             });
@@ -762,6 +503,65 @@
   }
 
   /* ====================================================================== *
+   * 7b. COPY CHECKLIST — plain-text summary the agent can actually read
+   *     The page cannot save anything the daily task can read back, so the
+   *     user copies this text into Perplexity and the next run uses it.
+   * ====================================================================== */
+  function pkSummary() {
+    var d = loadPk();
+    var out = ["Myoko 2027 \u884c\u674e\u6e05\u55ae\u73fe\u6cc1\uff08" +
+               new Date().toISOString().slice(0, 10) + "\uff09", ""];
+    OWNERS.forEach(function (o) {
+      var items = (d.items || []).filter(function (i) { return i.owner === o[0]; });
+      if (!items.length) return;
+      out.push("## " + o[1] + "\uff08" + items.length + " \u9805\uff09");
+      items.forEach(function (i) {
+        out.push("- " + i.name + (i.en ? " (" + i.en + ")" : "") +
+                 " \u2014 " + i.cat + " \u00b7 " + i.prio + " \u00b7 " + i.state);
+      });
+      out.push("");
+    });
+    var acts = [];
+    $$("[data-act]").forEach(function (c) {
+      var t = c.closest("label");
+      var nm = t ? (t.querySelector(".chk-text b") || {}).textContent : null;
+      if (nm) acts.push((c.checked ? "[x] " : "[ ] ") + nm.trim());
+    });
+    if (acts.length) {
+      out.push("## \u884c\u52d5\u6e05\u55ae Action checklist");
+      out = out.concat(acts);
+      out.push("");
+    }
+    out.push("\u8acb\u4ee5\u4e0a\u8ff0\u72c0\u614b\u66f4\u65b0\u660e\u65e5\u7684\u7c21\u5831\u3002");
+    return out.join("\n");
+  }
+
+  function initPkCopy() {
+    var btn = $("#pk-copy");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var txt = pkSummary();
+      function fallback() {
+        var ta = document.createElement("textarea");
+        ta.value = txt;
+        ta.setAttribute("readonly", "readonly");
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); } catch (e) {}
+        document.body.removeChild(ta);
+        toast("\u5df2\u8907\u5236\uff0c\u76f4\u63a5\u8cbc\u7d66 Perplexity", "clipboard");
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(function () {
+          toast("\u5df2\u8907\u5236\uff0c\u76f4\u63a5\u8cbc\u7d66 Perplexity", "clipboard");
+        })["catch"](fallback);
+      } else { fallback(); }
+    });
+  }
+
+  /* ====================================================================== *
    * 8. Storage warning banner
    * ====================================================================== */
   function initStoreWarn() {
@@ -774,11 +574,10 @@
     initNav();
     initMaps();
     initTabs();
-    RIDERS.forEach(bindTrainingForm);
-    initTrainingIO();
     initGearFilters();
     initPacking();
     initActions();
+    initPkCopy();
     initStoreWarn();
   }
   if (document.readyState === "loading") {

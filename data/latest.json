@@ -1,136 +1,25 @@
 {
-  "schema": "myoko2027-briefing-v3",
   "date": "2026-08-22",
-  "generated_hkt": "2026-08-22T15:00:00+08:00",
-  "trip": {
-    "dates": "2027-01-17 → 2027-01-25",
-    "myoko_stay": "2027-01-18 → 2027-01-23",
-    "nights_in_myoko": 5,
-    "riding_days": "4 confirmed + 1 flexible",
-    "riders": [
-      "Lawrence",
-      "Anson"
-    ],
-    "level": "beginner / improving",
-    "accommodation": {
-      "name": "Lime Resort Myoko",
-      "status": "CONFIRMED",
-      "address": "1223 Nakamachi, Myoko, Niigata 949-2113",
-      "phone": "0255-75-5115",
-      "shuttle": "Free, Myoko Kogen Stn, 8 min, 09:00-18:00, book 1 day ahead",
-      "taxi_alt": "approx JPY 1,800"
-    },
-    "other_nights": "Tokyo (separate, not covered by this briefing)",
-    "days_to_trip": 148,
-    "days_to_myoko": 149
+  "version": "v5",
+  "sections": 12,
+  "gear_items": 41,
+  "gear_images": 41,
+  "sources": 44,
+  "fx": {
+    "JPY_HKD": 0.0493,
+    "USD_HKD": 7.8,
+    "EUR_HKD": 9.1,
+    "note": "Xe 2026-08-22, recheck before payment"
   },
-  "riding_plan": [
-    {
-      "day": 1,
-      "date": "2027-01-18",
-      "resort": "Kurohime Kogen",
-      "focus": "gear setup + basics",
-      "lesson": "none (JP only)"
-    },
-    {
-      "day": 2,
-      "date": "2027-01-19",
-      "resort": "Ikenotaira / Alpen Blick",
-      "focus": "first lesson AM",
-      "lesson": "Escape Myoko half day JPY 35,000"
-    },
-    {
-      "day": 3,
-      "date": "2027-01-20",
-      "resort": "Myoko Suginohara (Mitahara is part of Suginohara)",
-      "focus": "long green cruising",
-      "lesson": "none"
-    },
-    {
-      "day": 4,
-      "date": "2027-01-21",
-      "resort": "Akakura Onsen",
-      "focus": "second lesson + village",
-      "lesson": "Myoko Snowsports PM JPY 30,000",
-      "note": "Akakura Kanko only if conditions good - single beginner run"
-    },
-    {
-      "day": 5,
-      "date": "2027-01-22",
-      "resort": "flexible",
-      "focus": "decide on the day",
-      "lesson": "none"
-    }
+  "changes": [
+    "all JPY/USD/EUR amounts now show estimated HKD",
+    "gear magazine now carries real product photos with source credit + link",
+    "training input form removed (no reliable persistence on a static site)",
+    "full source table moved to sources.html; main page shows a summary card only",
+    "tickets & lessons limited to our five resorts, with Chinese names",
+    "transport/accommodation split into 4 blocks with a 'to confirm' table per block",
+    "actions grouped by urgency; packing form and dropdowns restyled"
   ],
-  "season_2627": {
-    "Suginohara": "2026-12-19 to 2027-03-28 (planned)",
-    "Madarao": "2026-12-12 to 2027-03-28",
-    "Myoko Snowsports lessons": "2026-12-12 to 2027-03-28, bookings OPEN",
-    "Yodel Snow School": "bookings OPEN",
-    "Akakura Onsen": "site offline (security incident); early-bird tickets from 2026-09-01 via third parties",
-    "lift_prices_2627": "NOT yet published by any Myoko resort; Ikenotaira states price under adjustment"
-  },
-  "maps": {
-    "stored": 7,
-    "resorts": [
-      "Akakura Kanko",
-      "Ikenotaira",
-      "Suginohara",
-      "Seki Onsen",
-      "Madarao",
-      "Tangram",
-      "Kurohime"
-    ],
-    "missing": [
-      "Akakura Onsen (official site offline)"
-    ],
-    "status": "ALL 7 marked needs checking - none carries a 26/27 label"
-  },
-  "gear": {
-    "watch_items": 41,
-    "categories": 16,
-    "lawrence": {
-      "board": "Bataleon Mojo 157 (planned)",
-      "bindings": "Bataleon Blaster AW FASE",
-      "verdict": "board flex 3 is correct for beginner; bindings flex 6 are stiffer than ideal - Union Flite Pro flex 4 at USD 179.95 is the cheaper better match",
-      "blocked_on": "height, weight, boot size"
-    },
-    "anson": {
-      "chosen": "nothing yet",
-      "verdict": "buy boots (Burton Mint BOA USD 279.95), rent board and bindings for the first trip",
-      "blocked_on": "height, weight, boot size"
-    },
-    "image_policy": "no product images used - all sources are retailer CDNs with unclear rights"
-  },
-  "training": {
-    "records": "browser storage only on a static site",
-    "export": "data/training/lawrence-progress.json, data/training/anson-progress.json",
-    "no_updates_yet": true
-  },
-  "weather_jan_normals_sekiyama": {
-    "mean_temp_c": 0.0,
-    "monthly_snowfall_cm": 385,
-    "max_snow_depth_cm": 172,
-    "sunshine_hours": 58.1,
-    "18_23_jan_daily_new_snow_cm": 12,
-    "snow_depth_18_to_23": "108 to 118",
-    "risk": "2026-01-17 recorded 14.3C and depth fell 58 to 34 cm - rain-on-snow is a real January risk"
-  },
-  "urgent": [
-    "Provide height / weight / boot size for both riders",
-    "Book English lessons before end of Oct 2026",
-    "Call Lime Resort 0255-75-5115 re drying room, 26/27 ski package, route to Ikenotaira"
-  ],
-  "removed_from_scope": [
-    "Shiga Kogen"
-  ],
-  "sources_checked": 44,
-  "leonardo_ai": "removed from workflow",
-  "design_version": "v4-2026-08-22",
-  "maps_included": [
-    "suginohara",
-    "ikenotaira",
-    "kurohime",
-    "akakura-kanko"
-  ]
+  "archive": "archive/2026-08-22.html",
+  "repo": "https://github.com/llc-wake/Myoko2027"
 }

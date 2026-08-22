@@ -3,7 +3,7 @@
   "edition": "2026-08-22",
   "count": 41,
   "policy": "Items are never deleted between editions. New items get first_seen; existing items get last_checked bumped. Each edition is also archived to gear/archive/YYYY-MM-DD.json",
-  "image_policy": "No product images used. All available product shots are served from cdn.shopify.com or retailer CDNs, so image rights are unclear.",
+  "image_policy": "產品圖片直接使用官方或正規零售商網站的圖，每張都注明來源網站、附來源連結，並在 Google Drive images/gear 保留備份。",
   "items": [
     {
       "name": "Jones Frontier 2.0",
@@ -19,7 +19,11 @@
       "link": "lawrence anson beginner boards watch",
       "source": "https://www.jonessnowboards.com/products/frontier-2-0-snowboard",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-frontier-2-0.jpg",
+      "image_source": "https://www.evo.com/snowboards/jones-frontier-20-snowboard",
+      "image_credit": "evo",
+      "image_url": "https://www.evo.com/cdn/shop/files/product-image-1183296.jpg?v=1767736586"
     },
     {
       "name": "Burton Cultivator Flat Top",
@@ -35,7 +39,11 @@
       "link": "lawrence anson beginner boards watch",
       "source": "https://www.burton.com/products/burton-cultivator-flat-top-snowboard",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/burton-cultivator-flat-top.png",
+      "image_source": "https://www.burton.com/us/en/p/burton-cultivator-flat-top-snowboard/W26-302891.html",
+      "image_credit": "Burton",
+      "image_url": "https://www.burton.com/cdn/shop/files/3028910E4J_1.webp?v=1778421246&width=2880"
     },
     {
       "name": "Jones Dream Weaver 2.0",
@@ -51,7 +59,11 @@
       "link": "anson beginner boards watch",
       "source": "https://www.jonessnowboards.com/products/dream-weaver-2-0-snowboard",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-dream-weaver-2-0.jpg",
+      "image_source": "https://www.evo.com/snowboards/jones-dream-weaver-20-snowboard-womens",
+      "image_credit": "evo",
+      "image_url": "https://www.evo.com/cdn/shop/files/product-image-1183363.jpg?v=1767736587"
     },
     {
       "name": "Union Flite Pro",
@@ -67,7 +79,11 @@
       "link": "lawrence anson beginner bindings watch",
       "source": "https://unionbindingcompany.com/products/union-flite-pro-snowboard-binding-2027",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/union-flite-pro.jpg",
+      "image_source": "https://unionbindingcompany.com/products/union-flite-pro-mens-snowboard-binding-2026",
+      "image_credit": "Union Binding Company",
+      "image_url": "https://unionbindingcompany.com/cdn/shop/files/UN26_FLITE_PRO_BLACK.jpg?v=1785333250"
     },
     {
       "name": "Jones Nebula FASE",
@@ -83,7 +99,11 @@
       "link": "anson beginner bindings watch",
       "source": "https://www.jonessnowboards.com/products/nebula-fase-snowboard-bindings",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-nebula-fase.jpg",
+      "image_source": "https://www.skiessentials.com/products/2027-jones-nebula-fase-binding-j27bnunbl",
+      "image_credit": "SkiEssentials",
+      "image_url": "https://cdn.shopify.com/s/files/1/0670/5135/6456/files/2027-jones-nebula-fase-binding-j27bnunbl-1-j27bnunbl-white.jpg?v=1784661074&width=1200&height=1200&crop=center"
     },
     {
       "name": "Union Rosa",
@@ -99,7 +119,11 @@
       "link": "anson beginner bindings watch",
       "source": "https://unionbindingcompany.com/products/union-rosa-womens-snowboard-binding-2027",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/union-rosa.webp",
+      "image_source": "https://unionbindingcompany.com/products/union-rosa-womens-snowboard-binding-2027",
+      "image_credit": "",
+      "image_url": "http://unionbindingcompany.com/cdn/shop/files/UN26_ROSA_BLACK.jpg?v=1785333254"
     },
     {
       "name": "Thirtytwo Shifty BOA（男裝）",
@@ -115,7 +139,11 @@
       "link": "lawrence beginner boots watch",
       "source": "https://www.evo.com/products/284875-thirtytwo-shifty-boa-snowboard-boots-2027",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/item-6.png",
+      "image_source": "https://thirtytwo.com/products/mens-shifty-boa-snowboard-boots-grey-8105000539-020",
+      "image_credit": "Thirtytwo",
+      "image_url": "https://thirtytwo.com/cdn/shop/files/8105000539-020-H-001_800x.png?v=1767313035"
     },
     {
       "name": "Thirtytwo Shifty BOA（女裝）",
@@ -131,7 +159,11 @@
       "link": "anson beginner boots watch",
       "source": "https://www.evo.com/products/284878-thirtytwo-shifty-boa-snowboard-boots-women-s-2027",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/item-7.png",
+      "image_source": "https://thirtytwo.com/products/womens-shifty-boa-snowboard-boots-brown-black-8205000241-201",
+      "image_credit": "Thirtytwo",
+      "image_url": "https://thirtytwo.com/cdn/shop/files/8205000241-201-H-001_800x.png?v=1767313635"
     },
     {
       "name": "Burton Waverange Plus",
@@ -147,7 +179,11 @@
       "link": "notyet boots",
       "source": "https://www.burton.com/products/burton-waverange-plus-snowboard-boots",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/burton-waverange-plus.png",
+      "image_source": "https://www.burton.com/us/en/p/mens-burton-waverange-step-on-snowboard-boots/W26-302921.html",
+      "image_credit": "Burton",
+      "image_url": "https://www.burton.com/cdn/shop/files/3029210A02_1.webp?v=1783620495&width=2880"
     },
     {
       "name": "Jones MTN Surf Jacket",
@@ -163,7 +199,11 @@
       "link": "lawrence anson beginner jackets watch",
       "source": "https://www.jonessnowboards.com/products/mtn-surf-jacket",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-mtn-surf-jacket.jpg",
+      "image_source": "https://www.jonessnowboards.com/products/men-s-mtn-surf-recycled-jacket-2026",
+      "image_credit": "Jones Snowboards",
+      "image_url": "https://www.jonessnowboards.com/cdn/shop/files/J.26.JKM.MSS.BU-gallery-1_b4493b15-1ab8-4a78-8bd0-d85d5a617416.webp?v=1768452998"
     },
     {
       "name": "Jones Tweaker Jacket",
@@ -179,7 +219,11 @@
       "link": "lawrence anson beginner jackets watch",
       "source": "https://www.jonessnowboards.com/products/tweaker-jacket",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-tweaker-jacket.webp",
+      "image_source": "https://www.jonessnowboards.com/products/tweaker-jacket",
+      "image_credit": "",
+      "image_url": "https://www.jonessnowboards.com/cdn/shop/files/J.27.JKU.TWE.400-gallery-1.webp?v=1782808572"
     },
     {
       "name": "Jones Deeper GORE-TEX",
@@ -195,7 +239,11 @@
       "link": "watch jackets",
       "source": "https://www.jonessnowboards.com/products/deeper-gore-tex-jacket",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-deeper-gore-tex.jpg",
+      "image_source": "https://www.jonessnowboards.com/products/men-s-deeper-goretex-jacket",
+      "image_credit": "Jones Snowboards",
+      "image_url": "https://www.jonessnowboards.com/cdn/shop/files/J.27.JKM.G2L.400-galley-1.webp?v=1782809473"
     },
     {
       "name": "Jones Tweaker Pants（中性）",
@@ -211,7 +259,11 @@
       "link": "lawrence anson beginner pants watch",
       "source": "https://www.jonessnowboards.com/products/tweaker-pants",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/item-12.webp",
+      "image_source": "https://www.jonessnowboards.com/products/tweaker-pants",
+      "image_credit": "",
+      "image_url": "https://www.jonessnowboards.com/cdn/shop/files/J.27.PTU.TWE.001-gallery-1.webp?v=1782805752"
     },
     {
       "name": "Burton [ak] Airpin Pant（女裝）",
@@ -227,7 +279,11 @@
       "link": "anson beginner pants watch",
       "source": "https://www.burton.com/products/burton-ak-airpin-pant-womens",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/item-13.png",
+      "image_source": "https://www.burton.com/en-us/products/womens-burton-ak-airpin-pants-225161",
+      "image_credit": "Burton",
+      "image_url": "https://www.burton.com/cdn/shop/files/2251611A04_4.webp?v=1778423831&width=2880"
     },
     {
       "name": "Trew Olallie PRIMO",
@@ -243,7 +299,11 @@
       "link": "notyet pants",
       "source": "https://trewgear.com/products/olallie-pant-primo",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/trew-olallie-primo.webp",
+      "image_source": "https://trewgear.com/products/olallie-pant-primo",
+      "image_credit": "",
+      "image_url": "http://trewgear.com/cdn/shop/files/240930_W25_TREW_PRIMO_W_OLALLIE_PANT_DUST_KHAKI_2252.jpg?v=1762204479"
     },
     {
       "name": "Burton Merino Midweight Crew",
@@ -259,7 +319,11 @@
       "link": "lawrence anson beginner baselayers watch",
       "source": "https://www.burton.com/products/burton-midweight-base-layer-crew",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/burton-merino-midweight-crew.jpg",
+      "image_source": "https://www.backcountry.com/burton-midweight-x-baselayer-crew-top-mens",
+      "image_credit": "Backcountry",
+      "image_url": "https://content.backcountry.com/images/items/1200/BUR/BURZ8I1/CALGRE.jpg"
     },
     {
       "name": "Burton Synthetic Midweight Pant",
@@ -275,7 +339,11 @@
       "link": "lawrence anson beginner baselayers watch",
       "source": "https://www.burton.com/products/burton-midweight-base-layer-pant",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/burton-synthetic-midweight-pant.jpg",
+      "image_source": "https://www.evo.com/long-underwear-bottoms/burton-midweight-pants-mens",
+      "image_credit": "evo",
+      "image_url": "https://www.evo.com/cdn/shop/files/product-image-1146680.jpg?v=1767735057"
     },
     {
       "name": "Dakine Leather Scout Glove",
@@ -291,7 +359,11 @@
       "link": "lawrence beginner gloves watch",
       "source": "https://www.dakine.com/products/leather-scout-glove-black",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-leather-scout-glove.jpg",
+      "image_source": "https://www.dakine.com/products/leather-scout-glove-black",
+      "image_credit": "",
+      "image_url": "https://cdn.shopify.com/s/files/1/0242/3141/1792/files/LEATHERSCOUTGLOVE-BLACK-194626555720_10004440_BLACK-52M_MAIN.jpg?v=1724446121"
     },
     {
       "name": "Dakine Women's Galaxy GORE-TEX Mitt",
@@ -307,7 +379,11 @@
       "link": "anson gloves watch",
       "source": "https://www.dakine.com/products/womens-galaxy-gore-tex-mitt",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-women-s-galaxy-gore-tex-mitt.jpg",
+      "image_source": "https://www.dakine.com/products/womens-galaxy-gore-tex-mitt-black",
+      "image_credit": "Dakine",
+      "image_url": "https://cdn.shopify.com/s/files/1/0242/3141/1792/files/WOMENSGALAXYGORETEXMITT-BLACK-194626555331_10004461_BLACK-52M_MAIN.jpg?v=1724696992"
     },
     {
       "name": "Dakine Youth Wristguard Glove",
@@ -323,7 +399,11 @@
       "link": "beginner gloves watch",
       "source": "https://www.dakine.com/products/youth-wristguard-glove-black",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-youth-wristguard-glove.jpg",
+      "image_source": "https://www.dakine.com/products/youth-wristguard-glove-black",
+      "image_credit": "",
+      "image_url": "https://cdn.shopify.com/s/files/1/0242/3141/1792/files/YOUTHWRISTGUARDGLOVE-BLACK-194626554471_10004475_BLACK-52M_MAIN.jpg?v=1724699983"
     },
     {
       "name": "Smith Shakedown",
@@ -339,7 +419,11 @@
       "link": "lawrence anson beginner goggles watch",
       "source": "https://www.smithoptics.com/products/shakedown",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/smith-shakedown.webp",
+      "image_source": "https://www.smithoptics.com/products/shakedown",
+      "image_credit": "",
+      "image_url": "http://www.smithoptics.com/cdn/shop/files/shakedown-goggles_black-cpEverydayBlueMirror_3Q.png?v=1783714938"
     },
     {
       "name": "Smith Squad",
@@ -355,7 +439,11 @@
       "link": "watch goggles",
       "source": "https://www.smithoptics.com/products/squad",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/smith-squad.webp",
+      "image_source": "https://www.smithoptics.com/products/squad",
+      "image_credit": "",
+      "image_url": "http://www.smithoptics.com/cdn/shop/files/M006682QJ99MK_01.png?v=1758138258"
     },
     {
       "name": "Dakine Daytripper MIPS",
@@ -371,7 +459,11 @@
       "link": "lawrence anson beginner helmets watch",
       "source": "https://www.dakine.com/products/daytripper-mips-snow-helmet",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-daytripper-mips.jpg",
+      "image_source": "https://www.evo.com/ski-and-snowboard-helmets/dakine-daytripper-mips-helmet",
+      "image_credit": "evo",
+      "image_url": "https://www.evo.com/cdn/shop/files/product-image-1219830.jpg?v=1767737918"
     },
     {
       "name": "Anon Windham WaveCel",
@@ -387,7 +479,11 @@
       "link": "watch helmets",
       "source": "https://www.burton.com/products/anon-windham-wavecel-helmet",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/anon-windham-wavecel.jpg",
+      "image_source": "https://www.evo.com/ski-and-snowboard-helmets/anon-windham-wavecel-helmet",
+      "image_credit": "evo",
+      "image_url": "https://www.evo.com/cdn/shop/files/product-image-1229753.jpg?v=1767738317"
     },
     {
       "name": "Jones Escape Board Bag",
@@ -403,7 +499,11 @@
       "link": "lawrence bags watch",
       "source": "https://www.jonessnowboards.com/products/escape-board-bag",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/jones-escape-board-bag.webp",
+      "image_source": "https://www.jonessnowboards.com/products/escape-board-bag",
+      "image_credit": "",
+      "image_url": "https://www.jonessnowboards.com/cdn/shop/files/J.26.BAU.ESC-gallery-1.webp?v=1768451488"
     },
     {
       "name": "Dakine Low Roller",
@@ -419,7 +519,11 @@
       "link": "notyet bags",
       "source": "https://www.dakine.com/products/low-roller-snowboard-bag",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-low-roller.webp",
+      "image_source": "https://www.dakine.com/products/low-roller-snowboard-bag",
+      "image_credit": "",
+      "image_url": "https://cdn.shopify.com/s/files/1/0242/3141/1792/files/Dakine_Shopify_home.jpg?v=1751984261"
     },
     {
       "name": "Dakine Split Roller 2.0 85L",
@@ -435,7 +539,11 @@
       "link": "notyet bags",
       "source": "https://www.dakine.com/products/split-roller-2-0-85l-travel-bag",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-split-roller-2-0-85l.jpg",
+      "image_source": "https://www.dakine.com/products/split-roller-bag-2-0-85l-carbon-heather",
+      "image_credit": "Dakine",
+      "image_url": "https://cdn.shopify.com/s/files/1/0242/3141/1792/files/SPLITROLLERBAG2PT085L-CARBONHEATHER-194626607986_10004746_CARBNHETHR-62F_MAIN.jpg?v=1776376377"
     },
     {
       "name": "GoPro MAX2 Ski Bundle",
@@ -451,7 +559,11 @@
       "link": "lawrence gadgets cameras watch",
       "source": "https://gopro.com/en/us/shop/cameras/max2/CHDHZ-321-master.html",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/gopro-max2-ski-bundle.png",
+      "image_source": "https://gopro.com/en/us/shop/cameras/buy/max2/CHDHZ-311-master.html",
+      "image_credit": "GoPro",
+      "image_url": "https://static.gopro.com/assets/blta2b8522e5372af40/blt08ac1893ba000c71/69372b79ae9d435f73c040dc/1-pdp-max2-award-gallery---xl.png?width=2048&quality=80&disable=upscale"
     },
     {
       "name": "GoPro MAX2（單機）",
@@ -467,7 +579,11 @@
       "link": "lawrence gadgets cameras watch",
       "source": "https://gopro.com/en/us/shop/cameras/max2/CHDHZ-321-master.html",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/item-28.png",
+      "image_source": "https://gopro.com/en/us/shop/cameras/buy/max2/CHDHZ-311-master.html",
+      "image_credit": "GoPro",
+      "image_url": "https://static.gopro.com/assets/blta2b8522e5372af40/blt08ac1893ba000c71/69372b79ae9d435f73c040dc/1-pdp-max2-award-gallery---xl.png?width=2048&quality=80&disable=upscale"
     },
     {
       "name": "GoPro MISSION 1",
@@ -483,7 +599,11 @@
       "link": "gadgets cameras watch",
       "source": "https://gopro.com/en/us/shop/cameras/mission1/CHDHX-311-master.html",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/gopro-mission-1.jpg",
+      "image_source": "https://www.bhphotovideo.com/c/product/1964084-REG/gopro_mission_1.html",
+      "image_credit": "B&H Photo Video",
+      "image_url": "https://www.bhphotovideo.com/images/fb/gopro_mission_1_1964084.jpg"
     },
     {
       "name": "GoPro HERO13 Black",
@@ -499,7 +619,11 @@
       "link": "lawrence anson beginner gadgets cameras watch",
       "source": "https://gopro.com/en/us/shop/cameras/hero13black/CHDHX-131-master.html",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/gopro-hero13-black.png",
+      "image_source": "https://gopro.com/en/us/shop/cameras/buy/hero13black/CHDHX-131-master.html",
+      "image_credit": "GoPro",
+      "image_url": "https://static.gopro.com/assets/blta2b8522e5372af40/blt8c2249b5302e98e3/66ac8ab0a4a65755391e0cf8/01-pdp-h13-gallery-1920.png?width=2048&quality=80&disable=upscale"
     },
     {
       "name": "Insta360 X6",
@@ -515,7 +639,11 @@
       "link": "gadgets cameras watch",
       "source": "https://www.techradar.com/cameras/360-cameras/insta360-x6-review",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/insta360-x6.jpg",
+      "image_source": "https://www.techradar.com/cameras/360-cameras/insta360-x6-review",
+      "image_credit": "",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/Ec5Gh2bS8F6RUCuHbmGvpN-2048-80.jpg"
     },
     {
       "name": "DJI Osmo Action 6",
@@ -531,7 +659,11 @@
       "link": "gadgets cameras watch",
       "source": "https://www.dji.com/osmo-action-6",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dji-osmo-action-6.png",
+      "image_source": "https://www.dji.com/osmo-action-6",
+      "image_credit": "",
+      "image_url": "https://www-cdn.djiits.com/cms/uploads/ae781cd30b6dc794eb49ad3d44e26845@374*374.png"
     },
     {
       "name": "Therm-ic Heat Fusion One",
@@ -547,7 +679,11 @@
       "link": "notyet heated",
       "source": "https://www.therm-ic.com/en/heat-fusion-one",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/therm-ic-heat-fusion-one.jpg",
+      "image_source": "https://www.therm-ic.us/products/heated-ski-socks-powersocks-heat-fusion-men",
+      "image_credit": "Therm-ic",
+      "image_url": "https://www.therm-ic.us/cdn/shop/files/powersocks-heat-fusion-men_14c3af67-8b11-4e27-b26d-e0bb3b652fba.jpg?v=1725474913"
     },
     {
       "name": "Lenz Heat Vest 3.0",
@@ -563,7 +699,11 @@
       "link": "notyet heated",
       "source": "https://www.lenzproducts.com/en/heat-vest-3-0",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/lenz-heat-vest-3-0.jpg",
+      "image_source": "https://lenzproducts.com/en/collections/heizwesten",
+      "image_credit": "Lenz Products",
+      "image_url": "https://cdn.shopify.com/s/files/1/0254/0388/3572/t/16/assets/201d7eaa97cf--heat-vest-3-0-mit-heat-pad-coll.jpg?v=1778510482"
     },
     {
       "name": "Cardo HJC Spirit",
@@ -579,7 +719,11 @@
       "link": "notyet comms",
       "source": "https://www.cardosystems.com/products/hjc-spirit",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/cardo-hjc-spirit.webp",
+      "image_source": "https://www.cardosystems.com/products/hjc-spirit",
+      "image_credit": "",
+      "image_url": "http://cardosystems.com/cdn/shop/files/HJCPacktalk_001.webp?v=1775457279"
     },
     {
       "name": "Cardo Packtalk Outdoor 4-pack",
@@ -595,7 +739,11 @@
       "link": "notyet comms",
       "source": "https://www.cardosystems.com/products/packtalk-outdoor",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/cardo-packtalk-outdoor-4-pack.webp",
+      "image_source": "https://www.cardosystems.com/products/packtalk-outdoor",
+      "image_credit": "",
+      "image_url": "http://cardosystems.com/cdn/shop/files/OutdoorBlack_04.png?v=1767518548"
     },
     {
       "name": "Dakine Boot Quick Dry",
@@ -611,7 +759,11 @@
       "link": "lawrence anson beginner accessories watch",
       "source": "https://www.dakine.com/products/boot-quick-dry-black",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/dakine-boot-quick-dry.webp",
+      "image_source": "https://www.dakine.com/products/boot-quick-dry-black",
+      "image_credit": "",
+      "image_url": "https://cdn.shopify.com/s/files/1/0242/3141/1792/files/BOOTQUICKDRY-BLACK-194626587547_10003257_BLACK-62M_MAIN.jpg?v=1754923848"
     },
     {
       "name": "Burton Midweight Neck Warmer",
@@ -627,7 +779,11 @@
       "link": "lawrence anson beginner accessories watch",
       "source": "https://www.burton.com/products/burton-midweight-neck-warmer",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/burton-midweight-neck-warmer.png",
+      "image_source": "https://www.burton.com/en-us/products/burton-midweight-neck-warmer-149291b-o",
+      "image_credit": "Burton",
+      "image_url": "https://www.burton.com/cdn/shop/files/149291BEZH_1.webp?v=1778458451&width=2880"
     },
     {
       "name": "Demon Zero RF D3O Knee Pads",
@@ -643,7 +799,11 @@
       "link": "lawrence anson beginner protection watch",
       "source": "https://www.demonunited.com/products/demon-zero-rf-d3o-knee-pads",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/demon-zero-rf-d3o-knee-pads.png",
+      "image_source": "https://demon-united.com/products/zero-rf-knee",
+      "image_credit": "Demon United",
+      "image_url": "https://demon-united.com/cdn/shop/files/Demon_Zero_Knee_Model.png?v=1776373416&width=1600"
     },
     {
       "name": "背部護甲 · 加墊雪褲",
@@ -659,7 +819,11 @@
       "link": "notyet protection",
       "source": "https://www.demonunited.com/collections/snowboard-protection",
       "first_seen": "2026-08-22",
-      "last_checked": "2026-08-22"
+      "last_checked": "2026-08-22",
+      "image": "assets/gear/item-40.png",
+      "image_source": "https://demon-united.com/products/flex-force-pro-spine-guard",
+      "image_credit": "Demon United",
+      "image_url": "https://demon-united.com/cdn/shop/files/Demon_Flexforce_Pro_Spine_Guard_Model.png?v=1777484899&width=1600"
     }
   ]
 }

@@ -1359,3 +1359,421 @@ table.rtbl td:first-child { min-width: 200px; }
 /* map card: title / meta were drifting apart */
 .map-body h3 { margin: 0 0 6px; }
 .map-body .map-meta { margin: 0 0 12px; }
+
+/* ======================================================================== *
+ * ROUND 5 ADDITIONS
+ * ======================================================================== */
+
+/* ---------- currency: HKD estimate beside every JPY / USD / EUR --------- */
+.hkd {
+  font-size: .84em; font-weight: 500; color: var(--text-mute);
+  white-space: nowrap; letter-spacing: 0;
+}
+b .hkd, strong .hkd, .fchip-v .hkd { font-weight: 500; }
+.fx-note {
+  margin: 14px 0 0; font-size: 12.5px; color: var(--text-mute);
+  display: flex; align-items: center; gap: 7px; line-height: 1.6;
+}
+.fx-note .ic { flex: 0 0 auto; color: var(--blue-500); }
+
+/* ---------- sub-block heading inside a section -------------------------- */
+.blk-h {
+  display: flex; align-items: center; gap: 10px;
+  margin: 40px 0 18px; padding-bottom: 11px;
+  border-bottom: 2px solid var(--ice-300);
+  font-size: 19px; line-height: 1.4; color: var(--navy-800);
+}
+.blk-h:first-of-type { margin-top: 8px; }
+.blk-h .ic { flex: 0 0 auto; color: var(--blue-600); }
+.blk-h .en {
+  font-size: 13.5px; font-weight: 500; color: var(--text-mute);
+  letter-spacing: .01em;
+}
+
+/* ---------- "still to confirm" callout ---------------------------------- */
+.tocheck {
+  margin: 18px 0 0; padding: 16px 18px;
+  background: var(--amber-bg); border: 1px solid var(--amber);
+  border-left-width: 4px; border-radius: var(--radius-md);
+}
+.tocheck h4 {
+  margin: 0 0 9px; font-size: 15px; color: #7a4a05;
+  display: flex; align-items: center; gap: 8px;
+}
+.tocheck ul { margin: 0; padding-left: 20px; }
+.tocheck li { margin: 5px 0; font-size: 14.5px; line-height: 1.7; }
+
+/* ---------- cost panel (transport total) -------------------------------- */
+.cost-panel {
+  margin: 18px 0 0; padding: 18px 20px;
+  background: var(--navy-900); color: #fff;
+  border-radius: var(--radius-lg);
+}
+.cost-panel h4 { margin: 0 0 14px; font-size: 15.5px; color: #fff;
+  display: flex; align-items: center; gap: 8px; }
+.cost-panel .kv { background: transparent; border: 0; gap: 0; }
+.cost-panel .kv > div {
+  border-bottom: 1px solid rgba(255,255,255,.14); background: transparent;
+}
+.cost-panel .kv > div:last-child { border-bottom: 0; }
+.cost-panel .kv > div > span { color: rgba(255,255,255,.72); }
+.cost-panel .kv > div > b { color: #fff; }
+.cost-panel .hkd { color: rgba(255,255,255,.7); }
+
+/* generic key/value grid variants */
+.kv-1 { grid-template-columns: 1fr; }
+.kv-2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 720px) { .kv-2 { grid-template-columns: 1fr; } }
+
+/* ---------- hotel facilities (has / has not) ---------------------------- */
+.fac-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px; margin-top: 4px;
+}
+.fac-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+}
+.fac-card h4 {
+  margin: 0 0 10px; font-size: 15px;
+  display: flex; align-items: center; gap: 8px;
+}
+.fac-card ul { margin: 0; padding-left: 19px; }
+.fac-card li { margin: 6px 0; font-size: 14.5px; line-height: 1.65; }
+.fac-yes { border-top: 3px solid var(--green); }
+.fac-yes h4 { color: #1a6a3c; }
+.fac-no { border-top: 3px solid var(--red); }
+.fac-no h4 { color: #a1281f; }
+
+/* ---------- food cards -------------------------------------------------- */
+.food-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 16px;
+}
+.food-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.food-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px; margin-bottom: 12px;
+}
+.food-top h4 { margin: 0; font-size: 16.5px; line-height: 1.45; }
+.food-top h4 .en {
+  display: block; font-size: 13px; font-weight: 500; color: var(--text-mute);
+}
+.food-kind {
+  flex: 0 0 auto; font-size: 12px; font-weight: 700;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--ice-100); color: var(--navy-700);
+  border: 1px solid var(--ice-300);
+}
+.food-card .kv { margin: 0; }
+.food-note {
+  margin: 12px 0 0; padding-top: 12px; font-size: 14px; line-height: 1.75;
+  border-top: 1px dashed var(--grey-200); color: var(--text-soft);
+}
+
+/* ---------- ticket cards (§06) ----------------------------------------- */
+.tk-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 16px;
+}
+.tk-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-top: 3px solid var(--blue-500);
+  border-radius: var(--radius-lg); padding: 18px 20px 16px;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+}
+.tk-head { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 4px; }
+.tk-head .ic { flex: 0 0 auto; color: var(--blue-600); margin-top: 2px; }
+.tk-head h4 { margin: 0; font-size: 17px; line-height: 1.4; }
+.tk-en {
+  display: block; font-size: 13px; font-weight: 500; color: var(--text-mute);
+}
+.tk-day {
+  margin: 0 0 13px; font-size: 12.5px; font-weight: 700;
+  color: var(--navy-700); letter-spacing: .01em;
+}
+.tk-prices { display: grid; gap: 1px; background: var(--grey-200);
+  border: 1px solid var(--grey-200); border-radius: var(--radius-sm);
+  overflow: hidden; margin-bottom: 13px; }
+.tk-p {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; padding: 9px 12px; background: var(--grey-50);
+}
+.tk-p > span { font-size: 13.5px; color: var(--text-soft); }
+.tk-p > b { font-size: 15px; text-align: right; }
+.tk-note {
+  margin: auto 0 0; font-size: 13.5px; line-height: 1.7;
+  color: var(--text-soft);
+}
+
+/* ---------- recommendation panel (best / backup / decision) ------------- */
+.plan-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+.plan-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); padding: 20px;
+  box-shadow: var(--shadow-md);
+}
+.plan-card h4 { margin: 11px 0 12px; font-size: 17.5px; line-height: 1.4; }
+.plan-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; padding: 5px 11px; border-radius: 999px;
+}
+.plan-best { border-top: 4px solid var(--green); }
+.plan-best .plan-tag { background: var(--green-bg); color: #1a6a3c; }
+.plan-backup { border-top: 4px solid var(--amber); }
+.plan-backup .plan-tag { background: var(--amber-bg); color: #7a4a05; }
+.plan-decide { border-top: 4px solid var(--blue-500); }
+.plan-decide .plan-tag { background: var(--ice-100); color: var(--navy-800); }
+.plan-card ul { margin: 0; padding-left: 20px; }
+.plan-card li { margin: 7px 0; font-size: 14.5px; line-height: 1.75; }
+.plan-why {
+  margin: 13px 0 0; padding-top: 13px; font-size: 14px; line-height: 1.75;
+  border-top: 1px dashed var(--grey-200); color: var(--text-soft);
+}
+.dec-list { display: grid; gap: 10px; }
+.dec {
+  padding: 12px 14px; background: var(--grey-50);
+  border: 1px solid var(--grey-200); border-radius: var(--radius-sm);
+  font-size: 14.5px; line-height: 1.7;
+}
+.dec > b { display: block; margin-bottom: 3px; color: var(--navy-800); }
+
+/* ---------- skills to master (§07) ------------------------------------- */
+.skl-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 16px;
+}
+.skl-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-left: 3px solid var(--blue-500);
+  border-radius: var(--radius-md); padding: 17px 19px;
+  box-shadow: var(--shadow-sm);
+}
+.skl-top { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 11px; }
+.skl-top .ic { flex: 0 0 auto; color: var(--blue-600); margin-top: 1px; }
+.skl-top h4 { margin: 0; font-size: 16px; line-height: 1.45; }
+.skl-en { display: block; font-size: 12.5px; font-weight: 500; color: var(--text-mute); }
+.skl-why { margin: 0 0 11px; font-size: 14.5px; line-height: 1.75; color: var(--text-soft); }
+.skl-goal {
+  margin: 0; padding: 10px 13px; background: var(--ice-100);
+  border-radius: var(--radius-sm); font-size: 14px; line-height: 1.7;
+}
+.skl-goal > b { color: var(--navy-800); }
+
+/* ---------- manual update template ------------------------------------- */
+.upd-tpl {
+  margin: 0; padding: 18px 20px; background: var(--navy-900); color: #e8f1f8;
+  border-radius: var(--radius-lg); font-family: ui-monospace, SFMono-Regular,
+  Menlo, Consolas, monospace; font-size: 13.5px; line-height: 1.85;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
+
+/* ---------- gear dashboard by rider (§08) ------------------------------ */
+.gd-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+.gd-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.gd-head {
+  display: flex; align-items: flex-start; gap: 11px; margin-bottom: 14px;
+  padding-bottom: 13px; border-bottom: 1px solid var(--grey-200);
+}
+.gd-head .ic { flex: 0 0 auto; color: var(--blue-600); margin-top: 2px; }
+.gd-head > div { flex: 1 1 auto; min-width: 0; }
+.gd-head h4 { margin: 0; font-size: 16.5px; line-height: 1.4; }
+.gd-en { display: block; font-size: 12.5px; font-weight: 500; color: var(--text-mute); }
+.gd-head .badge { flex: 0 0 auto; }
+.gd-rows { display: grid; gap: 9px; }
+.gd-r {
+  display: grid; grid-template-columns: 118px 1fr; gap: 12px;
+  align-items: baseline; font-size: 14.5px; line-height: 1.7;
+}
+.gd-r > span { color: var(--text-mute); font-size: 13px; }
+.gd-r > b { font-weight: 600; overflow-wrap: anywhere; }
+.gd-verdict > b.badge { justify-self: start; font-weight: 700; }
+.gd-warn > b { color: #a1281f; }
+.gd-next {
+  margin-top: 3px; padding-top: 11px; border-top: 1px dashed var(--grey-200);
+}
+.gd-next > b { color: var(--navy-800); }
+@media (max-width: 520px) { .gd-r { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---------- gear product shots (§09) ----------------------------------- */
+.gear-shot { margin: 0 0 14px; }
+.gear-shot img {
+  width: 100%; height: 172px; object-fit: contain; display: block;
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-md); padding: 10px;
+}
+.gear-shot figcaption {
+  margin-top: 7px; font-size: 11.5px; line-height: 1.55; color: var(--text-mute);
+}
+.gear-shot figcaption a { color: var(--blue-600); }
+.gear-shot-none .gear-ph {
+  height: 172px; display: flex; align-items: center; justify-content: center;
+  gap: 8px; background: var(--grey-50); border: 1px dashed var(--grey-300);
+  border-radius: var(--radius-md); color: var(--text-mute); font-size: 13px;
+}
+
+/* ---------- packing: add box + legend ---------------------------------- */
+.pk-addbox {
+  background: var(--grey-50); border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 18px;
+}
+.pk-addbox-h {
+  margin: 0 0 14px; font-size: 15px; color: var(--navy-800);
+  display: flex; align-items: center; gap: 8px;
+}
+.pk-addbox .fld select, .pk-addbox .fld input[type="text"] { background: #fff; }
+.pk-legend {
+  margin: 18px 0 0; padding: 16px 18px; background: #fff;
+  border: 1px solid var(--grey-200); border-radius: var(--radius-lg);
+}
+.pkl-t {
+  margin: 0 0 12px; font-size: 14.5px; color: var(--navy-800);
+  display: flex; align-items: center; gap: 8px;
+}
+.pk-legend-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px 20px;
+}
+.pk-legend-grid > div { font-size: 13.5px; line-height: 1.7; }
+.pk-legend-grid b { color: var(--navy-800); }
+
+/* nicer dropdowns anywhere in a .fld (packing add-row was looking weak) */
+.fld select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a7189' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center;
+  padding-right: 38px; font-weight: 600; color: var(--navy-800);
+  cursor: pointer;
+}
+.fld select:hover { border-color: var(--ice-400); }
+
+/* ---------- persistence warning line ---------------------------------- */
+.store-line {
+  margin: 18px 0 0; padding: 12px 15px; font-size: 13.5px; line-height: 1.7;
+  background: var(--amber-bg); border: 1px solid var(--amber);
+  border-radius: var(--radius-md); color: #6d4304;
+  display: flex; align-items: flex-start; gap: 9px;
+}
+.store-line .ic { flex: 0 0 auto; margin-top: 3px; }
+
+/* ---------- grouped action checklist (§11) ----------------------------- */
+.act-group { margin: 0 0 26px; }
+.act-gh {
+  display: flex; align-items: center; gap: 11px; flex-wrap: wrap;
+  margin: 0 0 13px; padding: 9px 0 9px 14px; font-size: 16.5px;
+  border-left: 4px solid var(--grey-300); color: var(--navy-800);
+}
+.act-gen { font-size: 12.5px; font-weight: 500; color: var(--text-mute); }
+.act-gn {
+  margin-left: auto; font-size: 12px; font-weight: 700; padding: 3px 10px;
+  border-radius: 999px; background: var(--grey-50);
+  border: 1px solid var(--grey-200); color: var(--text-soft);
+}
+.act-urgent   .act-gh { border-left-color: var(--red);    color: #a1281f; }
+.act-month    .act-gh { border-left-color: var(--amber);  color: #7a4a05; }
+.act-booking  .act-gh { border-left-color: var(--blue-500); }
+.act-depart   .act-gh { border-left-color: var(--green);  color: #1a6a3c; }
+.act-optional .act-gh { border-left-color: var(--grey-300); color: var(--text-mute); }
+
+/* ---------- sources summary card (§12) -------------------------------- */
+.src-sum {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 22px; align-items: center;
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.src-sum-nums {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+}
+.src-sum-nums > div { text-align: center; }
+.src-sum-nums b { display: block; font-size: 27px; line-height: 1.2; color: var(--navy-800); }
+.src-sum-nums span { display: block; margin-top: 3px; font-size: 12.5px; color: var(--text-mute); }
+.c-high-t { color: #1a6a3c !important; }
+.c-mid-t  { color: #7a4a05 !important; }
+.c-low-t  { color: #a1281f !important; }
+.src-sum-act p { margin: 0 0 14px; font-size: 14.5px; line-height: 1.75; color: var(--text-soft); }
+@media (max-width: 800px) { .src-sum { grid-template-columns: 1fr; } }
+
+/* ---------- standalone sources page ----------------------------------- */
+body.srcpage { background: var(--grey-50); }
+body.srcpage main.wrap { padding-top: 34px; padding-bottom: 60px; }
+.srcpage-h { margin: 0 0 10px; font-size: 27px; line-height: 1.35; }
+.srcpage-lead { margin: 0 0 24px; font-size: 15px; line-height: 1.8; color: var(--text-soft); max-width: 760px; }
+.src-date { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.src-img { font-size: 13.5px; line-height: 1.65; }
+body.srcpage .srcs { min-width: 720px; }
+body.srcpage .srcs td { vertical-align: top; }
+body.srcpage .src-main { min-width: 210px; }
+body.srcpage .src-why { min-width: 200px; }
+
+/* ---------- misc ------------------------------------------------------- */
+.badge.b-warn { background: var(--amber-bg); color: #7a4a05; border-color: var(--amber); }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+
+/* round-5 QA fixes */
+.gear-shot img { box-sizing: border-box; }
+.gear-shot figcaption { overflow-wrap: anywhere; word-break: break-word; }
+.gd-rows { min-width: 0; }
+.gd-r > b, .gd-r > span { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  #tickets .info-bar { grid-template-columns: 1fr; row-gap: 14px; padding: 14px 0; }
+  #tickets .info-bar .info-cell { border-left: 0; padding: 4px 16px; }
+  #tickets .info-bar .info-value { font-size: 1.05rem; }
+}
+.gd-verdict > b.badge { max-width: 100%; white-space: normal; text-align: left; line-height: 1.5; }
+@media (max-width: 520px) { .gd-grid { grid-template-columns: 1fr; } .gd-card { padding: 16px; } }
+
+/* kv-1 rows carry long resort labels — 68px was forcing a 3-line stack */
+.kv-1 > div { grid-template-columns: 176px 1fr; gap: 0 16px; padding: 7px 0; }
+.kv-1 > div + div { border-top: 1px dashed var(--grey-200); }
+.kv-1 > div > span { line-height: 1.5; }
+.kv-2 > div { grid-template-columns: 92px 1fr; }
+@media (max-width: 640px) {
+  .kv-1 > div, .kv-2 > div { grid-template-columns: 1fr; gap: 2px 0; }
+  .kv-1 > div > span, .kv-2 > div > span { font-weight: 700; }
+}
+
+/* the legacy .gear-shot flex rule pushed the credit caption beside the photo */
+.gear-shot { display: block; height: auto; background: none; border-bottom: 0; padding: 0; }
+.gear-shot figcaption { display: block; text-align: left; }
+.gear-shot { margin: 0; }
+.gear-shot img { border: 0; border-bottom: 1px solid var(--grey-200); border-radius: 0; height: 168px; }
+.gear-shot figcaption { padding: 8px 22px 0; }
+
+/* packing add-form: the legacy 1fr/132/128/108 grid clipped the two selects */
+.pk-addbox .pk-add-row {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 16px; padding: 0; background: none; border-top: 0; align-items: end;
+}
+.pk-addbox .pk-add-row > .fld:nth-child(4) { grid-column: 1 / -1; }
+.pk-addbox .pk-add-row > .btn,
+.pk-addbox .pk-add-row > button { grid-column: 1 / -1; justify-self: start; }
+.pk-addbox .fld > span { font-size: 13px; font-weight: 700; color: var(--navy-700); letter-spacing: .01em; }
+.pk-addbox .fld select { appearance: none; padding-right: 38px; }
+@media (max-width: 700px) { .pk-addbox .pk-add-row { grid-template-columns: 1fr; } }
+.pk-row { grid-template-columns: 26px 1fr 118px 118px 112px 34px; }
+.pk-row select { padding: 7px 8px; font-size: 13.5px; }
+.checklist label { align-items: flex-start; column-gap: 12px; }
+.checklist input[type="checkbox"] { margin-top: 3px; flex: 0 0 auto; }
+.kv-1 > div > b, .kv-1 > div > span { min-width: 0; }
+.kv-1 > div { min-width: 0; }
+@media (max-width: 900px) { .pk-name, .pk-name .en { min-width: 0; overflow-wrap: anywhere; } }

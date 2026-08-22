@@ -162,3 +162,51 @@ python3 build_index.py          # → myoko-repo/index.html
 ---
 
 最後更新：**2026-08-22**（v4 版面與可讀性迭代）
+
+## v5 build pipeline (2026-08-22)
+
+```
+cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p6.py p7.py p8.py > build_index.py && python3 build_index.py
+```
+
+`build_index.py` is a SNAPSHOT of the fragments. After editing any fragment you MUST
+re-`cat` before running, or the edit silently does nothing. Edit fragments with Python
+`io.open` + `str.replace` — the edit tool fails on long CJK strings.
+
+Fragment map:
+
+| file | section |
+| --- | --- |
+| `b1.py` | head, SVG sprite, topbar, helpers, currency block (`JPY_HKD`, `jpy()`, `pricehk()`, `GEARIMG`) |
+| `b2.py` | hero + trip summary panel |
+| `b3.py` | 01 today's key updates |
+| `b4.py` | 02 five-day plan (`.pl-*`, never `.tl-*`) |
+| `b5.py` | 03 resorts + beginner run cards |
+| `p4.py` | 04 mountain maps (4) + 05 base / transport / facilities / food blocks |
+| `p5.py` | 06 tickets & lessons (5 resorts only) + 07 skills to master before the trip |
+| `p6.py` | 08 gear dashboard by rider (7 categories) |
+| `p7.py` | 09 gear magazine (product photos + credit) + 10 packing checklist |
+| `p8.py` | 11 grouped action list + 12 sources summary, writes `sources.html`, runs the HKD post-pass |
+
+### v5 rules
+
+- **HKD everywhere.** `p8.py`'s `_add_hkd()` post-pass walks the finished HTML and appends
+  `<span class="hkd">（約 HKD$n）</span>` after every `¥` / `US$` / `€` amount in text nodes.
+  Amounts under ¥100 / $5 are skipped so the FX note itself is not annotated.
+  Rate is declared once in `b1.py` (`JPY_HKD`) and printed on the page.
+- **Product images are required, with attribution.** Every gear item carries
+  `image`, `image_source`, `image_credit` in `data/gear-watch.json`; the figure renders a
+  `图片：<source link>` caption. Never leave the gear section imageless because rights are
+  unclear — cite the source instead. No AI-generated images; Leonardo AI is out of the flow.
+- **No training input form.** A static page cannot persist data the daily agent can read,
+  so section 07 lists the skills to master plus a copy-paste template for manual updates.
+- **Sources live in `sources.html`.** The main page shows only a small summary card.
+- **Traditional Chinese, HK style.** Check for simplified slips (`会`/`會`, `内`/`內`) after
+  every edit.
+
+### QA before commit
+
+Deploy `myoko-preview` and probe at 1440px and 390px: image `naturalWidth===0`,
+`scrollWidth-clientWidth>3` overflow (ignoring `overflow-x:auto`, `.tbl-wrap`, `.src-wrap`),
+unresolved `svg use` hrefs, stray thin lines, and `grep -o '%s' index.html | wc -l == 0`.
+`script.js` must never contain the literal `localStorage` / `sessionStorage` / `indexedDB`.
