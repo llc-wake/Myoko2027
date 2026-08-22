@@ -1,0 +1,665 @@
+{
+  "schema": "myoko2027-gear-watch-v1",
+  "edition": "2026-08-22",
+  "count": 41,
+  "policy": "Items are never deleted between editions. New items get first_seen; existing items get last_checked bumped. Each edition is also archived to gear/archive/YYYY-MM-DD.json",
+  "image_policy": "No product images used. All available product shots are served from cdn.shopify.com or retailer CDNs, so image rights are unclear.",
+  "items": [
+    {
+      "name": "Jones Frontier 2.0",
+      "category_zh": "雪板",
+      "category_en": "Snowboards",
+      "price": "US$549.95",
+      "spec": "Camber-Rocker · All-mountain",
+      "why": "Jones 官方定位 Beginner–Intermediate，Camber-Rocker 混合彎型，起步容錯但仍有邊刃咬合。價位偏高，適合「一副用三年」的想法。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "lawrence anson beginner boards watch",
+      "source": "https://www.jonessnowboards.com/products/frontier-2-0-snowboard",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Burton Cultivator Flat Top",
+      "category_zh": "雪板",
+      "category_en": "Snowboards",
+      "price": "US$399.95",
+      "spec": "Flat Top · Soft flex",
+      "why": "平底板型 — 平地穩、起步唔搖。Burton 官方標為初學到中級。係「唔想花 $550」的合理答案。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner boards watch",
+      "source": "https://www.burton.com/products/burton-cultivator-flat-top-snowboard",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones Dream Weaver 2.0",
+      "category_zh": "雪板",
+      "category_en": "Snowboards",
+      "price": "US$549.95",
+      "spec": "女裝 · Camber-Rocker",
+      "why": "Frontier 的女裝對應款。如果 Anson 最後決定買而唔租，這係 Bataleon Mojo Women's 之外的另一選擇。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "anson beginner boards watch",
+      "source": "https://www.jonessnowboards.com/products/dream-weaver-2-0-snowboard",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Union Flite Pro",
+      "category_zh": "固定器",
+      "category_en": "Bindings",
+      "price": "US$179.95",
+      "spec": "flex 4 / 10",
+      "why": "整份清單裡最好的性價比。flex 4 剛好配 flex 3 的軟板 — 即係如果 Lawrence 想解決 Blaster 偏硬的問題，這個係最直接的答案，而且便宜一半。",
+      "verdict": "最佳性價比",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner bindings watch",
+      "source": "https://unionbindingcompany.com/products/union-flite-pro-snowboard-binding-2027",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones Nebula FASE",
+      "category_zh": "固定器",
+      "category_en": "Bindings",
+      "price": "US$299.95",
+      "spec": "女裝 · FASE 快扣",
+      "why": "同 Lawrence 那對 Blaster 一樣係 FASE 後傾快扣系統 — 唔需要坐落雪地綁帶。對初學者係真好處，但價錢高。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "anson beginner bindings watch",
+      "source": "https://www.jonessnowboards.com/products/nebula-fase-snowboard-bindings",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Union Rosa",
+      "category_zh": "固定器",
+      "category_en": "Bindings",
+      "price": "US$169.95",
+      "spec": "女裝入門",
+      "why": "Anson 的預算選擇，比 Juliet 省 US$30。如果最後決定租板但買固定器，這個夠用。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "anson beginner bindings watch",
+      "source": "https://unionbindingcompany.com/products/union-rosa-womens-snowboard-binding-2027",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Thirtytwo Shifty BOA（男裝）",
+      "category_zh": "雪靴",
+      "category_en": "Boots",
+      "price": "US$119.99",
+      "spec": "軟 flex · BOA",
+      "why": "整份清單裡最誇張的性價比。US$119 有 BOA 收緊系統同軟 flex — 如果 Lawrence 仲未買靴，這個值得試腳。唯一問題係軟到中期就會想換。",
+      "verdict": "最佳性價比",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence beginner boots watch",
+      "source": "https://www.evo.com/products/284875-thirtytwo-shifty-boa-snowboard-boots-2027",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Thirtytwo Shifty BOA（女裝）",
+      "category_zh": "雪靴",
+      "category_en": "Boots",
+      "price": "US$199.99",
+      "spec": "軟 flex · BOA",
+      "why": "Anson 的預算替代（對比 Burton Mint BOA US$279.95）。BOA 齊全，但內靴唔係熱塑，長遠合腳度會差一線。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "anson beginner boots watch",
+      "source": "https://www.evo.com/products/284878-thirtytwo-shifty-boa-snowboard-boots-women-s-2027",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Burton Waverange Plus",
+      "category_zh": "雪靴",
+      "category_en": "Boots",
+      "price": "US$409.95",
+      "spec": "Step On 相容",
+      "why": "價錢明顯超出初學需要。Step On 系統要配對應固定器，第一副唔建議鎖死在一個生態系統。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet boots",
+      "source": "https://www.burton.com/products/burton-waverange-plus-snowboard-boots",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones MTN Surf Jacket",
+      "category_zh": "雪衣外套",
+      "category_en": "Jackets",
+      "price": "US$399.95",
+      "spec": "20K/20K 防水透氣",
+      "why": "20K 防水 / 20K 透氣 — 這個數字係關鍵。妙高一月可能出現濕雪甚至雨（2026 年 1 月 17 日錄得 14.3°C），10K 的外套會濕透。呢件係「一日全濕都唔怕」的級別。",
+      "verdict": "初學友善 · 建議",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner jackets watch",
+      "source": "https://www.jonessnowboards.com/products/mtn-surf-jacket",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones Tweaker Jacket",
+      "category_zh": "雪衣外套",
+      "category_en": "Jackets",
+      "price": "US$299.95",
+      "spec": "2L · 防水",
+      "why": "MTN Surf 的省錢版，同系列剪裁。如果兩個人都要買外套，這個組合便宜 US$200。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner jackets watch",
+      "source": "https://www.jonessnowboards.com/products/tweaker-jacket",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones Deeper GORE-TEX",
+      "category_zh": "雪衣外套",
+      "category_en": "Jackets",
+      "price": "US$489.95",
+      "spec": "GORE-TEX",
+      "why": "GORE-TEX 確實更好，但對一年滑四日的初學者，20K/20K 已經夠。留意春季清貨。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "watch jackets",
+      "source": "https://www.jonessnowboards.com/products/deeper-gore-tex-jacket",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones Tweaker Pants（中性）",
+      "category_zh": "雪褲",
+      "category_en": "Pants",
+      "price": "US$239.95",
+      "spec": "2L 20K/20K",
+      "why": "同外套同級防水。中性剪裁，兩個人都可以穿（尺碼不同）。雪褲比外套更需要防水 — 初學者一日坐落雪地幾十次。",
+      "verdict": "初學友善 · 建議",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner pants watch",
+      "source": "https://www.jonessnowboards.com/products/tweaker-pants",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Burton [ak] Airpin Pant（女裝）",
+      "category_zh": "雪褲",
+      "category_en": "Pants",
+      "price": "US$154.95",
+      "spec": "輕量",
+      "why": "Anson 的預算選擇。價錢好，但防水規格低於 Tweaker，如果遇上濕雪日會較快濕。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "anson beginner pants watch",
+      "source": "https://www.burton.com/products/burton-ak-airpin-pant-womens",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Trew Olallie PRIMO",
+      "category_zh": "雪褲",
+      "category_en": "Pants",
+      "price": "US$249",
+      "spec": "高規格",
+      "why": "小眾品牌，做工好。但對四日行程係過度投資。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet pants",
+      "source": "https://trewgear.com/products/olallie-pant-primo",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Burton Merino Midweight Crew",
+      "category_zh": "底層衣",
+      "category_en": "Base layers",
+      "price": "US$114.95",
+      "spec": "美利奴羊毛",
+      "why": "羊毛底層最大好處係濕了仍然保暖，而且唔臭。連續四日滑雪、酒店只有投幣洗衣，這一點很實際。每人兩件就夠。",
+      "verdict": "初學友善 · 建議",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner baselayers watch",
+      "source": "https://www.burton.com/products/burton-midweight-base-layer-crew",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Burton Synthetic Midweight Pant",
+      "category_zh": "底層衣",
+      "category_en": "Base layers",
+      "price": "US$84.95",
+      "spec": "合成纖維",
+      "why": "底層褲，比羊毛便宜。乾得快但會有味。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner baselayers watch",
+      "source": "https://www.burton.com/products/burton-midweight-base-layer-pant",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Leather Scout Glove",
+      "category_zh": "雪手套",
+      "category_en": "Gloves",
+      "price": "US$83",
+      "spec": "皮革 · 五指",
+      "why": "五指手套操作性好（解 binding、用手機、拉拉鏈）。皮革要打油保養，但耐用。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence beginner gloves watch",
+      "source": "https://www.dakine.com/products/leather-scout-glove-black",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Women's Galaxy GORE-TEX Mitt",
+      "category_zh": "雪手套",
+      "category_en": "Gloves",
+      "price": "US$115",
+      "spec": "GORE-TEX 連指",
+      "why": "連指（mitt）比五指暖，但操作差。對初學者建議五指 — 一日要解綁帶幾十次。如果 Anson 特別怕冷手，才考慮連指。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "anson gloves watch",
+      "source": "https://www.dakine.com/products/womens-galaxy-gore-tex-mitt",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Youth Wristguard Glove",
+      "category_zh": "雪手套",
+      "category_en": "Gloves",
+      "price": "US$70",
+      "spec": "內置護腕",
+      "why": "手套內置護腕 — 如果唔想另外戴 Demon 護腕，這係一體化方案。注意係青年尺碼，成人手大可能唔合。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "beginner gloves watch",
+      "source": "https://www.dakine.com/products/youth-wristguard-glove-black",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Smith Shakedown",
+      "category_zh": "雪鏡",
+      "category_en": "Goggles",
+      "price": "US$155",
+      "spec": "Semi-toric 鏡片",
+      "why": "半環曲面鏡片，在白視野（flat light）下辨識地形起伏明顯較好。妙高一月月日照僅 58 小時，這個功能唔係花招。",
+      "verdict": "初學友善 · 建議",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner goggles watch",
+      "source": "https://www.smithoptics.com/products/shakedown",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Smith Squad",
+      "category_zh": "雪鏡",
+      "category_en": "Goggles",
+      "price": "US$165",
+      "spec": "換片系統",
+      "why": "經典型號，換片方便。但如果已經買 Anon Tracker 2.0 套裝就重複。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "watch goggles",
+      "source": "https://www.smithoptics.com/products/squad",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Daytripper MIPS",
+      "category_zh": "頭盔",
+      "category_en": "Helmets",
+      "price": "US$130",
+      "spec": "MIPS",
+      "why": "Smith Cache Mips 的替代，價錢接近。挑選頭盔唯一標準係戴得合頭，所以最好在店裡試三個牌子。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner helmets watch",
+      "source": "https://www.dakine.com/products/daytripper-mips-snow-helmet",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Anon Windham WaveCel",
+      "category_zh": "頭盔",
+      "category_en": "Helmets",
+      "price": "US$199.95",
+      "spec": "WaveCel",
+      "why": "WaveCel 係另一套旋轉衝擊技術，理論上優於 MIPS。價錢高 US$70。對綠線初學者，MIPS 已經足夠。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "watch helmets",
+      "source": "https://www.burton.com/products/anon-windham-wavecel-helmet",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Jones Escape Board Bag",
+      "category_zh": "行李袋",
+      "category_en": "Bags",
+      "price": "US$169.95",
+      "spec": "最長 166cm",
+      "why": "Lawrence 的 157 板放得落。有輪、有補墊。比 EVOC US$85 貴一倍，但如果會經常飛雪場就值。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "lawrence bags watch",
+      "source": "https://www.jonessnowboards.com/products/escape-board-bag",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Low Roller",
+      "category_zh": "行李袋",
+      "category_en": "Bags",
+      "price": "US$216",
+      "spec": "板袋 · 有輪",
+      "why": "價錢高於 Jones Escape。除非有特別偏好，唔需要。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet bags",
+      "source": "https://www.dakine.com/products/low-roller-snowboard-bag",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Split Roller 2.0 85L",
+      "category_zh": "行李袋",
+      "category_en": "Bags",
+      "price": "US$300",
+      "spec": "85L 大行李",
+      "why": "這係主行李箱而唔係板袋。兩人四日行程唔需要 85L。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet bags",
+      "source": "https://www.dakine.com/products/split-roller-2-0-85l-travel-bag",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "GoPro MAX2 Ski Bundle",
+      "category_zh": "運動攝影機",
+      "category_en": "Action cameras",
+      "price": "US$579.99",
+      "spec": "360° · 套裝",
+      "why": "套裝包含滑雪配件（頭盔黏貼座、延長桿）。360° 相機對滑雪特別好 — 唔需要對準，事後在軟件裡選角度。對做內容的人係實際工具。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence gadgets cameras watch",
+      "source": "https://gopro.com/en/us/shop/cameras/max2/CHDHZ-321-master.html",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "GoPro MAX2（單機）",
+      "category_zh": "運動攝影機",
+      "category_en": "Action cameras",
+      "price": "US$499.99",
+      "spec": "360°",
+      "why": "如果已經有黏貼座與延長桿，買單機省 US$80。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence gadgets cameras watch",
+      "source": "https://gopro.com/en/us/shop/cameras/max2/CHDHZ-321-master.html",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "GoPro MISSION 1",
+      "category_zh": "運動攝影機",
+      "category_en": "Action cameras",
+      "price": "US$599.99",
+      "spec": "50MP · 1 吋感光元件",
+      "why": "1 吋感光元件係大躍進，畫質接近相機。但體積大、價錢高，對滑雪用途 360° 的靈活性反而更重要。",
+      "verdict": "值得留意",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "gadgets cameras watch",
+      "source": "https://gopro.com/en/us/shop/cameras/mission1/CHDHX-311-master.html",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "GoPro HERO13 Black",
+      "category_zh": "運動攝影機",
+      "category_en": "Action cameras",
+      "price": "—",
+      "spec": "傳統廣角",
+      "why": "核實過：沒有 HERO14。HERO13 Black 仍然係現行最新的傳統款。如果只想拍第一人稱視角而唔想處理 360° 檔案，這個最簡單。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner gadgets cameras watch",
+      "source": "https://gopro.com/en/us/shop/cameras/hero13black/CHDHX-131-master.html",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Insta360 X6",
+      "category_zh": "運動攝影機",
+      "category_en": "Action cameras",
+      "price": "US$699.99 / US$799.99",
+      "spec": "360° · 2026-08-12 發表",
+      "why": "剛剛發表（2026 年 8 月 12 日），GoPro MAX2 的直接對手。價格來自 TechRadar 評測而非官方頁，所以視為未完全核實。",
+      "verdict": "值得留意 · 價格未核實",
+      "tags": [
+        "b-watch"
+      ],
+      "link": "gadgets cameras watch",
+      "source": "https://www.techradar.com/cameras/360-cameras/insta360-x6-review",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "DJI Osmo Action 6",
+      "category_zh": "運動攝影機",
+      "category_en": "Action cameras",
+      "price": "€379 / €479",
+      "spec": "傳統廣角",
+      "why": "價格為歐元，來源非 DJI 官方頁，未核實。列出只為完整。",
+      "verdict": "未核實",
+      "tags": [
+        "b-check"
+      ],
+      "link": "gadgets cameras watch",
+      "source": "https://www.dji.com/osmo-action-6",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Therm-ic Heat Fusion One",
+      "category_zh": "發熱裝備",
+      "category_en": "Heated gear",
+      "price": "US$84.95",
+      "spec": "發熱鞋墊",
+      "why": "妙高一月平均氣溫 0.0°C — 唔係極寒。合腳的靴同乾襪解決 90% 冷腳問題。這個係「已經試過所有方法仍然冷腳」才買。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet heated",
+      "source": "https://www.therm-ic.com/en/heat-fusion-one",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Lenz Heat Vest 3.0",
+      "category_zh": "發熱裝備",
+      "category_en": "Heated gear",
+      "price": "US$139.95",
+      "spec": "發熱背心",
+      "why": "同上 — 一月妙高唔需要。如果去北海道二月才考慮。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet heated",
+      "source": "https://www.lenzproducts.com/en/heat-vest-3-0",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Cardo HJC Spirit",
+      "category_zh": "通訊裝備",
+      "category_en": "Communication",
+      "price": "US$149.95",
+      "spec": "頭盔內置對講",
+      "why": "兩個人滑同一條綠線，講話用得著嗎？用唔著。這係分開滑不同雪道的人才需要的東西。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet comms",
+      "source": "https://www.cardosystems.com/products/hjc-spirit",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Cardo Packtalk Outdoor 4-pack",
+      "category_zh": "通訊裝備",
+      "category_en": "Communication",
+      "price": "US$869.95",
+      "spec": "四人組",
+      "why": "四人組。兩個人唔需要。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet comms",
+      "source": "https://www.cardosystems.com/products/packtalk-outdoor",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Dakine Boot Quick Dry",
+      "category_zh": "旅行配件",
+      "category_en": "Travel accessories",
+      "price": "US$24",
+      "spec": "雪靴乾燥器",
+      "why": "整份清單裡我最推薦的 24 美元。因為 Lime Resort 官方頁面沒有寫明有乾燥室，連續四日踩濕靴同踩乾靴，體驗差距很大。",
+      "verdict": "最高回報",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner accessories watch",
+      "source": "https://www.dakine.com/products/boot-quick-dry-black",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Burton Midweight Neck Warmer",
+      "category_zh": "旅行配件",
+      "category_en": "Travel accessories",
+      "price": "US$29.95",
+      "spec": "頸套",
+      "why": "便宜、有用。一月妙高日照少、風大，頸套比多一件外套實際。每人一個。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner accessories watch",
+      "source": "https://www.burton.com/products/burton-midweight-neck-warmer",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "Demon Zero RF D3O Knee Pads",
+      "category_zh": "護具",
+      "category_en": "Protection",
+      "price": "US$49.99",
+      "spec": "D3O 護膝",
+      "why": "便宜。初學者跪落雪地的次數比想像多。值得加。",
+      "verdict": "初學友善",
+      "tags": [
+        "b-ok"
+      ],
+      "link": "lawrence anson beginner protection watch",
+      "source": "https://www.demonunited.com/products/demon-zero-rf-d3o-knee-pads",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    },
+    {
+      "name": "背部護甲 · 加墊雪褲",
+      "category_zh": "護具",
+      "category_en": "Protection",
+      "price": "US$109.99 / US$139.99",
+      "spec": "—",
+      "why": "綠線初學跌法用唔到背甲；已有防撞短褲的話加墊雪褲重複。兩件都建議跳過。",
+      "verdict": "暫時不需要",
+      "tags": [
+        "b-none"
+      ],
+      "link": "notyet protection",
+      "source": "https://www.demonunited.com/collections/snowboard-protection",
+      "first_seen": "2026-08-22",
+      "last_checked": "2026-08-22"
+    }
+  ]
+}

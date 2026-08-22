@@ -1,201 +1,129 @@
 {
-  "briefing_date": "2026-08-22",
-  "generated_at_hkt": "2026-08-22T14:00:00+08:00",
-  "language": "zh-Hant-HK",
+  "schema": "myoko2027-briefing-v3",
+  "date": "2026-08-22",
+  "generated_hkt": "2026-08-22T15:00:00+08:00",
   "trip": {
-    "window": "2027-01-17 to 2027-01-25",
-    "countdown_days": 148,
-    "riding_days": "4 full + 1 optional warm-up",
-    "riders": ["Lawrence", "wife"],
-    "level": "Beginner / improving",
-    "nights_at_resort": 5,
-    "sources_checked": "2026-08-22"
+    "dates": "2027-01-17 → 2027-01-25",
+    "myoko_stay": "2027-01-18 → 2027-01-23",
+    "nights_in_myoko": 5,
+    "riding_days": "4 confirmed + 1 flexible",
+    "riders": [
+      "Lawrence",
+      "Anson"
+    ],
+    "level": "beginner / improving",
+    "accommodation": {
+      "name": "Lime Resort Myoko",
+      "status": "CONFIRMED",
+      "address": "1223 Nakamachi, Myoko, Niigata 949-2113",
+      "phone": "0255-75-5115",
+      "shuttle": "Free, Myoko Kogen Stn, 8 min, 09:00-18:00, book 1 day ahead",
+      "taxi_alt": "approx JPY 1,800"
+    },
+    "other_nights": "Tokyo (separate, not covered by this briefing)",
+    "days_to_trip": 148,
+    "days_to_myoko": 149
   },
-  "top3": [
+  "riding_plan": [
     {
-      "rank": 1,
-      "priority": "urgent",
-      "title": "Accommodation still unbooked",
-      "note": "Mid-to-late January is peak. Book one free-cancellation room now; shortlist Akakura Kanko Hotel or Alpen Blick (Ikenotaira)."
+      "day": 1,
+      "date": "2027-01-18",
+      "resort": "Kurohime Kogen",
+      "focus": "gear setup + basics",
+      "lesson": "none (JP only)"
     },
     {
-      "rank": 2,
-      "priority": "important",
-      "title": "Akakura Onsen early-bird tickets on sale 1 Sep 2026",
-      "note": "Buy via Rakuten Ticket / Asoview / Pass Market. Official site is offline after a confirmed unauthorised-access incident — do not enter card details there.",
-      "source": "https://akakura-ski.com/"
+      "day": 2,
+      "date": "2027-01-19",
+      "resort": "Ikenotaira / Alpen Blick",
+      "focus": "first lesson AM",
+      "lesson": "Escape Myoko half day JPY 35,000"
     },
     {
-      "rank": 3,
-      "priority": "confirmed",
-      "title": "Madarao published full 26/27 season",
-      "note": "12 Dec 2026 - 28 Mar 2027, fully covers the trip window. Season pass and NAGANO 7 both uneconomic for 4 riding days.",
-      "source": "https://www.madarao.jp/11200"
+      "day": 3,
+      "date": "2027-01-20",
+      "resort": "Myoko Suginohara (Mitahara is part of Suginohara)",
+      "focus": "long green cruising",
+      "lesson": "none"
+    },
+    {
+      "day": 4,
+      "date": "2027-01-21",
+      "resort": "Akakura Onsen",
+      "focus": "second lesson + village",
+      "lesson": "Myoko Snowsports PM JPY 30,000",
+      "note": "Akakura Kanko only if conditions good - single beginner run"
+    },
+    {
+      "day": 5,
+      "date": "2027-01-22",
+      "resort": "flexible",
+      "focus": "decide on the day",
+      "lesson": "none"
     }
   ],
-  "resorts": [
-    {
-      "name": "Madarao Kogen",
-      "season_2627": "2026-12-12 to 2027-03-28",
-      "status": "published",
-      "source": "https://www.madarao.jp/11200"
-    },
-    {
-      "name": "Myoko Suginohara",
-      "season_2627": "2026-12-19 to 2027-03-28",
-      "status": "provisional",
-      "source": "https://www.princehotels.co.jp/ski/myoko/winter/"
-    },
-    {
-      "name": "Akakura Onsen",
-      "season_2627": null,
-      "status": "site offline - security incident",
-      "note": "Early-bird tickets from 2026-09-01. Bus reservations temporarily suspended. Tel 0255-87-2125.",
-      "source": "https://akakura-ski.com/"
-    },
-    {
-      "name": "Akakura Kanko",
-      "season_2627": null,
-      "status": "no update - ops panel still 25/26",
-      "source": "https://akr-ski.com/slope/"
-    },
-    {
-      "name": "Ikenotaira Onsen (Alpen Blick)",
-      "season_2627": null,
-      "status": "no update",
-      "source": "https://alpenblick-resort.com/ski"
-    },
-    {
-      "name": "Seki Onsen",
-      "season_2627": null,
-      "status": "no update - 25/26 ended 2026-04-12",
-      "source": "http://sekionsen.jp/"
-    },
-    {
-      "name": "Tangram",
-      "season_2627": null,
-      "status": "no update - lifts covered by Madarao Mountain Pass",
-      "source": "https://www.tangram.jp/"
-    }
-  ],
-  "tickets": {
-    "decision": "Buy individual day tickets. No pass is economic for 4 riding days.",
-    "estimated_day_tickets_jpy": "27000-32000 per person for 4 days",
-    "madarao_mountain_pass_2627": {
-      "on_sale": "2026-09-01 to 2026-10-31",
-      "valid_from": "2026-12-12",
-      "ic_deposit_jpy": 500,
-      "refundable": false,
-      "prices_jpy": {
-        "adult_regular": 77000,
-        "adult_early": 68000,
-        "senior55_regular": 70000,
-        "senior55_early": 62000,
-        "child6to12_regular": 36500,
-        "child6to12_early": 32500,
-        "kids_under5_regular": 9000,
-        "kids_under5_early": 8000
-      },
-      "source": "https://www.madarao.jp/9290"
-    },
-    "nagano7_powder_dream_pass": {
-      "resorts": ["Shiga Kogen Mountain Resort", "Nozawa Onsen", "Madarao Kogen", "Ryuoo Ski Park", "Tangram Ski Circus", "Togakushi", "Snow Resort Romance no Kamisama"],
-      "myoko_included": false,
-      "web_sales": "2026-10-01 to 2026-11-30",
-      "prices_jpy": {
-        "super_early_oct_adult": 140000,
-        "super_early_oct_student": 110000,
-        "early_nov_adult": 150000,
-        "early_nov_student": 115000,
-        "regular_dec_to_jan_adult": 160000,
-        "regular_dec_to_jan_student": 120000
-      },
-      "bank_transfer_discount_jpy": 2000,
-      "source": "https://powderdreampass.com/"
-    },
-    "mt_myoko_all_mountain": {
-      "status": "shop lists zero products",
-      "historic_early_bird_cutoff": "30 November",
-      "baseline_2526_jpy": {"early": 95000, "regular": 115000},
-      "source": "https://mountmyoko.axess.shop/en/Products/Tickets"
-    },
-    "ikon_pass_2627": {
-      "includes": ["Myoko Suginohara", "Lotte Arai"],
-      "days": "7 days (Base 5)",
-      "from_usd": {"full": 1449, "base": 1019},
-      "verdict": "not worth it for 4 riding days",
-      "source": "https://www.ikonpass.com/en/destinations/myoko-suginohara-ski-resort"
-    },
-    "mountain_collective_2627": {
-      "japan_resorts": ["Niseko United"],
-      "myoko_included": false,
-      "source": "https://mountaincollective.com/"
-    }
-  },
-  "travel": {
-    "rail_route": "Tokyo -> Joetsu-Myoko (Hokuriku Shinkansen Hakutaka, 1h50-2h) -> Echigo Tokimeki Myoko Haneuma Line (20 min) -> Myoko Kogen",
-    "total_time": "about 2h20-2h30",
-    "fare_jpy": null,
-    "jr_pass_note": "Exchange Order prices change 2026-10-01; figures are image-only on the official page and not yet extracted",
-    "jr_pass_source": "https://japanrailpass.net/en/purchase/price/",
-    "accommodation_shortlist": [
-      {"name": "Akakura Kanko Hotel", "note": "ski-in/ski-out, strong English", "jan_2027_rate": null},
-      {"name": "Alpen Blick (Ikenotaira)", "note": "best beginner terrain on the doorstep", "jan_2027_rate": null}
-    ]
+  "season_2627": {
+    "Suginohara": "2026-12-19 to 2027-03-28 (planned)",
+    "Madarao": "2026-12-12 to 2027-03-28",
+    "Myoko Snowsports lessons": "2026-12-12 to 2027-03-28, bookings OPEN",
+    "Yodel Snow School": "bookings OPEN",
+    "Akakura Onsen": "site offline (security incident); early-bird tickets from 2026-09-01 via third parties",
+    "lift_prices_2627": "NOT yet published by any Myoko resort; Ikenotaira states price under adjustment"
   },
   "maps": {
-    "storage": "Google Drive / Myoko2027 Assets Folder / images/maps/",
-    "note": "All 7 maps marked needs-checking: no 26/27 season label on any file. Japanese resorts usually publish new maps in Nov-Dec.",
-    "items": [
-      {"resort": "Akakura Onsen", "status": "unavailable", "reason": "official site offline"},
-      {"resort": "Akakura Kanko", "status": "needs checking", "file": "akakura-kanko-map.webp", "dimensions": "1300x1564", "page": "https://akr-ski.com/slope/"},
-      {"resort": "Ikenotaira Onsen", "status": "needs checking", "file": "ikenotaira-map.webp", "dimensions": "1358x1920", "page": "https://alpenblick-resort.com/ski"},
-      {"resort": "Myoko Suginohara", "status": "needs checking", "file": "suginohara-map.png", "dimensions": "790x809", "page": "https://www.princehotels.co.jp/ski/myoko/winter/coursemap/"},
-      {"resort": "Seki Onsen", "status": "needs checking", "file": "seki-onsen-map.jpg", "dimensions": "680x354", "page": "http://sekionsen.jp/course.html", "note": "base image only; course names are HTML overlays"},
-      {"resort": "Madarao", "status": "needs checking", "file": "madarao-map.pdf", "dimensions": "B4 1-page", "page": "https://www.madarao.jp/ski/course"},
-      {"resort": "Tangram", "status": "needs checking", "file": "tangram-map.jpg", "dimensions": "1030x617", "page": "https://www.tangram.jp/ski/ski/map.php"}
-    ]
-  },
-  "training": {
-    "level_estimate": "Beginner / improving",
-    "last_update_from_user": null,
-    "reminder": "No training update received yet. A one-line note after the next session lets the level estimate, drill plan and Myoko lesson level be updated.",
-    "lesson_prices_2627": {
-      "escape_myoko": {"jpy_per_instructor_per_session": "30000-59000", "source": "https://escapemyoko.com/myoko-snowboard-lessons/"},
-      "myoko_snowsports": {"status": "26/27 prices unpublished", "source": "https://myokosnowsports.com/akakura/snowsports-school/"},
-      "go_myoko_canyons": {"status": "26/27 prices unpublished", "source": "https://gomyoko.com/lessons/"},
-      "yodel": {"status": "26/27 prices unpublished", "source": "http://yodelsnow.com/lessonmenu.html"}
-    }
+    "stored": 7,
+    "resorts": [
+      "Akakura Kanko",
+      "Ikenotaira",
+      "Suginohara",
+      "Seki Onsen",
+      "Madarao",
+      "Tangram",
+      "Kurohime"
+    ],
+    "missing": [
+      "Akakura Onsen (official site offline)"
+    ],
+    "status": "ALL 7 marked needs checking - none carries a 26/27 label"
   },
   "gear": {
-    "planned_setup": "Bataleon FASE Blaster 157 + Bataleon Mojo consideration",
-    "news": "Bataleon Mojo is brand new for 2027 (beginner all-mountain, 3/10 flex, available in 157). Blaster AW FASE unchanged. Women's Mojo new at USD 459.95.",
-    "verdict": "No change needed to the planned setup.",
-    "source": "https://snowboardingprofiles.com/2027-bataleon-snowboards-lineup-overview"
+    "watch_items": 41,
+    "categories": 16,
+    "lawrence": {
+      "board": "Bataleon Mojo 157 (planned)",
+      "bindings": "Bataleon Blaster AW FASE",
+      "verdict": "board flex 3 is correct for beginner; bindings flex 6 are stiffer than ideal - Union Flite Pro flex 4 at USD 179.95 is the cheaper better match",
+      "blocked_on": "height, weight, boot size"
+    },
+    "anson": {
+      "chosen": "nothing yet",
+      "verdict": "buy boots (Burton Mint BOA USD 279.95), rent board and bindings for the first trip",
+      "blocked_on": "height, weight, boot size"
+    },
+    "image_policy": "no product images used - all sources are retailer CDNs with unclear rights"
   },
-  "actions": [
-    {"id": "a1", "priority": "urgent", "due": "this week", "text": "Book one free-cancellation room for 17-25 Jan 2027 (Akakura Kanko Hotel or Alpen Blick)"},
-    {"id": "a2", "priority": "important", "due": "2026-09-01", "text": "Check Akakura Onsen early-bird ticket types and prices; buy via Rakuten Ticket / Asoview / Pass Market, not the official site"},
-    {"id": "a3", "priority": "important", "due": "this month", "text": "Both get boot fitting done - determines board and binding sizing"},
-    {"id": "a4", "priority": "decision", "due": null, "text": "Decide whether to re-run the Myoko vs Shiga Kogen comparison; earlier notes ranked Shiga ahead, and NAGANO 7 reinforces that ecosystem"},
-    {"id": "a5", "priority": "watch", "due": null, "text": "Send a short training update so the level estimate and lesson recommendation can be refreshed"},
-    {"id": "a6", "priority": "important", "due": "2026-10-01", "text": "Check JR Pass Exchange Order price change before 1 Oct 2026"},
-    {"id": "a7", "priority": "watch", "due": null, "text": "Email Myoko snowsport schools about mid-January private lesson availability and 26/27 rates"},
-    {"id": "a8", "priority": "decision", "due": null, "text": "Decide whether to make the Myoko2027 repo private so official maps can be embedded directly"}
+  "training": {
+    "records": "browser storage only on a static site",
+    "export": "data/training/lawrence-progress.json, data/training/anson-progress.json",
+    "no_updates_yet": true
+  },
+  "weather_jan_normals_sekiyama": {
+    "mean_temp_c": 0.0,
+    "monthly_snowfall_cm": 385,
+    "max_snow_depth_cm": 172,
+    "sunshine_hours": 58.1,
+    "18_23_jan_daily_new_snow_cm": 12,
+    "snow_depth_18_to_23": "108 to 118",
+    "risk": "2026-01-17 recorded 14.3C and depth fell 58 to 34 cm - rain-on-snow is a real January risk"
+  },
+  "urgent": [
+    "Provide height / weight / boot size for both riders",
+    "Book English lessons before end of Oct 2026",
+    "Call Lime Resort 0255-75-5115 re drying room, 26/27 ski package, route to Ikenotaira"
   ],
-  "gaps": [
-    "No Tokyo-Myoko rail fare figure",
-    "No JR Pass price figures (official page is image-only)",
-    "No verified January 2027 accommodation rates",
-    "Epic Pass Japan status unverified",
-    "Impact shorts, wrist guards, back protectors, heated gear, wearables, comms and action cameras not yet researched",
-    "No snow data - August is out of season; snow tracking starts December"
+  "removed_from_scope": [
+    "Shiga Kogen"
   ],
-  "workflow": {
-    "schedule": "daily 08:00 Asia/Hong_Kong",
-    "images": "asi-generate-image (gpt_image_2)",
-    "leonardo_ai": "removed - connector cannot retrieve generated images",
-    "repo": "llc-wake/Myoko2027",
-    "drive_folder": "Myoko2027 Assets Folder"
-  }
+  "sources_checked": 44,
+  "leonardo_ai": "removed from workflow"
 }

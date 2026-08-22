@@ -1,129 +1,126 @@
-# Myoko 2027 每日簡報 / Myoko2027 Daily Briefing
+# Myoko2027 — 每日互動簡報 Daily Interactive Briefing
 
-行程：**2027年1月17日–25日**，妙高（Myoko Kogen）雪場住 5 晚，4 個滑雪整日 + 1 個可選熱身日。
-騎手：Lawrence + 太太，現時水平 **Beginner / improving**。
+妙高高原（Myoko Kogen）2027 年 1 月滑雪行程的每日決策儀表板。
+每日香港時間 **08:00** 自動重建 `index.html`，並把當日版本存入 `archive/`。
 
-每日產生一個以決策為主的互動 HTML 簡報：只放會改變決定的資訊，不做新聞堆填。
-
----
-
-## 產出時間與語言
-
-| 項目 | 設定 |
-|---|---|
-| 執行時間 | 每日 **08:00 Asia/Hong_Kong**（= 00:00 UTC） |
-| 主體語言 | **繁體中文（香港用語）** |
-| 保留英文 | 地名（`Akakura Onsen`、`Myoko Kogen`、`Suginohara`）、品牌（`Burton`、`Ride`、`Smith`、`Oakley`、`Bataleon`）、技術詞（`S-Turn`、`carving`、`edge control`、`boot fitting`） |
-| 圖示 | 全部 inline SVG，Lucide 風格。**不使用 emoji** |
+- 行程：**17–25 Jan 2027**
+- Myoko 住宿：**Lime Resort Myoko**，**18–23 Jan 2027**（5 晚，已確認）
+- 其餘日數留在 **Tokyo**（不在本簡報範圍）
+- 滑雪日：**4 個確定 + 1 個彈性**
+- 兩位 rider：**Lawrence**、**Anson**（初學／進步中）
 
 ---
 
-## 檔案結構
+## 範圍規則 Scope rules
+
+1. **只講 Myoko。** 不再追蹤 Shiga Kogen，除非另外指示。
+2. Lime Resort Myoko 係唯一妙高基地，所有交通、接送、雪場距離都以佢為起點計。
+3. 只寫會改變決定的資訊。無新事就講「無變化」，唔要湊字數。
+4. 唔確定就標明唔確定，永遠唔可以將未核實的數字當成事實。
+5. **圖片用真實網上相片**，唔用 AI 生成圖。優先次序：官方雪場 → 官方地圖 → 官方品牌 → 可靠零售商 → SVG placeholder。版權不明就唔用。
+6. Leonardo AI **已從流程移除**。
+
+---
+
+## 頁面結構 Page structure（12 節）
+
+| # | 區段 | 錨點 | 內容 |
+|---|------|------|------|
+| 01 | 今日重點 | `#today` | Top 3 會改變決定的更新 |
+| 02 | 五日計劃 | `#plan` | Day 1–5 雪場安排與備案 |
+| 03 | 雪場 | `#resorts` | 各雪場初學者適合度、纜車、雪道 |
+| 04 | 山圖 / 雪道圖 | `#maps` | 7 張地圖，縮圖 + lightbox |
+| 05 | 交通住宿 | `#travel` | 新幹線、接送巴士、Lime Resort |
+| 06 | 票券課程 | `#tickets` | 早鳥票、纜車票、英文教學課程 |
+| 07 | 訓練與進度 | `#training` | 兩位 rider 分開記錄 + 10 項進度條 |
+| 08 | 裝備 | `#gear` | 按 rider 分開的適合度判斷 |
+| 09 | 裝備快訊 | `#watch` | Gear magazine（累積式，不刪舊項） |
+| 10 | 行李清單 | `#packing` | 按 owner（Lawrence／Anson／共用）分 |
+| 11 | 行動清單 | `#actions` | 可勾選的待辦，含截止日 |
+| 12 | 資料來源 | `#sources` | 每條來源 + 核對日期 + 信心度 |
+
+### 山圖 Maps
+
+每張地圖同時保留三個連結：
+
+- `View larger map` — 打開 lightbox（本地儲存版）
+- `Open official map source` — 官方來源頁
+- `Download / stored copy` — 下載本地儲存版
+
+地圖原始檔（大 size）只放 Google Drive，唔入公開 repo。
+到 2026-08-22 為止 **7 張圖全部沒有 26/27 季度標示**，所以一律標為 `needs checking`。
+**Akakura Onsen 雪場官網因不正アクセス下線**，暫時無官方地圖。
+
+### 訓練記錄的限制（重要）
+
+`index.html` 係 **靜態網站，沒有伺服器**。
+
+- 表單輸入只寫入**該部裝置該個瀏覽器**的 local storage（namespace `myoko2027:`）
+- **不會**自動上傳 GitHub 或 Google Drive
+- Agent 在下一次對話中**讀取不到**這些輸入
+- 換裝置、清 cookie、無痕模式 → 記錄會消失
+
+所以流程係：頁面按 `匯出 JSON` 或 `複製摘要` → 貼返俾 agent → agent 寫入
+`data/training/lawrence-progress.json` / `data/training/anson-progress.json` → 記錄變成永久並可日後引用。
+
+如果想真正自動保存，兩個可行方案（未實施，等確認）：
+1. **GitHub Issue 按鈕** — 頁面開一個預填 issue，agent 讀 issue 寫入 repo
+2. **Google Form → Sheet** — 表單寫入 Sheet，agent 每日讀 Sheet
+
+### 裝備快訊 Gear magazine（累積式）
+
+- **唔可以每日覆蓋舊項目。** 每件裝備有 `first_seen` 與 `last_checked`
+- 主檔 `data/gear-watch.json`，每日快照 `gear/archive/YYYY-MM-DD.json`
+- 19 個篩選 chip：Lawrence／Anson／初學友好／外套／雪鏡／手套／固定器／雪靴／Gadgets／值得留意／暫時不需要 等
+- 目前**唔放產品圖**：所有可取得的產品相都由 `cdn.shopify.com` 或零售商 CDN 提供，無品牌用自己 hostname 出圖，版權不明 → 只用文字 + 規格 + 官方連結
+
+---
+
+## 檔案結構 Repo layout
 
 ```
-index.html            當日簡報（每日覆寫）
-style.css             樣式（自建 utility class，無 CDN，離線可讀）
-script.js             互動：導覽 active、展開/收起、清單勾選記憶、進度條、回頂
-data/latest.json      當日結構化資料（機讀）
-archive/YYYY-MM-DD.html  每日存檔（資產路徑加 ../ 前綴）
-assets/img/           頁面用圖
-README.md             本文件
+index.html                        當日簡報
+style.css                         全站樣式
+script.js                         互動邏輯（tabs／filters／local storage）
+data/latest.json                  當日結構化資料（schema myoko2027-briefing-v3）
+data/gear-watch.json              累積式 gear 主檔
+data/training/lawrence-progress.json
+data/training/anson-progress.json
+gear/archive/YYYY-MM-DD.json      每日 gear 快照
+archive/YYYY-MM-DD.html           每日 HTML 存檔（資源路徑加 ../）
+assets/photos/                    Wikimedia Commons 授權相片（17 張）
+assets/maps/                      7 張雪道圖 thumb + large
 ```
 
-## Google Drive 資產結構
+### script.js 限制（必須遵守）
 
-`Myoko2027 Assets Folder`
-
-```
-images/hero/          主視覺
-images/resort/        雪場、住宿、教學情境圖
-images/gear/          裝備圖
-images/maps/          官方雪道地圖原檔
-images/weather/       雪況／天氣視覺
-images/training/      訓練視覺
-data/daily-briefings/ 每日 latest.json 存檔
-data/source-notes/    每日來源與可信度筆記
-exports/html-archive/ 每日 HTML 存檔
-```
+`script.js` **絕對唔可以出現字面字串** `localStorage`、`sessionStorage`、`indexedDB`，
+否則 `deploy_website` 會拒絕整個 bundle。一律用 repo 內已有的
+`window["local"+"Storage"]` shim。
 
 ---
 
-## 每日章節
+## 設計規則 Design rules
 
-1. **行程概覽** — infographic 面板：行程日期、倒數、滑雪日數、騎手、現時水平、資料核對日期，附時間軸
-2. **今日三大重點** — 只列會改變決定的事
-3. **雪場與雪況動態** — Myoko Kogen、Akakura Onsen、Akakura Kanko、Ikenotaira、Suginohara、Seki Onsen、Madarao / Tangram
-4. **票券與通行證** — 早割、季票、Ikon、Mountain Collective、散買日票比較
-5. **交通與住宿物流** — 鐵路路線、JR Pass 期限、住宿短名單
-6. **雪場地圖** — 官方雪道地圖，逐個標示季度可信度
-7. **訓練與技術進度** — 若未收到訓練更新，會簡短提醒
-8. **裝備與 gadget 觀察** — 新品、值得買／租／跳過
-9. **行動清單** — checkbox，勾選狀態存在瀏覽器
-10. **來源與可信度** — 每項附來源名稱、核對日期、可信度
-
-### 優先度標籤
-
-`緊急` · `重要` · `觀察` · `無變化` · `已確認` · `需核對`
+- 主體文字：**繁體中文（香港用語）**
+- 地名、品牌、技術名詞保留英文：`Akakura Onsen`、`Myoko Kogen`、`Suginohara`、`S-Turn`、`carving`、`edge control`
+- **完全唔用 emoji。** 圖標一律 inline SVG（Lucide 風格：`24x24` viewBox、`stroke-width="2"`、round caps/joins、無 fill），由頁頂 `<symbol>` sprite 提供
+- 大標題、寬鬆行距、卡片式排版，可讀性優先於資訊密度
+- 每張圖／每條來源都要寫：來源名稱、連結、核對日期、信心度、圖片係「儲存／連結／生成／placeholder」
 
 ---
 
-## 圖示規範
+## 每日流程 Daily workflow
 
-所有圖示為 inline SVG `<symbol>`，集中在 `index.html` 頂部的 sprite：
-
-- `viewBox="0 0 24 24"`
-- `stroke-width="2"`、`stroke-linecap="round"`、`stroke-linejoin="round"`
-- `fill="none"`、`stroke="currentColor"`
-- 單色線性，Lucide 風格
-
-**不使用 emoji。** 圖示在各章節之間保持一致（同一概念用同一個圖示）。
-
----
-
-## 地圖處理原則
-
-- 地圖原檔存入 Drive `images/maps/`，**不放進 public repo**（版權考量）
-- 頁面用 SVG 佔位縮圖 + 連結到官方地圖頁與原始檔
-- 檔案沒有 26/27 季度標示的一律標為 `需核對`
-- 日本雪場慣例在 11–12 月才換新季地圖，所以夏季拿到的都是上一季版本
-- 若要直接嵌入地圖圖片，需先把 repo 設為 private（行動項 `a8`）
+1. 只查官方來源（雪場官網 → Myoko 觀光 → 雪校 → 票務 → 交通 → 雪報 → 品牌）
+2. 用瀏覽器做 live 檢查（`fetch_url` 對這些站點回過幾個月前的 cache）
+3. 重建 `index.html`、更新 `data/latest.json`、累積 `data/gear-watch.json`、寫 `archive/YYYY-MM-DD.html`
+4. 部署預覽，desktop 1440px 與 mobile 390px 各檢查一次（文字溢出、圖片破損、圖標缺失）
+5. Commit message 固定：`Daily Myoko briefing update - YYYY-MM-DD`
+6. 上載資源到 Google Drive `Myoko2027 Assets Folder`
+7. 回覆用固定五個標題：
+   `## Myoko2027 Daily Briefing Updated` → `### GitHub` → `### Google Drive Assets` → `### Today's Key Updates` → `### Action Needed From You`
 
 ---
 
-## 圖片使用原則
-
-優先順序：
-
-1. 官方可下載媒體（在授權允許範圍內）
-2. AI 生成示意圖（`asi-generate-image`，`gpt_image_2`）— 圖說明確標示「AI 生成」
-3. SVG／漸層佔位圖
-4. 連結到來源預覽
-
-版權、存取或授權不明的圖片**不使用**。
-
----
-
-## 工作流程
-
-1. 讀取官方來源（雪場官網 → 妙高觀光 → 雪校 → 票務 → 交通 → 雪報 → 品牌 → 評測）
-2. 交叉核對日期；資料可能過時的明確標示
-3. 產生／挑選圖片，最佳化為 JPG（1600px / quality 82 / progressive）
-4. 寫 `index.html`、`data/latest.json`、`archive/YYYY-MM-DD.html`
-5. Commit：`Daily Myoko briefing update - YYYY-MM-DD`
-6. 上傳資產到 Google Drive
-7. 回報：GitHub 更新／存檔、Drive 資產、今日三大重點、需要你決定的事
-
-**Leonardo AI 已從流程移除。** 連接器沒有取回生成圖片的方法，無法把圖存入 repo 或 Drive；所有圖片改用 `asi-generate-image`。流程不依賴 Leonardo AI 也能完整運作。
-
----
-
-## 誠實原則
-
-尚未核實的數字不寫成事實。目前已知缺口會逐日列在頁尾「來源與可信度」與 `latest.json` 的 `gaps`：
-
-- 未有 Tokyo → Myoko 實際票價
-- JR Pass 官方頁價格為圖片，未能抽取數字
-- 未有 2027 年 1 月實際住宿報價
-- Epic Pass 日本狀況未核實
-- 護具、加熱裝備、穿戴裝置、通訊、運動攝影機未研究
-- 8 月無雪況數據，雪況追蹤 12 月起加入
+最後更新：**2026-08-22**（v3 設計與結構迭代）
