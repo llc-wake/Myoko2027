@@ -1,54 +1,11 @@
 {
-  "rider": "Anson",
-  "rider_id": "anson",
-  "schema": "myoko2027-training-v1",
-  "note": "Website writes to browser storage only. Export from the page and paste back to the agent, or the agent updates this file on request.",
-  "updated": null,
-  "entries": [
-    {
-      "date": "YYYY-MM-DD",
-      "level": "beginner",
-      "confidence": 0,
-      "skills": {
-        "balance": 0,
-        "heel": 0,
-        "toe": 0,
-        "sturn": 0,
-        "speed": 0,
-        "lift": 0,
-        "green": 0,
-        "red": 0,
-        "powder": 0,
-        "fitness": 0
-      },
-      "fear": 0,
-      "difficult": "",
-      "improved": "",
-      "notes": ""
-    }
-  ],
-  "skill_keys": {
-    "balance": "站姿與平衡 Stance & balance",
-    "heel": "後刃剎停 Heel-side edge",
-    "toe": "前刃剎停 Toe-side edge",
-    "sturn": "連續 S-Turn",
-    "speed": "速度控制 Speed control",
-    "lift": "上落纜車 Lift loading",
-    "green": "綠線全程 Green runs",
-    "red": "紅線 Red runs",
-    "powder": "粉雪 Powder",
-    "fitness": "體能 Fitness"
-  },
-  "targets_before_jan_2027": {
-    "balance": 85,
-    "heel": 90,
-    "toe": 90,
-    "sturn": 85,
-    "speed": 85,
-    "lift": 95,
-    "green": 95,
-    "red": 60,
-    "powder": 40,
-    "fitness": 80
-  }
+ "rider": "Anson",
+ "sessions": 0,
+ "latest_date": "",
+ "latest_where": "",
+ "latest_hours": "",
+ "self_level": "",
+ "skill_counts": [],
+ "recent": [],
+ "has_data": false
 }

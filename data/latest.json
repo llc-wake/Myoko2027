@@ -1,5 +1,5 @@
 {
-  "date": "2026-08-22",
+  "date": "2026-08-23",
   "version": "v5",
   "sections": 12,
   "gear_items": 41,
@@ -12,14 +12,20 @@
     "note": "Xe 2026-08-22, recheck before payment"
   },
   "changes": [
-    "all JPY/USD/EUR amounts now show estimated HKD",
-    "gear magazine now carries real product photos with source credit + link",
-    "training input form removed (no reliable persistence on a static site)",
-    "full source table moved to sources.html; main page shows a summary card only",
-    "tickets & lessons limited to our five resorts, with Chinese names",
-    "transport/accommodation split into 4 blocks with a 'to confirm' table per block",
-    "actions grouped by urgency; packing form and dropdowns restyled"
+    "training log is now permanent: Google Form -> Google Sheet, read by the daily run",
+    "section 07 rebuilt: 7.1 training log (form button + saved records), 7.2 ten skills, 7.3 paste-back fallback",
+    "fetch_training.py reads the response Sheet into data/training/*.json before each build"
   ],
-  "archive": "archive/2026-08-22.html",
-  "repo": "https://github.com/llc-wake/Myoko2027"
+  "archive": "archive/2026-08-23.html",
+  "repo": "https://github.com/llc-wake/Myoko2027",
+  "training": {
+    "method": "Google Form -> Google Sheet",
+    "form": "https://docs.google.com/forms/d/e/1FAIpQLSeLAHz8UONjJiR4PbydRET2NGqAT2LRgrC7Te6PLS9SSYJ2ig/viewform",
+    "form_edit": "https://docs.google.com/forms/d/1Qy8N5uhBoKAlQgjfwUW5d8DevcXXc_5m9okZzLl57yA/edit",
+    "sheet_id": "12mPcK7KE5qdhFh9XxN8xRg1W5V8n5rPtxGOX3KbTi_E",
+    "sheet_owner": "LChiurmit@gmail.com",
+    "shared_with": "lawrence@wake.hk (Editor)",
+    "reader": "fetch_training.py",
+    "records": 0
+  }
 }

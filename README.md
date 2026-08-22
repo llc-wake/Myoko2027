@@ -32,7 +32,7 @@
 | 04 | 山圖 / 雪道圖 | `#maps` | 4 張地圖（只放實際會去的雪場），縮圖 + lightbox |
 | 05 | 交通住宿 | `#travel` | 新幹線、接送巴士、Lime Resort |
 | 06 | 票券課程 | `#tickets` | 早鳥票、纜車票、英文教學課程 |
-| 07 | 訓練與進度 | `#training` | 兩位 rider 分開記錄 + 10 項進度條 |
+| 07 | 出發前要練成的技術 | `#training` | 7.1 訓練記錄（Google Form/Sheet）· 7.2 十項技術 · 7.3 備用模板 |
 | 08 | 裝備 | `#gear` | 按 rider 分開的適合度判斷 |
 | 09 | 裝備快訊 | `#watch` | Gear magazine（累積式，不刪舊項） |
 | 10 | 行李清單 | `#packing` | 按 owner（Lawrence／Anson／共用）分 |
@@ -53,21 +53,24 @@ Seki Onsen、Madarao、Tangram 的圖已從頁面移除，檔案仍保留在 Goo
 到 2026-08-22 為止 **4 張圖全部沒有 26/27 季度標示**，所以一律標為 `needs checking`。
 **Akakura Onsen 雪場官網因不正アクセス下線**，暫時無官方地圖。
 
-### 訓練記錄的限制（重要）
+### 訓練記錄（v6 起：Google Form → Google Sheet，永久保存）
 
-`index.html` 係 **靜態網站，沒有伺服器**。
+Lawrence 於 2026-08-23 選了方案（乙）。現在的流程：
 
-- 表單輸入只寫入**該部裝置該個瀏覽器**的 local storage（namespace `myoko2027:`）
-- **不會**自動上傳 GitHub 或 Google Drive
-- Agent 在下一次對話中**讀取不到**這些輸入
-- 換裝置、清 cookie、無痕模式 → 記錄會消失
+1. 頁面 §7.1 有「填寫訓練記錄」按鈕 → Google Form（10 題）
+2. 表單答案自動寫入 Google Sheet
+   - Form edit：`https://docs.google.com/forms/d/1Qy8N5uhBoKAlQgjfwUW5d8DevcXXc_5m9okZzLl57yA/edit`
+   - 回應連結：`https://docs.google.com/forms/d/e/1FAIpQLSeLAHz8UONjJiR4PbydRET2NGqAT2LRgrC7Te6PLS9SSYJ2ig/viewform`
+   - Sheet ID：`12mPcK7KE5qdhFh9XxN8xRg1W5V8n5rPtxGOX3KbTi_E`
+   - Sheet 由 `LChiurmit@gmail.com` 擁有，已分享給 `lawrence@wake.hk`（Editor），所以 `gws` 連接可以讀
+3. 每日簡報建置前先跑 `python3 tools/fetch_training.py`（bash `api_credentials=["gws"]`），
+   把 Sheet 讀成 `data/training/records.json`、`lawrence-progress.json`、`anson-progress.json`
+4. `p5.py` 在建置時讀這些 JSON，靜態渲染 §7.1 的狀態列與最近 12 條記錄
 
-所以流程係：頁面按 `匯出 JSON` 或 `複製摘要` → 貼返俾 agent → agent 寫入
-`data/training/lawrence-progress.json` / `data/training/anson-progress.json` → 記錄變成永久並可日後引用。
+備註：Google Forms API 在連接器的 Cloud project 上是 disabled，所以表單是用本機瀏覽器
+UI 自動化建立的。要改題目就直接開 Form edit 連結手改。
 
-如果想真正自動保存，兩個可行方案（未實施，等確認）：
-1. **GitHub Issue 按鈕** — 頁面開一個預填 issue，agent 讀 issue 寫入 repo
-2. **Google Form → Sheet** — 表單寫入 Sheet，agent 每日讀 Sheet
+備用方法（不方便填表時）：§7.3 有 copy-paste 模板，貼返給 agent，agent 手動寫入同一批 JSON。
 
 ### 裝備快訊 Gear magazine（累積式）
 
@@ -196,10 +199,11 @@ Fragment map:
   Rate is declared once in `b1.py` (`JPY_HKD`) and printed on the page.
 - **Product images are required, with attribution.** Every gear item carries
   `image`, `image_source`, `image_credit` in `data/gear-watch.json`; the figure renders a
-  `图片：<source link>` caption. Never leave the gear section imageless because rights are
+  `圖片：<source link>` caption. Never leave the gear section imageless because rights are
   unclear — cite the source instead. No AI-generated images; Leonardo AI is out of the flow.
-- **No training input form.** A static page cannot persist data the daily agent can read,
-  so section 07 lists the skills to master plus a copy-paste template for manual updates.
+- **Training log is a Google Form -> Google Sheet.** Run `tools/fetch_training.py` with
+  `api_credentials=["gws"]` before each build; section 07 renders the saved records statically
+  and keeps a copy-paste fallback in 7.3. Never build an in-page form that only writes to the browser.
 - **Sources live in `sources.html`.** The main page shows only a small summary card.
 - **Traditional Chinese, HK style.** Check for simplified slips (`会`/`會`, `内`/`內`) after
   every edit.
