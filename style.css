@@ -1021,3 +1021,341 @@ figure.fig figcaption .ic { display: inline-block; vertical-align: -3px; margin-
 /* wide source table needs its own scroll area on narrow screens */
 .src-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .src-wrap table.srcs { min-width: 560px; }
+
+/* ==========================================================================
+   v4 — 2026-08-22 design refinement
+   (hero line fix, compact trip summary, scannable key updates, day timeline,
+    beginner-run cards, tighter travel / hotel / ticket rhythm)
+   ========================================================================== */
+
+/* ---------- hero: no overlap pull-up any more, panel now sits in flow ----- */
+.hero-credit { padding-bottom: 0; margin-bottom: 0; }
+.hero-img { display: block; }
+
+/* ---------- 行程摘要 Trip at a glance (compact) --------------------------- */
+.tag-panel {
+  margin: 26px 0 4px;
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+.tag-head {
+  display: flex; align-items: center; gap: 11px; flex-wrap: wrap;
+  padding: 14px 20px; background: var(--ice-100);
+  border-bottom: 1px solid var(--ice-200);
+}
+.tag-head .ic { color: var(--blue-600); flex: 0 0 auto; }
+.tag-head h2 {
+  margin: 0; font-size: 1.05rem; font-weight: 800; color: var(--navy-800);
+  line-height: 1.4;
+}
+.tag-head h2 .en { font-weight: 600; color: var(--text-mute); font-size: .82em; }
+.tag-stamp {
+  margin-left: auto; font-size: 12.5px; font-weight: 700; color: var(--text-mute);
+  letter-spacing: .03em; white-space: nowrap;
+}
+.tag-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--grey-200);
+}
+.tag-cell { background: #fff; padding: 13px 18px 14px; min-width: 0; }
+.tag-l {
+  margin: 0 0 3px; font-size: 11.5px; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text-mute);
+  display: flex; align-items: center; gap: 6px; line-height: 1.4;
+}
+.tag-l .ic { width: 14px; height: 14px; }
+.tag-v {
+  margin: 0; font-size: 1.22rem; font-weight: 800; color: var(--navy-800);
+  line-height: 1.25; letter-spacing: -.01em;
+}
+.tag-v-sm { font-size: 1.02rem; line-height: 1.3; }
+.tag-big { font-size: 2.25rem; line-height: 1.05; color: var(--blue-600); }
+.tag-u { font-size: .5em; font-weight: 700; color: var(--text-mute); margin-left: 3px; }
+.tag-v-sm .tag-u, .tag-v .tag-u { font-size: .62em; }
+.tag-n {
+  margin: 4px 0 0; font-size: 13px; line-height: 1.55; color: var(--text-soft);
+}
+.tag-ok { color: var(--green); font-weight: 700; }
+.tag-lead { background: linear-gradient(180deg, var(--ice-100) 0%, #fff 78%); }
+.tag-act { background: linear-gradient(180deg, #fefaf9 0%, #fff 78%); }
+.tag-act .tag-l { color: var(--red); }
+.tag-act .tag-v { color: var(--red); font-size: 1.06rem; }
+.tag-foot {
+  margin: 0; padding: 12px 20px; font-size: 12.8px; line-height: 1.6;
+  color: var(--text-mute); background: var(--grey-50);
+  border-top: 1px solid var(--grey-200);
+}
+@media (max-width: 980px) { .tag-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) {
+  .tag-grid { grid-template-columns: 1fr; }
+  .tag-big { font-size: 1.9rem; }
+}
+
+/* ---------- fact chips (shared by 今日重點 and 五日計劃) ------------------ */
+.fchip {
+  display: inline-flex; align-items: baseline; gap: 7px;
+  padding: 5px 11px; border-radius: 999px;
+  background: var(--grey-100); border: 1px solid var(--grey-200);
+  font-size: 13px; line-height: 1.5; max-width: 100%;
+}
+.fchip-l { color: var(--text-mute); font-weight: 600; }
+.fchip-v { color: var(--navy-800); font-weight: 800; white-space: nowrap; }
+.fchip-hot { background: var(--ice-200); border-color: var(--ice-300); }
+.fchip-hot .fchip-v { color: var(--blue-600); }
+.fchip-warn { background: var(--amber-bg); border-color: #f0dcb4; }
+.fchip-warn .fchip-v { color: var(--amber); }
+.upd-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+
+/* ---------- 01 今日重點 -------------------------------------------------- */
+.upd-grid { display: grid; gap: 20px; }
+.upd {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-left: 4px solid var(--slate);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
+  padding: 18px 22px 20px;
+}
+.upd-urgent { border-left-color: var(--red); }
+.upd-watch  { border-left-color: var(--blue-500); }
+.upd-ok     { border-left-color: var(--green); }
+.upd-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.upd-rank {
+  font-size: 12px; font-weight: 800; letter-spacing: .1em;
+  color: var(--text-mute); background: var(--grey-100);
+  border-radius: 6px; padding: 2px 7px;
+}
+.upd-tag {
+  margin-left: auto; font-size: 12.5px; font-weight: 700;
+  color: var(--text-mute); letter-spacing: .03em;
+}
+.upd-title {
+  margin: 9px 0 0; font-size: 1.16rem; font-weight: 800; line-height: 1.5;
+  color: var(--navy-800); letter-spacing: -.005em;
+}
+.upd-rows { margin-top: 16px; border-top: 1px solid var(--grey-100); }
+.upd-row {
+  display: grid; grid-template-columns: 116px 1fr; gap: 8px 18px;
+  padding: 13px 0; border-bottom: 1px solid var(--grey-100);
+}
+.upd-row:last-child { border-bottom: 0; padding-bottom: 2px; }
+.upd-k {
+  margin: 0; font-size: 12.5px; font-weight: 800; letter-spacing: .06em;
+  color: var(--text-mute); display: flex; align-items: center; gap: 6px;
+  line-height: 1.5; padding-top: 2px;
+}
+.upd-k .ic { flex: 0 0 auto; color: var(--blue-600); }
+.upd-t { min-width: 0; font-size: 15.5px; line-height: 1.75; color: var(--text-soft); }
+.upd-t > *:first-child { margin-top: 0; }
+.upd-t > *:last-child { margin-bottom: 0; }
+.upd-t b { color: var(--navy-800); }
+.upd-do { background: var(--ice-100); border-radius: var(--radius-sm); padding: 13px 15px; }
+.upd-do .upd-k { color: var(--blue-600); }
+.upd-do .upd-t { color: var(--text); }
+.upd-urgent .upd-do { background: var(--red-bg); }
+.upd-urgent .upd-do .upd-k, .upd-urgent .upd-do .upd-k .ic { color: var(--red); }
+ul.tight { margin: 0; padding-left: 20px; }
+ul.tight li { margin: 0 0 5px; line-height: 1.72; }
+ul.tight li:last-child { margin-bottom: 0; }
+@media (min-width: 1000px) { .upd-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .upd { padding: 16px 16px 18px; }
+  .upd-row { grid-template-columns: 1fr; gap: 5px; }
+  .upd-do { padding: 12px 14px; }
+}
+
+/* ---------- 02 五日雪場計劃 (vertical timeline) -------------------------- */
+ol.pl { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 20px; }
+.pl-day { display: grid; grid-template-columns: 46px 1fr; gap: 0; }
+.pl-rail { position: relative; display: flex; flex-direction: column; align-items: center; }
+.pl-dot {
+  width: 34px; height: 34px; flex: 0 0 auto; border-radius: 50%;
+  background: var(--navy-800); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; margin-top: 14px; z-index: 2;
+  box-shadow: 0 0 0 4px #fff;
+}
+.pl-line { flex: 1 1 auto; width: 3px; background: var(--ice-300); margin-top: -4px; }
+.pl-day:last-child .pl-line { display: none; }
+.pl-card {
+  background: #fff; border: 1px solid var(--grey-200);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
+  padding: 18px 22px 20px; min-width: 0;
+}
+.pl-head { display: flex; align-items: flex-start; gap: 16px; }
+.pl-thumb {
+  width: 108px; height: 76px; flex: 0 0 auto; object-fit: cover;
+  border-radius: var(--radius-sm); background: var(--grey-100);
+}
+.pl-headtext { min-width: 0; flex: 1 1 auto; }
+.pl-date {
+  margin: 0; font-size: 12.5px; font-weight: 800; letter-spacing: .07em;
+  color: var(--blue-600); text-transform: uppercase;
+}
+.pl-place {
+  margin: 4px 0 0; font-size: 1.2rem; font-weight: 800; line-height: 1.4;
+  color: var(--navy-800);
+}
+.pl-zh { font-size: .78em; font-weight: 700; color: var(--text-mute); margin-left: 6px; }
+.pl-kicker {
+  margin: 6px 0 0; font-size: 13.5px; color: var(--text-soft);
+  display: flex; align-items: center; gap: 9px; flex-wrap: wrap;
+}
+.pl-cells { display: grid; gap: 14px; margin-top: 16px; }
+@media (min-width: 900px) { .pl-cells { grid-template-columns: 1fr 1fr; } }
+.pl-cell {
+  min-width: 0; background: var(--grey-50); border: 1px solid var(--grey-100);
+  border-radius: var(--radius-sm); padding: 13px 16px 14px;
+  font-size: 15px; line-height: 1.72; color: var(--text-soft);
+}
+.pl-cells + .pl-cell, .pl-cell + .pl-cell { margin-top: 14px; }
+.pl-cell p { margin: 0; }
+.pl-cell b { color: var(--navy-800); }
+.pl-k {
+  margin: 0 0 7px !important; font-size: 12.5px; font-weight: 800;
+  letter-spacing: .06em; color: var(--text-mute);
+  display: flex; align-items: center; gap: 6px;
+}
+.pl-k .ic { flex: 0 0 auto; color: var(--blue-600); }
+.pl-warn { background: var(--red-bg); border-color: #f6d5d2; }
+.pl-warn .pl-k, .pl-warn .pl-k .ic { color: var(--red); }
+.pl-goal { background: var(--ice-100); border-color: var(--ice-200); }
+.pl-goal .pl-k, .pl-goal .pl-k .ic { color: var(--blue-600); }
+@media (max-width: 640px) {
+  .pl-day { grid-template-columns: 34px 1fr; }
+  .pl-card { padding: 16px 16px 18px; }
+  .pl-head { gap: 12px; }
+  .pl-thumb { width: 78px; height: 60px; }
+  .pl-place { font-size: 1.08rem; }
+  .pl-zh { display: block; margin-left: 0; margin-top: 2px; }
+}
+
+/* ---------- 03 雪場資料: Chinese resort names + beginner run cards -------- */
+.rname-zh {
+  display: block; font-size: 13px; font-weight: 700; color: var(--text-mute);
+  margin-top: 2px; line-height: 1.5;
+}
+table.rtbl td:first-child { min-width: 200px; }
+.acc-zh { font-size: .84em; font-weight: 700; color: var(--text-mute); }
+.run-list { display: grid; gap: 14px; margin: 4px 0 18px; }
+@media (min-width: 900px) { .run-list { grid-template-columns: 1fr 1fr; } }
+.run {
+  background: var(--grey-50); border: 1px solid var(--grey-200);
+  border-radius: var(--radius-sm); padding: 14px 16px 15px; min-width: 0;
+}
+.run-top { display: flex; align-items: flex-start; gap: 10px; }
+.run-code {
+  flex: 0 0 auto; min-width: 30px; text-align: center;
+  background: var(--navy-800); color: #fff; border-radius: 7px;
+  font-size: 12.5px; font-weight: 800; padding: 3px 6px; margin-top: 2px;
+}
+.run-names { flex: 1 1 auto; min-width: 0; }
+.run-jp {
+  margin: 0; font-size: 15.5px; font-weight: 800; color: var(--navy-800);
+  line-height: 1.45; overflow-wrap: anywhere;
+}
+.run-zh { margin: 1px 0 0; font-size: 13px; color: var(--text-mute); line-height: 1.5; }
+.run-top .badge { flex: 0 0 auto; margin-top: 2px; }
+.run-stat {
+  margin: 9px 0 0; font-size: 13.5px; font-weight: 600; color: var(--blue-600);
+  line-height: 1.6; letter-spacing: .01em;
+}
+.run-why, .run-care {
+  margin: 8px 0 0; font-size: 14.5px; line-height: 1.7; color: var(--text-soft);
+}
+.run-why b, .run-care b { color: var(--navy-800); }
+.run-why > b:first-child, .run-care > b { letter-spacing: .04em; font-size: 12.5px; }
+.run-care { color: var(--red); }
+.run-care b { color: var(--red); }
+.run-care .ic { width: 14px; height: 14px; vertical-align: -2px; margin-right: 3px; }
+
+/* ---------- 05 交通與住宿 / 酒店設施: consistent padding + rhythm -------- */
+#travel .info-card { padding: 0; }
+#travel .info-card > h3, #travel .info-card > h4,
+#tickets .info-card > h3, #tickets .info-card > h4 { margin-top: 0; }
+#travel .card-grid { gap: 18px; align-items: start; }
+#travel .dcard, #travel .info-card { padding: 20px 22px; }
+#travel .dcard > *:first-child, #travel .info-card > *:first-child { margin-top: 0; }
+#travel .dcard > *:last-child, #travel .info-card > *:last-child { margin-bottom: 0; }
+#travel .kv { gap: 7px 14px; }
+#travel .kv dd { line-height: 1.65; }
+#travel p { margin: 0 0 12px; line-height: 1.72; }
+#travel p:last-child { margin-bottom: 0; }
+#travel h3.sub { margin: 34px 0 14px; }
+#travel .note { margin: 16px 0; }
+#travel ul, #tickets ul { margin: 0 0 12px; padding-left: 21px; }
+#travel ul li, #tickets ul li { margin-bottom: 5px; line-height: 1.7; }
+#travel ul:last-child, #tickets ul:last-child { margin-bottom: 0; }
+
+/* ---------- 06 纜車票與課程: tighten the vertical rhythm ----------------- */
+#tickets .section-body { line-height: 1.7; }
+#tickets .info-card, #tickets .dcard { padding: 18px 20px; }
+#tickets .info-card > *:first-child, #tickets .dcard > *:first-child { margin-top: 0; }
+#tickets .info-card > *:last-child, #tickets .dcard > *:last-child { margin-bottom: 0; }
+#tickets p { margin: 0 0 10px; line-height: 1.7; }
+#tickets p:last-child { margin-bottom: 0; }
+#tickets h3.sub { margin: 28px 0 12px; }
+#tickets .tbl-wrap { margin: 14px 0; }
+#tickets .tbl-wrap td, #tickets .tbl-wrap th { padding-top: 11px; padding-bottom: 11px; }
+#tickets .note { margin: 14px 0; }
+#tickets .card-grid { gap: 16px; }
+#tickets .kv { gap: 6px 14px; }
+#tickets .info-note { margin: 12px 0 0; }
+
+/* ---------- ROOT CAUSE of the vertical line over the hero -----------------
+   .prog-target is position:absolute with top/bottom:-3px, but its parent
+   .rng-row was position:static, so it escaped to the initial containing
+   block and painted a 2px navy line down the whole viewport (visible as a
+   stray vertical line through the banner). Give the row a containing block. */
+.rng-row { position: relative; }
+.prog-list, .prog-scale { position: relative; }
+/* keep the 變動 / 為何重要 / 下一步 labels aligned with the first line of text */
+.upd-row { align-items: start; }
+.upd-k { align-self: start; }
+/* .acc-body p adds 16px bottom margin — too loose inside the run cards */
+.acc-body .run p { margin: 0; }
+.acc-body .run .run-zh { margin-top: 1px; }
+.acc-body .run .run-stat { margin-top: 9px; }
+.acc-body .run .run-why, .acc-body .run .run-care { margin-top: 8px; }
+.acc-body .run-list { margin: 4px 0 18px; }
+/* .kv used with div>span+b (not dt/dd) in #travel — give it real label/value rhythm */
+.kv > div { display: grid; grid-template-columns: 68px 1fr; gap: 0 12px; align-items: baseline; }
+.kv > div > span { font-size: 12px; letter-spacing: .05em; color: var(--text-mute); }
+.kv > div > b { font-weight: 650; color: var(--text); line-height: 1.55; }
+#travel .info-card .kv { margin-bottom: 14px; }
+/* cols-2 / cols-3 wrappers had no display:grid, so they were inert */
+.cols-2, .cols-3 { display: grid; gap: 18px; align-items: start; }
+.cols-3 > .card-grid { grid-template-columns: repeat(3, 1fr); }
+.cols-2 > .card-grid { grid-template-columns: 1fr; }
+@media (max-width: 860px) {
+  .cols-2, .cols-3 { grid-template-columns: 1fr; }
+  .cols-3 > .card-grid { grid-template-columns: 1fr; }
+}
+/* route legs read far better stacked than in four narrow centred columns */
+#travel .timeline { grid-template-columns: 1fr; gap: 16px; }
+#travel .timeline::before { left: 11px; right: auto; top: 8px; bottom: 8px; width: 3px; height: auto; }
+#travel .tl-step { text-align: left; display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: start; }
+#travel .tl-dot { margin: 0; }
+#travel .tl-when { font-size: 12.5px; }
+#travel .tl-what { font-size: 14px; line-height: 1.8; color: var(--text); max-width: 80ch; margin-top: 3px; }
+#travel .info-card p { line-height: 1.8; }
+.cols-3:has(> .card-grid:only-child), .cols-2:has(> .card-grid:only-child) { grid-template-columns: 1fr; }
+/* #tickets summary strip had no grid, so four cells stacked into a tall sparse column */
+#tickets .info-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  padding: 16px 4px; border-radius: var(--radius-md);
+  border: 1px solid var(--grey-200); background: var(--grey-50);
+}
+#tickets .info-bar .info-cell { padding: 4px 20px; border-left: 1px solid var(--grey-200); }
+#tickets .info-bar .info-cell:first-child { border-left: 0; }
+#tickets .info-bar .info-label { margin: 0 0 5px; font-size: 12px; letter-spacing: .05em; color: var(--text-mute); }
+#tickets .info-bar .info-value { margin: 0; font-size: 1.16rem; line-height: 1.3; }
+#tickets .info-bar .info-note { margin: 5px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--text-soft); }
+@media (max-width: 860px) {
+  #tickets .info-bar { grid-template-columns: repeat(2, 1fr); row-gap: 16px; }
+  #tickets .info-bar .info-cell:nth-child(3) { border-left: 0; }
+}
+.kv > div > b { overflow-wrap: anywhere; }
+@media (max-width: 560px) { .kv > div { grid-template-columns: 1fr; gap: 1px 0; } }
+/* map card: title / meta were drifting apart */
+.map-body h3 { margin: 0 0 6px; }
+.map-body .map-meta { margin: 0 0 12px; }

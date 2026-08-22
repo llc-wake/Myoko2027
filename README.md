@@ -29,7 +29,7 @@
 | 01 | 今日重點 | `#today` | Top 3 會改變決定的更新 |
 | 02 | 五日計劃 | `#plan` | Day 1–5 雪場安排與備案 |
 | 03 | 雪場 | `#resorts` | 各雪場初學者適合度、纜車、雪道 |
-| 04 | 山圖 / 雪道圖 | `#maps` | 7 張地圖，縮圖 + lightbox |
+| 04 | 山圖 / 雪道圖 | `#maps` | 4 張地圖（只放實際會去的雪場），縮圖 + lightbox |
 | 05 | 交通住宿 | `#travel` | 新幹線、接送巴士、Lime Resort |
 | 06 | 票券課程 | `#tickets` | 早鳥票、纜車票、英文教學課程 |
 | 07 | 訓練與進度 | `#training` | 兩位 rider 分開記錄 + 10 項進度條 |
@@ -48,7 +48,9 @@
 - `Download / stored copy` — 下載本地儲存版
 
 地圖原始檔（大 size）只放 Google Drive，唔入公開 repo。
-到 2026-08-22 為止 **7 張圖全部沒有 26/27 季度標示**，所以一律標為 `needs checking`。
+由 v4 起，山圖**只保留實際會去或認真考慮的雪場**（Suginohara、Ikenotaira、Kurohime、Akakura Kanko）。
+Seki Onsen、Madarao、Tangram 的圖已從頁面移除，檔案仍保留在 Google Drive。
+到 2026-08-22 為止 **4 張圖全部沒有 26/27 季度標示**，所以一律標為 `needs checking`。
 **Akakura Onsen 雪場官網因不正アクセス下線**，暫時無官方地圖。
 
 ### 訓練記錄的限制（重要）
@@ -89,7 +91,7 @@ data/training/anson-progress.json
 gear/archive/YYYY-MM-DD.json      每日 gear 快照
 archive/YYYY-MM-DD.html           每日 HTML 存檔（資源路徑加 ../）
 assets/photos/                    Wikimedia Commons 授權相片（17 張）
-assets/maps/                      7 張雪道圖 thumb + large
+assets/maps/                      雪道圖 thumb + large（頁面只引用 4 個雪場）
 ```
 
 ### script.js 限制（必須遵守）
@@ -123,4 +125,40 @@ assets/maps/                      7 張雪道圖 thumb + large
 
 ---
 
-最後更新：**2026-08-22**（v3 設計與結構迭代）
+## 建置方式 Build pipeline（v4）
+
+`index.html` 由 sandbox 內的 Python fragment 串連生成，**唔用 `edit` 工具改 HTML**
+（`edit` 對長 CJK 字串經常失敗；一律用 Python `io.open` + `str.replace`）。
+
+```bash
+cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p6.py p7.py p8.py > build_index.py
+python3 build_index.py          # → myoko-repo/index.html
+```
+
+| fragment | 負責 |
+|---|---|
+| `b1.py` | `<head>`、40 個 SVG symbol sprite、topbar、`w()` / `ic()` / `fig()`、`TODAY`、倒數 |
+| `b2.py` | Hero（`assets/photos/mt-myoko.jpg` + 版權註明）、`.tag-panel` 行程摘要、`sec()` / `acc()` |
+| `b3.py` | §01 今日重點 — `.upd` 卡（變動／為何重要／下一步 三段式 + `.fchip` 數字 chip） |
+| `b4.py` | §02 五日計劃 — `<ol class="pl">` 逐日垂直時間線（`.pl-*`，唔可以用 `.tl-*`，會同 p4 的交通時間線撞名） |
+| `b5.py` | §03 雪場資料表（含繁中名 `.rname-zh`）＋ 初級雪道逐條 `.run` 卡（5 個雪場約 32 條） |
+| `p4.py` | §04 山圖（4 張）＋ §05 交通與住宿 |
+| `p5.py` | §06 票券課程 ＋ §07 訓練與進度 |
+| `p6.py` | §08 裝備（按 rider） |
+| `p7.py` | §09 裝備快訊 ＋ §10 行李清單 |
+| `p8.py` | §11 行動清單 ＋ §12 資料來源 ＋ footer / lightbox / 寫檔 |
+
+改完之後一定要**重新 `cat` 一次**再 `python3 build_index.py`：
+`build_index.py` 係 snapshot，只改 fragment 而唔重新串連＝改動唔會生效。
+
+### v4 版面修正（2026-08-22）
+
+- 移除 hero 上的幼直線：真正成因係 `.prog-target` 的 `position:absolute` 逃出 `position:static` 的 `.rng-row`，已補 `position:relative`
+- `.cols-2` / `.cols-3` 原本無 `display:grid`，所以一直失效；已修正
+- `#travel` 的 `.timeline` 由四欄居中改為垂直堆疊，`.kv` 改為 label／value 兩欄
+- `#tickets` 的 `.info-bar` 由縱向長條改為四格摘要 strip
+- `.acc-body p` 的 16px 下邊距會令 `.run` 卡過鬆，已針對性覆寫
+
+---
+
+最後更新：**2026-08-22**（v4 版面與可讀性迭代）

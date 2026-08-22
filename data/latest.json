@@ -125,5 +125,12 @@
     "Shiga Kogen"
   ],
   "sources_checked": 44,
-  "leonardo_ai": "removed from workflow"
+  "leonardo_ai": "removed from workflow",
+  "design_version": "v4-2026-08-22",
+  "maps_included": [
+    "suginohara",
+    "ikenotaira",
+    "kurohime",
+    "akakura-kanko"
+  ]
 }
