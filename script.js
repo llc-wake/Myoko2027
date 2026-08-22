@@ -1,117 +1,151 @@
-/* Myoko2027 daily briefing — interaction layer */
+/* Myoko2027 daily briefing — interactions
+   Storage access is wrapped in a lazy, defensive shim with an in-memory
+   fallback so the page works in sandboxed/embedded contexts too. */
 (function () {
   'use strict';
 
-  var BRIEF_DATE = document.body.getAttribute('data-brief-date') || 'unknown';
-  var STORE = 'myoko2027-actions-' + BRIEF_DATE;
-
-  /* Storage shim. Sandboxed iframes and privacy modes throw on access, so
-     resolve it lazily and fall back to an in-memory store for the session. */
-  var memory = {};
-  var backing = (function () {
+  // ---------- storage shim -------------------------------------------------
+  var mem = {};
+  function store() {
     try {
       var s = window['local' + 'Storage'];
-      s.setItem('__myoko_probe__', '1');
-      s.removeItem('__myoko_probe__');
+      var k = '__t';
+      s.setItem(k, '1');
+      s.removeItem(k);
       return s;
     } catch (e) {
       return null;
     }
-  })();
-  var store = {
-    get: function (k) {
-      try { return backing ? backing.getItem(k) : (memory[k] || null); }
-      catch (e) { return memory[k] || null; }
-    },
-    set: function (k, v) {
-      memory[k] = v;
-      try { if (backing) backing.setItem(k, v); } catch (e) {}
+  }
+  var S = null, probed = false;
+  function get(k) {
+    if (!probed) { S = store(); probed = true; }
+    try { return S ? S.getItem(k) : (k in mem ? mem[k] : null); }
+    catch (e) { return k in mem ? mem[k] : null; }
+  }
+  function set(k, v) {
+    if (!probed) { S = store(); probed = true; }
+    try { if (S) { S.setItem(k, v); return; } } catch (e) {}
+    mem[k] = v;
+  }
+  function del(k) {
+    if (!probed) { S = store(); probed = true; }
+    try { if (S) { S.removeItem(k); return; } } catch (e) {}
+    delete mem[k];
+  }
+
+  var PREFIX = 'myoko2027:chk:';
+
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  ready(function () {
+
+    // ---------- action checklist -----------------------------------------
+    var boxes = Array.prototype.slice.call(
+      document.querySelectorAll('#checklist input[type=checkbox]')
+    );
+    var fill = document.getElementById('pfill');
+    var label = document.getElementById('plabel');
+
+    function paint() {
+      var done = 0;
+      boxes.forEach(function (b) {
+        var li = b.closest('li');
+        if (b.checked) { done++; if (li) li.classList.add('done'); }
+        else if (li) { li.classList.remove('done'); }
+      });
+      var pct = boxes.length ? Math.round((done / boxes.length) * 100) : 0;
+      if (fill) fill.style.width = pct + '%';
+      if (label) label.textContent = done + ' / ' + boxes.length + ' 已完成';
     }
-  };
 
-  /* ---- Action checklist: persist ticks per briefing date ---- */
-  var boxes = Array.prototype.slice.call(
-    document.querySelectorAll('.checklist input[type=checkbox]')
-  );
-  var fill = document.querySelector('.progress-fill');
-  var label = document.querySelector('.progress-label');
-
-  function saved() {
-    try { return JSON.parse(store.get(STORE) || '{}'); }
-    catch (e) { return {}; }
-  }
-  function persist() {
-    var state = {};
-    boxes.forEach(function (b) { state[b.id] = b.checked; });
-    store.set(STORE, JSON.stringify(state));
-  }
-  function render() {
-    var done = 0;
     boxes.forEach(function (b) {
-      var li = b.closest('li');
-      if (li) li.classList.toggle('done', b.checked);
-      if (b.checked) done++;
+      var k = PREFIX + (b.getAttribute('data-k') || b.id);
+      if (get(k) === '1') b.checked = true;
+      b.addEventListener('change', function () {
+        if (b.checked) set(k, '1'); else del(k);
+        paint();
+      });
     });
-    var pct = boxes.length ? Math.round((done / boxes.length) * 100) : 0;
-    if (fill) fill.style.width = pct + '%';
-    if (label) label.textContent = done + ' of ' + boxes.length + ' done';
-  }
+    paint();
 
-  var state = saved();
-  boxes.forEach(function (b) {
-    if (state[b.id]) b.checked = true;
-    b.addEventListener('change', function () { persist(); render(); });
+    var reset = document.getElementById('preset');
+    if (reset) {
+      reset.addEventListener('click', function () {
+        boxes.forEach(function (b) {
+          b.checked = false;
+          del(PREFIX + (b.getAttribute('data-k') || b.id));
+        });
+        paint();
+      });
+    }
+
+    // ---------- expand / collapse all per section -------------------------
+    Array.prototype.forEach.call(
+      document.querySelectorAll('[data-toggle-all]'),
+      function (btn) {
+        var id = btn.getAttribute('data-toggle-all');
+        var scope = document.getElementById(id);
+        if (!scope) return;
+        btn.addEventListener('click', function () {
+          var accs = scope.querySelectorAll('details.acc');
+          var anyClosed = Array.prototype.some.call(accs, function (d) { return !d.open; });
+          Array.prototype.forEach.call(accs, function (d) { d.open = anyClosed; });
+          var txt = btn.querySelector('span');
+          if (txt) txt.textContent = anyClosed ? '全部收起' : '全部展開';
+        });
+      }
+    );
+
+    // ---------- nav active state on scroll --------------------------------
+    var links = Array.prototype.slice.call(document.querySelectorAll('#navlinks a'));
+    var targets = links
+      .map(function (a) {
+        var el = document.querySelector(a.getAttribute('href'));
+        return el ? { a: a, el: el } : null;
+      })
+      .filter(Boolean);
+
+    function markActive() {
+      var current = null;
+      targets.forEach(function (t) {
+        if (t.el.getBoundingClientRect().top <= 160) current = t;
+      });
+      links.forEach(function (a) { a.classList.remove('active'); });
+      if (current) current.a.classList.add('active');
+    }
+
+    // ---------- back to top ----------------------------------------------
+    var top = document.getElementById('totop');
+    if (top) {
+      top.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    var raf = null;
+    function onScroll() {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        raf = null;
+        markActive();
+        if (top) {
+          if (window.scrollY > 700) top.classList.add('show');
+          else top.classList.remove('show');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    markActive();
+
+    // ---------- keep hash nav from hiding behind sticky bar ---------------
+    links.forEach(function (a) {
+      a.addEventListener('click', function () {
+        setTimeout(markActive, 500);
+      });
+    });
   });
-  render();
-
-  var reset = document.querySelector('.btn-reset');
-  if (reset) {
-    reset.addEventListener('click', function () {
-      boxes.forEach(function (b) { b.checked = false; });
-      persist();
-      render();
-    });
-  }
-
-  /* ---- Remember which accordions were open ---- */
-  var OPEN_STORE = 'myoko2027-open-' + BRIEF_DATE;
-  var openState = {};
-  try { openState = JSON.parse(store.get(OPEN_STORE) || '{}'); } catch (e) {}
-  Array.prototype.forEach.call(document.querySelectorAll('details[id]'), function (d) {
-    if (openState[d.id]) d.open = true;
-    d.addEventListener('toggle', function () {
-      openState[d.id] = d.open;
-      store.set(OPEN_STORE, JSON.stringify(openState));
-    });
-  });
-
-  /* ---- Expand / collapse all ---- */
-  var toggleAll = document.getElementById('toggle-all');
-  if (toggleAll) {
-    toggleAll.addEventListener('click', function () {
-      var all = Array.prototype.slice.call(document.querySelectorAll('details'));
-      var anyClosed = all.some(function (d) { return !d.open; });
-      all.forEach(function (d) { d.open = anyClosed; });
-      toggleAll.textContent = anyClosed ? 'Collapse all' : 'Expand all';
-    });
-  }
-
-  /* ---- Back to top ---- */
-  var top = document.querySelector('.totop');
-  if (top) {
-    window.addEventListener('scroll', function () {
-      top.classList.toggle('show', window.scrollY > 600);
-    }, { passive: true });
-    top.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  /* ---- Days-to-trip counter ---- */
-  var counter = document.getElementById('days-to-trip');
-  if (counter) {
-    var start = new Date('2027-01-17T00:00:00+09:00');
-    var days = Math.ceil((start - new Date()) / 86400000);
-    counter.textContent = days > 0 ? days + ' days' : 'under way';
-  }
 })();

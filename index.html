@@ -1,594 +1,894 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-HK">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Myoko 2027 — Daily Briefing · 22 Aug 2026</title>
-<meta name="description" content="Daily decision briefing for the Myoko Kogen January 2027 snowboard trip: resort status, lift passes, travel logistics, training and gear watch.">
-<meta name="theme-color" content="#0d2340">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Myoko 2027 每日簡報 · 2026年8月22日</title>
+<meta name="description" content="妙高 Myoko 2027 雪之旅每日決策簡報：雪場動態、纜車票與通行證、交通物流、雪場地圖、訓練進度、裝備市場。">
+<meta name="theme-color" content="#0b1c33">
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-brief-date="2026-08-22">
+<body>
 
-<div class="topbar">
+<!-- ====================== ICON SPRITE (Lucide-style line icons) ==========
+     24x24 viewBox · stroke-width 2 · round caps & joins · no fill
+     ===================================================================== -->
+<svg class="icon-sprite" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-mountain" viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M4 20 10 7l4 7 2-3 4 9"/></symbol>
+<symbol id="i-dashboard" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a3 3 0 0 0 0 6v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a3 3 0 0 0 0-6Z"/><path d="M9 7v10"/></symbol>
+<symbol id="i-train" viewBox="0 0 24 24"><path d="M8 3.2V7a4 4 0 0 0 8 0V3.2"/><rect x="4" y="7" width="16" height="10" rx="3"/><path d="M4 13h16"/><path d="m8 21 2-3M16 21l-2-3"/></symbol>
+<symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3Z"/><path d="M9 3v15M15 6v15"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></symbol>
+<symbol id="i-package" viewBox="0 0 24 24"><path d="m7.5 4.3 9 5.1"/><path d="M21 8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></symbol>
+<symbol id="i-checks" viewBox="0 0 24 24"><path d="m3 7 2 2 4-4"/><path d="m3 17 2 2 4-4"/><path d="M13 6h8M13 12h8M13 18h8"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3Z"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 10.5h18"/><path d="M8 14.5h.01M12 14.5h.01M16 14.5h.01M8 18h.01M12 18h.01"/></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6 2h12M6 22h12"/><path d="M6 2v4a6 6 0 0 0 6 6 6 6 0 0 0 6-6V2"/><path d="M6 22v-4a6 6 0 0 1 6-6 6 6 0 0 1 6 6v4"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.9"/><path d="M16.5 3.1a4 4 0 0 1 0 7.8"/></symbol>
+<symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14 15.5 9"/><path d="M3.5 18a9 9 0 1 1 17 0"/><circle cx="12" cy="14" r="1.6"/></symbol>
+<symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><path d="m5 5 14 14M19 5 5 19"/><path d="m9 5 3-3 3 3M9 19l3 3 3-3"/></symbol>
+<symbol id="i-cloudsnow" viewBox="0 0 24 24"><path d="M4 14.9A4 4 0 0 1 5 7a5.5 5.5 0 0 1 10.6-1.2A4.5 4.5 0 0 1 20 14.5"/><path d="M8 19h.01M12 21h.01M16 19h.01M12 17h.01"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v4M12 16h.01"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.4 12.4 2.6 2.6 5-5.6"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></symbol>
+<symbol id="i-ext" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></symbol>
+<symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 20V8"/><path d="M3 14h16a2 2 0 0 1 2 2v4"/><path d="M3 17h18"/><circle cx="8" cy="11" r="2"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5Z"/><path d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5"/><path d="M21 9.5v5"/></symbol>
+<symbol id="i-money" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="m21 15-5-5L5 21"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><path d="M8 12h8"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+<symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l4.6-4.6a2 2 0 0 0-2.8-2.8L13.2 8.2 5 6.4 3.4 8l6 3.4-2.2 2.2-2.6-.6-1.2 1.2 3.2 2.2 2.2 3.2 1.2-1.2-.6-2.6 2.2-2.2 3.4 6Z"/></symbol>
+<symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M7 8V3h10v5"/><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M7 16h10v5H7Z"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10"/><path d="M4 7h16"/><path d="m4 7-2 6h4Z"/><path d="m20 7-2 6h4Z"/></symbol>
+<symbol id="i-boot" viewBox="0 0 24 24"><path d="M6 3v9l-2 4v3a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-3V3Z"/><path d="M4 17h17"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M15.5 21A13.5 13.5 0 0 1 3 8.5 2 2 0 0 1 5 6.5h2.5a1 1 0 0 1 1 .8l.7 3a1 1 0 0 1-.5 1.1l-1.4.8a10 10 0 0 0 4.5 4.5l.8-1.4a1 1 0 0 1 1.1-.5l3 .7a1 1 0 0 1 .8 1V19a2 2 0 0 1-2 2Z"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></symbol>
+</defs></svg>
+
+<!-- ============================== TOP NAV ============================== -->
+<nav class="topbar" aria-label="主要導覽">
   <div class="topbar-inner">
-    <div class="brand"><span class="dot"></span> Myoko 2027 · Daily Briefing</div>
-    <nav class="navlinks">
-      <a href="#summary">Summary</a>
-      <a href="#resort-update">Resorts</a>
-      <a href="#tickets">Tickets</a>
-      <a href="#travel">Travel</a>
-      <a href="#training">Training</a>
-      <a href="#gear">Gear</a>
-      <a href="#actions">Actions</a>
-      <a href="#watchlist">Watchlist</a>
-      <a href="#sources">Sources</a>
-    </nav>
+    <span class="brand"><svg class="ic"><use href="#i-mountain"/></svg>Myoko 2027 簡報</span>
+    <div class="navlinks" id="navlinks">
+      <a href="#summary"><svg class="ic"><use href="#i-dashboard"/></svg>概覽</a>
+      <a href="#top3"><svg class="ic"><use href="#i-target"/></svg>重點</a>
+      <a href="#resorts"><svg class="ic"><use href="#i-mountain"/></svg>雪場</a>
+      <a href="#tickets"><svg class="ic"><use href="#i-ticket"/></svg>票務</a>
+      <a href="#travel"><svg class="ic"><use href="#i-train"/></svg>交通</a>
+      <a href="#maps"><svg class="ic"><use href="#i-map"/></svg>地圖</a>
+      <a href="#training"><svg class="ic"><use href="#i-trend"/></svg>訓練</a>
+      <a href="#gear"><svg class="ic"><use href="#i-package"/></svg>裝備</a>
+      <a href="#watch"><svg class="ic"><use href="#i-eye"/></svg>觀察</a>
+      <a href="#actions"><svg class="ic"><use href="#i-checks"/></svg>行動</a>
+      <a href="#sources"><svg class="ic"><use href="#i-book"/></svg>來源</a>
+    </div>
   </div>
-</div>
+</nav>
 
+<!-- ================================ HERO ============================== -->
 <header class="hero">
-  <img src="assets/img/hero.jpg" alt="Snowboarder strapping in above a snow-covered Japanese resort village at dawn" width="1600" height="900">
-  <div class="hero-overlay">
-    <div class="hero-inner">
-      <p class="eyebrow">Saturday 22 August 2026 · Briefing 001</p>
-      <h1>Myoko Kogen 2026/27 Command Centre</h1>
-      <p class="sub">Deep off-season. One resort has dates, the official ticket shop is empty, and the only genuinely urgent item on the board is your room.</p>
+  <img class="hero-img" src="assets/img/hero.jpg" alt="妙高高原冬季雪山景色">
+  <div class="hero-veil"></div>
+  <div class="hero-body">
+    <span class="hero-kicker"><svg class="ic ic-sm"><use href="#i-cloudsnow"/></svg>每日決策簡報 · 2026年8月22日（星期六）</span>
+    <h1>妙高 2027 雪之旅<br>今日有兩件事要跟</h1>
+    <p class="hero-lede">
+      今日出現本季<strong>第一個有確切日期的票務動作</strong>：<span class="en">Akakura Onsen</span> 公佈 2026-27 早割券於 <strong>9月1日（星期二）</strong>開售，距今只有 10 天。同日 <span class="en">Madarao</span> 亦公佈 26/27 完整營業期，是第二個確認日期的雪場。住宿仍然是唯一真正緊急、而且未處理的一項。
+    </p>
+    <div class="hero-chips">
+      <span class="hero-chip"><svg class="ic"><use href="#i-calendar"/></svg>2027年1月17–25日</span>
+      <span class="hero-chip"><svg class="ic"><use href="#i-hourglass"/></svg>距出發 148 天</span>
+      <span class="hero-chip"><svg class="ic"><use href="#i-alert"/></svg>1 項緊急 · 2 項重要</span>
     </div>
   </div>
 </header>
 
+<!-- ===================== INFOGRAPHIC SUMMARY PANEL ==================== -->
+<section class="info-panel" id="summary">
+  <div class="info-card">
+    <div class="info-head">
+      <h2><svg class="ic"><use href="#i-dashboard"/></svg>行程概覽</h2>
+      <span class="info-date">資料核對日期：2026年8月22日</span>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-cell">
+        <span class="info-icon"><svg class="ic"><use href="#i-calendar"/></svg></span>
+        <span class="info-label">行程日期</span>
+        <span class="info-value">1月17–25日 <span class="small muted">2027</span></span>
+        <span class="info-note">9 天 8 晚，雪場住 5 晚，前後各留 <span class="en">Tokyo</span> 時間，最後一晚 <span class="en">Narita</span>。</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-icon"><svg class="ic"><use href="#i-hourglass"/></svg></span>
+        <span class="info-label">倒數</span>
+        <span class="info-value">148 天</span>
+        <span class="info-note">距離最近一個硬期限（<span class="en">Akakura Onsen</span> 早割開售）只有 <strong>10 天</strong>。</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-icon"><svg class="ic"><use href="#i-snow"/></svg></span>
+        <span class="info-label">滑雪日數</span>
+        <span class="info-value">4 個整日 <span class="small muted">+ 1 熱身日（可選）</span></span>
+        <span class="info-note">以 4 日計，散買日票約 ¥27,000–32,000／人，比任何季票都便宜。</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-icon"><svg class="ic"><use href="#i-users"/></svg></span>
+        <span class="info-label">同行者</span>
+        <span class="info-value">Lawrence + 太太</span>
+        <span class="info-note">2 人，同一進度節奏，需要並排練習的緩坡寬雪道。</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-icon"><svg class="ic"><use href="#i-gauge"/></svg></span>
+        <span class="info-label">現時水平</span>
+        <span class="info-value">初級 · 進步中</span>
+        <span class="info-note">可連續 <span class="en">S-Turn</span>，但 <span class="en">edge control</span> 與速度控制仍未穩定。</span>
+      </div>
+      <div class="info-cell">
+        <span class="info-icon"><svg class="ic"><use href="#i-book"/></svg></span>
+        <span class="info-label">來源核對</span>
+        <span class="info-value">2026年8月22日</span>
+        <span class="info-note">今日全部資料由官方網站即日讀取；每項下方均標明來源與可信度。</span>
+      </div>
+    </div>
+
+    <div class="info-bar">
+      <div class="timeline">
+        <div class="tl-step now">
+          <span class="tl-dot"><svg class="ic"><use href="#i-dot"/></svg></span>
+          <div><div class="tl-when">現在 · 8月22日</div><div class="tl-what">訂住宿、量 boot 尺碼</div></div>
+        </div>
+        <div class="tl-step">
+          <span class="tl-dot"><svg class="ic"><use href="#i-ticket"/></svg></span>
+          <div><div class="tl-when">9月1日</div><div class="tl-what">Akakura Onsen 早割券開售</div></div>
+        </div>
+        <div class="tl-step">
+          <span class="tl-dot"><svg class="ic"><use href="#i-money"/></svg></span>
+          <div><div class="tl-when">10月1日</div><div class="tl-what">JR Pass 換票證加價；NAGANO 7 開售</div></div>
+        </div>
+        <div class="tl-step">
+          <span class="tl-dot"><svg class="ic"><use href="#i-snow"/></svg></span>
+          <div><div class="tl-when">11月30日</div><div class="tl-what">Mt Myoko 早鳥歷史截止日</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <main class="wrap">
 
-  <!-- ============ SUMMARY ============ -->
-  <section id="summary">
-    <div class="card">
-      <h2><span class="num">01</span> Top 3 Things to Know Today</h2>
-      <p class="sec-note">Filtered to decisions only. Everything else in this briefing is context or a watch item.</p>
-
-      <div class="summary-grid">
-        <div class="top3">
-          <span class="rank">Priority 01</span>
-          <h3>Accommodation is the only urgent item</h3>
-          <p>Mid-January is peak Japan powder season and Myoko's Western-friendly slopeside inventory is small. 22 August is <em>inside</em> the normal booking window, not ahead of it. Your 17–25 Jan window does sit just before the Chinese New Year 2027 surge, which helps slightly.</p>
-          <span class="badge b-urgent">Urgent</span>
-        </div>
-        <div class="top3">
-          <span class="rank">Priority 02</span>
-          <h3>Myoko has published almost nothing for 26/27</h3>
-          <p>Only Suginohara has dates (19 Dec 2026 – 28 Mar 2027, provisional). The official Mt Myoko ticket shop lists <strong>zero products</strong>. Nothing local is buyable today. Historic early-bird cut-off is 30 November, with sales opening around October — so the ticket decision is 6–10 weeks away.</p>
-          <span class="badge b-watch">Watch</span>
-        </div>
-        <div class="top3">
-          <span class="rank">Priority 03</span>
-          <h3>One school already has 26/27 lesson prices</h3>
-          <p>Escape Myoko has published 26/27 pricing: ¥30,000–59,000 <em>per instructor</em> per session. For the two of you that is ¥15,000–29,500 each — the only Myoko school you can budget accurately against today.</p>
-          <span class="badge b-confirmed">Confirmed</span>
-        </div>
-      </div>
-
-      <div class="brief-meta">
-        <span><b>Trip window</b> 17–25 Jan 2027</span>
-        <span><b>Countdown</b> <span id="days-to-trip">—</span></span>
-        <span><b>Riding days</b> 4 full + 1 optional warm-up</span>
-        <span><b>Riders</b> Lawrence + wife, beginner / improving</span>
-        <span><b>Sources checked</b> 22 Aug 2026</span>
-        <span><button class="btn-reset" id="toggle-all" type="button">Expand all</button></span>
-      </div>
+<!-- ============================== TOP 3 =============================== -->
+<section class="section" id="top3">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-target"/></svg></span><span class="section-num">01</span>今日三大重點</h2>
+    <p class="section-sub">只列出會改變決定的事。其餘細節放在下面各個可展開的分頁。</p>
+  </div>
+  <div class="section-body">
+    <div class="top3">
+      <article class="p-card is-urgent">
+        <div class="p-rank"><svg class="ic"><use href="#i-dot"/></svg>第 1 項</div>
+        <h3>住宿仍未訂 — 唯一真正緊急的事</h3>
+        <p>1月中下旬是妙高全季最貴、最早滿的檔期，而距出發已只有 148 天。目前仍未有任何 2027 年 1 月的實際報價。建議本週內鎖定 <span class="en">Akakura Kanko Hotel</span> 或 <span class="en">Alpen Blick</span>（<span class="en">Ikenotaira</span>）其中一間可免費取消的房，先佔位再慢慢比價。</p>
+        <span class="badge b-urgent"><svg class="ic"><use href="#i-alert"/></svg>緊急</span>
+      </article>
+      <article class="p-card">
+        <div class="p-rank"><svg class="ic"><use href="#i-dot"/></svg>第 2 項</div>
+        <h3>Akakura Onsen 早割券 9月1日開售</h3>
+        <p>官網公佈 2026-27 早割券於 <strong>9月1日（星期二）</strong>起發售，可經 <span class="en">Rakuten Ticket</span>、<span class="en">Asoview</span>、<span class="en">Pass Market</span> 購買。這是本季第一個有確切日期的票務動作。同一頁亦承認官網因<strong>被不正常入侵</strong>而暫停瀏覽，所以短期內不要在該網站直接輸入信用卡資料。</p>
+        <span class="badge b-import"><svg class="ic"><use href="#i-clock"/></svg>重要</span>
+      </article>
+      <article class="p-card is-ok">
+        <div class="p-rank"><svg class="ic"><use href="#i-dot"/></svg>第 3 項</div>
+        <h3>Madarao 公佈 26/27 營業期</h3>
+        <p><strong>2026年12月12日至2027年3月28日</strong>，完整覆蓋我們的行程窗口。這是第二個公佈 26/27 日期的雪場（第一個是 <span class="en">Suginohara</span>）。同時公佈的季票（早割 ¥68,000）與 <span class="en">NAGANO 7</span> 通行證（¥140,000 起）對只滑 4 日的我們並不划算 — 結論仍然是散買日票。</p>
+        <span class="badge b-ok"><svg class="ic"><use href="#i-check"/></svg>已確認</span>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ RESORTS ============ -->
-  <section id="resort-update">
-    <div class="card">
-      <h2><span class="num">02</span> Myoko Resort &amp; Snow Season Update <span class="badge b-none">No major update</span></h2>
-      <p class="sec-note">It is August. There are no snow conditions, no snowfall data and no opening confirmations in existence for 26/27. Any such figure quoted today is fabricated.</p>
+<!-- =========================== RESORT NEWS ============================ -->
+<section class="section" id="resorts">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-mountain"/></svg></span><span class="section-num">02</span>雪場與雪季動態</h2>
+    <p class="section-sub">現時是 8 月，大部分雪場網站仍停留在 25/26 的資料。以下逐個標明是否已更新到 26/27。</p>
+  </div>
+  <div class="toolbar"><button class="btn-ghost" data-toggle-all="resorts"><svg class="ic ic-sm"><use href="#i-expand"/></svg><span>全部展開</span></button></div>
+  <div class="section-body">
 
-      <details id="d-resort-news">
-        <summary>Resort news &amp; 26/27 status <span class="badge b-watch">Watch</span></summary>
-        <div class="details-body">
-          <div class="tbl-scroll">
-            <table>
-              <thead><tr><th>Resort</th><th>26/27 dates</th><th>25/26 baseline (prior season)</th><th>Beginner fit</th></tr></thead>
-              <tbody>
-                <tr>
-                  <td><a href="https://www.princehotels.co.jp/ski/myoko/winter/" target="_blank" rel="noopener">Myoko Suginohara</a></td>
-                  <td><strong>Announced</strong> — 19 Dec 2026 – 28 Mar 2027 (operator flags it 予定 / provisional)</td>
-                  <td>13 Dec 2025 – 29 Mar 2026</td>
-                  <td><strong>Best cruiser mountain in the valley.</strong> 8,500 m longest run, 1,124 m vertical, 16 courses, long low-gradient groomers.</td>
-                </tr>
-                <tr>
-                  <td><a href="https://akakura-ski.com/" target="_blank" rel="noopener">Akakura Onsen</a></td>
-                  <td>Not yet announced. Site (updated 2 Apr 2026) only states preparations for 2026-2027 are under way.</td>
-                  <td>13 Dec 2025 – 31 Mar 2026; night skiing 27 Dec – 15 Mar, 17:00–21:00</td>
-                  <td>The classic beginner village mountain — wide lower greens straight off the village, night skiing, most ski schools.</td>
-                </tr>
-                <tr>
-                  <td><a href="https://akr-ski.com/" target="_blank" rel="noopener">Akakura Kanko</a></td>
-                  <td>Not yet announced. Homepage still shows green-season content only (Sky Cable to 8 Nov 2026).</td>
-                  <td>19 Dec 2025 – 31 Mar 2026</td>
-                  <td>Steeper and higher; upper mountain is intermediate+. Snowboards permitted on every lift and the gondola. Links to Akakura Onsen.</td>
-                </tr>
-                <tr>
-                  <td><a href="https://www.ikenotaira.jp/huyu.php" target="_blank" rel="noopener">Ikenotaira Alpen Blick</a></td>
-                  <td>Not yet announced.</td>
-                  <td>13 Dec 2025 – 29 Mar 2026, 08:30–16:30</td>
-                  <td><strong>Strongest pure-beginner terrain in Myoko.</strong> 15 courses, longest 4,500 m, max 28°, and a 3 km bahn up to ~450 m wide — the safest place to drill turns without traffic.</td>
-                </tr>
-                <tr>
-                  <td><a href="http://sekionsen.jp/" target="_blank" rel="noopener">Seki Onsen</a></td>
-                  <td>Not yet announced. Site only notes the 25/26 season ended 12 Apr 2026.</td>
-                  <td>Closed 12 Apr 2026</td>
-                  <td><strong>Skip for this trip.</strong> Two old lifts, steep powder-cult terrain, no snowmaking, minimal grooming, and not on the Mt Myoko shuttle.</td>
-                </tr>
-                <tr>
-                  <td><a href="https://www.lottehotel.com/arai-resort/ja.html" target="_blank" rel="noopener">Arai Mountain Resort</a></td>
-                  <td>Not yet announced.</td>
-                  <td>13 Dec 2025 – 10 May 2026, 08:30–16:00</td>
-                  <td>Great hotel, wrong mountain for a first week: 36% intermediate, 28% expert-plus, max slope 46°.</td>
-                </tr>
-                <tr>
-                  <td><a href="https://www.madarao.jp/ski" target="_blank" rel="noopener">Madarao</a> / Tangram</td>
-                  <td>Not yet announced.</td>
-                  <td>Included in the Mt.Myoko+ 3 Day Pass</td>
-                  <td>Tree-run destination over the ridge in Nagano. A day-trip option, not a base.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p><strong>No lift replacements, new lifts, new facilities or ownership changes are announced for 26/27</strong> on any official site checked today.</p>
-          <ul>
-            <li>Suginohara joined the <a href="https://www.ikonpass.com/en/destinations/myoko-suginohara-ski-resort" target="_blank" rel="noopener">Ikon Pass</a> from winter 2025 and stays on it for 26/27.</li>
-            <li>Arai naming, often reported wrong: the ski area became ARAI Snow Resort (Nov 2023), then <em>Arai Mountain Resort</em> from 2024-25. The operator did not change — still LOTTE Hotel Arai.</li>
-            <li>Lotte Holdings signed a wellness-tourism agreement with Myoko City on 8 July 2025 — a medium-term investment signal, not a 26/27 product.</li>
-            <li>Akakura Kanko has published an anti-resale warning on lift products and a drone ban.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details id="d-weather">
-        <summary>Weather / snow trend <span class="badge b-none">No major update</span></summary>
-        <div class="details-body">
-          <p><strong>Nothing to report, and that is the correct answer for 22 August.</strong> Myoko's season does not begin until mid-December. First meaningful snowfall reports and opening confirmations are expected <strong>late November to mid-December 2026</strong>.</p>
-          <p>Structural context worth holding: Myoko sits in one of the heaviest-snowfall regions on earth, which is a benefit for cover and a risk for visibility and road access. Your 17–25 January window is the statistical peak of both snowfall and storm frequency. Plan around <strong>one weather-loss day in four</strong> and keep an onsen or Snow Monkey day in reserve.</p>
-        </div>
-      </details>
-
-      <details id="d-lifts">
-        <summary>Opening / lift operations <span class="badge b-confirmed">1 of 7 confirmed</span></summary>
-        <div class="details-body">
-          <p>Only Suginohara has committed to 26/27 operating dates, and it labels them provisional. Every other Myoko-area resort is silent. Expect the rest to publish in <strong>October–November 2026</strong>.</p>
-          <div class="callout">
-            <b>What this means for you:</b> your 18–23 January stay sits comfortably inside every resort's historic operating window, so there is no date risk to manage. No action needed on lift operations until October.
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ TICKETS ============ -->
-  <section id="tickets">
-    <div class="card">
-      <h2><span class="num">03</span> Tickets, Passes &amp; Booking Watch <span class="badge b-watch">Watch</span></h2>
-      <p class="sec-note">Nothing Myoko-local is on sale today. The one live, purchasable product that touches Myoko is the Ikon Pass — and for a four-day trip it makes no financial sense.</p>
-
-      <details id="d-tickets">
-        <summary>Lift tickets &amp; passes <span class="badge b-none">Nothing on sale</span></summary>
-        <div class="details-body">
-          <p>The official <a href="https://mountmyoko.axess.shop/en/Products/Tickets" target="_blank" rel="noopener">Mt Myoko ticket shop</a> shows <strong>zero products listed</strong> as of today. That is strong direct evidence nothing local is buyable.</p>
-          <div class="tbl-scroll">
-            <table>
-              <thead><tr><th>Product</th><th>26/27 status</th><th>25/26 baseline</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Mt. Myoko All Mountain season pass</strong><br>Akakura Onsen + Kanko + Ikenotaira + Suginohara</td><td>Not announced, not on sale</td><td class="num">Early-bird ¥95,000 to 30 Nov 2025; regular ¥115,000. Online only.</td></tr>
-                <tr><td><strong>Mt. Myoko+ 3 Day Pass</strong><br>the 4 core resorts + Arai + Madarao + Tangram</td><td>Not on sale</td><td>3 non-consecutive days, <strong>includes an all-day shuttle pass</strong>. IC gate at the core 4; paper exchange at Arai/Madarao/Tangram.</td></tr>
-                <tr><td><strong>Myoko Complete Pass</strong></td><td>Cannot verify — the site returns HTTP 403. Treat as possibly discontinued.</td><td class="num">2023 version ¥21,000 for 3 exchangeable day tickets across 7 resorts</td></tr>
-                <tr><td><strong>Akakura all-mountain 1-day</strong> (Onsen + Kanko)</td><td>Not announced</td><td class="num">¥8,500 adult, sold 20 Dec – 22 Mar</td></tr>
-                <tr><td><strong>Myoko Fast Pass</strong> (third-party, hotel guests only)</td><td>Not announced</td><td class="num">¥9,000/day adult, covers 5 resorts, includes a ¥1,000 lunch ticket</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p><strong>Individual day tickets, 25/26 baseline:</strong> Suginohara ¥8,000 · Akakura Onsen ¥7,000 · Ikenotaira ¥6,900 (+¥500 IC deposit) · Arai ¥7,500 economy. Akakura Kanko publishes no lift prices at all.</p>
-          <div class="callout warn">
-            <b>Early-bird pattern:</b> the Myoko cut-off has been <strong>30 November</strong> three seasons running (¥73,000 in 2022 → ¥88,000 in 2024 → ¥95,000 in 2025). Sales typically open late September / October. Physical handover is at the Myoko Kogen Tourist Information Center, 0255-86-3911.
-          </div>
-          <div class="callout stop">
-            <b>Do not buy a mega-pass for this trip.</b> Four Myoko day tickets run roughly ¥27,000–32,000 per person. Ikon Base is ~US$1,019 and Ikon Pass ~US$1,449. <a href="https://mountaincollective.com/" target="_blank" rel="noopener">Mountain Collective</a> 26/27 covers Niseko only — no Myoko resort at all. Ikon 26/27 does include <strong>Suginohara (7 days / Base 5 days)</strong> and <strong>Arai</strong>, which only matters if you were already buying Ikon for a bigger season.
-          </div>
-        </div>
-      </details>
-
-      <details id="d-schools">
-        <summary>Lessons &amp; schools <span class="badge b-important">Important</span></summary>
-        <div class="details-body">
-          <div class="tbl-scroll">
-            <table>
-              <thead><tr><th>School</th><th>Format</th><th>Published price</th><th>Season label</th></tr></thead>
-              <tbody>
-                <tr>
-                  <td><a href="https://escapemyoko.com/myoko-snowboard-lessons/" target="_blank" rel="noopener">Escape Myoko</a></td>
-                  <td>Private / small group, English only, max 6 of similar ability. Priced <strong>per instructor</strong>, not per person.</td>
-                  <td class="num">Full day ¥59,000 · AM half ¥35,000 · PM half ¥30,000</td>
-                  <td><strong>26/27 — confirmed</strong> (page dated 13 Jul 2026)</td>
-                </tr>
-                <tr>
-                  <td><a href="https://myokosnowsports.com/akakura/snowsports-school/" target="_blank" rel="noopener">Myoko Snowsports</a></td>
-                  <td><strong>The only genuine English adult group snowboard product in Myoko</strong> — "Super 6", 2.25 h afternoon sessions, max 6, first-timer to expert, age 15+. Plus private and multi-resort options.</td>
-                  <td>Not published</td>
-                  <td>Site still advertises 2025-2026 bookings</td>
-                </tr>
-                <tr>
-                  <td><a href="https://gomyoko.com/lessons/" target="_blank" rel="noopener">Canyons Myoko / Go Myoko</a></td>
-                  <td>Private only, up to 6 guests</td>
-                  <td class="num">AM ¥42,000 · PM ¥32,000 · full day ¥70,000</td>
-                  <td>Unlabelled — likely 2023/24, indicative only</td>
-                </tr>
-                <tr>
-                  <td><a href="http://yodelsnow.com/lessonmenu.html" target="_blank" rel="noopener">Yodel Snow School</a></td>
-                  <td>English adult private (1–3 people); English group for children only. SAJ certified.</td>
-                  <td class="num">Early bird ¥18,000 · AM 2.5 h ¥30,000 · full day ¥55,000</td>
-                  <td>No season label</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="callout">
-            <b>Recommendation.</b> Because Escape Myoko prices per instructor, a two-person private works out at <strong>¥15,000–29,500 each</strong> — competitive with Yodel and well under Canyons. Book <strong>one full private day early in the stay</strong> (19 Jan) and keep Myoko Snowsports' Super 6 group session in reserve as a cheaper second touch-point later in the week.
-          </div>
-        </div>
-      </details>
-
-      <details id="d-rentals">
-        <summary>Rentals <span class="badge b-check">Needs checking</span></summary>
-        <div class="details-body">
-          <ul>
-            <li><strong>Myoko Snowsports</strong>, 585-74 Akakura — in-store at the school base. K2, Line, Burton, Ride, Elan, Fablice.</li>
-            <li><strong>Canyons Myoko</strong> — rentals collected at Hotel Taiko, Akakura Onsen.</li>
-            <li><strong>Escape Myoko</strong> — rental can be bundled with lessons.</li>
-            <li><strong>Ikenotaira on-mountain</strong> — 25/26 board set ¥5,500/day, outerwear ¥5,500/day.</li>
-          </ul>
-          <div class="callout warn">
-            <b>Gap worth knowing:</b> no Myoko operator was found publishing a confirmed hotel-delivery rental service with 26/27 prices. Delivery rental is far better established in Hakuba and Niseko. Since you plan to bring your own Bataleon setup, this mainly affects your wife's kit — plan on in-store collection near the hotel.
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ TRAVEL ============ -->
-  <section id="travel">
-    <div class="card">
-      <h2><span class="num">04</span> Travel &amp; Logistics Watch <span class="badge b-important">1 dated deadline</span></h2>
-      <p class="sec-note">One real deadline this month: JR Pass Exchange Order prices change for purchases made on or after 1 October 2026.</p>
-
-      <details id="d-transport">
-        <summary>Transport <span class="badge b-important">Important</span></summary>
-        <div class="details-body">
-          <p><strong>Standard routing:</strong> Tokyo → Hokuriku Shinkansen → Joetsu-Myoko → <a href="https://www.echigo-tokimeki.co.jp/" target="_blank" rel="noopener">Echigo Tokimeki Railway</a> Myoko Haneuma Line → Myoko Kogen. Roughly <strong>2 h 20 – 2 h 30 station to station</strong>.</p>
-          <p><strong>Alternative:</strong> Tokyo → Nagano (~1 h 20) → Shinano Railway Kita-Shinano Line → Myoko Kogen (~47 min). Often better-timed, and it is the line the winter airport buses shadow.</p>
-          <ul>
-            <li><strong>Hokuriku Shinkansen</strong> was revised 14 March 2026, but every published change is a Kagayaki/Tsurugi item at the far end of the line. <strong>Nothing alters Joetsu-Myoko service.</strong> The next revision would normally be ~March 2027 — after your trip.</li>
-            <li><strong>Echigo Tokimeki Railway</strong> timetable and fares are dated 14 March 2026. No 26/27 winter changes published.</li>
-            <li><strong>JR Pass:</strong> the <a href="https://japanrailpass.net/en/purchase/price/" target="_blank" rel="noopener">official price page</a> now carries three separate Exchange Order tables — online, purchases by 30 Sep 2026, and purchases from 1 Oct 2026. A price change is confirmed for 1 October.</li>
-          </ul>
-          <div class="callout stop">
-            <b>Honest gap:</b> I could not verify the Tokyo → Myoko Kogen fare, and could not extract the JR Pass figures. Both operators publish those tables as <strong>image-only PDFs</strong>. Do not quote a fare until it is confirmed on the JR East reservation site or at a ticket window.
-          </div>
-          <div class="callout">
-            <b>Verdict on the JR Pass:</b> for a single Tokyo–Myoko round trip it is almost certainly <strong>not</strong> worth buying. It only becomes a question if you add wider Japan legs — in which case price it before 30 September.
-          </div>
-          <p><strong>Airport transfers (25/26 baseline, no 26/27 schedule yet):</strong></p>
-          <ul>
-            <li><a href="https://myoko.jp/tokyo-myoko-shuttle/" target="_blank" rel="noopener">Myoko Snow Transfer</a> — Narita ↔ Myoko Kogen, <strong>¥13,500 base</strong>, resort drop only. Departures 09:15 / 11:00 / 15:00 / 20:30. <strong>Book at least 7 days ahead.</strong> Haneda is offered but no timetable or fare is published.</li>
-            <li><a href="https://www.myokoshuttle.com/" target="_blank" rel="noopener">MKK Shuttle</a> — Tokyo airports ↔ Myoko from ¥11,000; Niigata Airport ↔ Myoko ¥4,500–6,500, book 13 days ahead.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details id="d-accom">
-        <summary>Accommodation <span class="badge b-urgent">Urgent</span></summary>
-        <div class="details-body">
-          <div class="callout stop">
-            <b>This is the only genuinely time-critical item in today's briefing.</b> Myoko has a small stock of Western-friendly slopeside rooms and the good ones for January go 6–12 months out. <strong>22 August 2026 is already inside the normal booking window.</strong>
-          </div>
-          <p><strong>Shortlist, strongest first:</strong></p>
-          <ul>
-            <li><strong>Akakura Kanko Hotel</strong> — sits directly on the Akakura Kanko slope. The strongest genuine ski-in/ski-out claim in the valley, and a Myoko Fast Pass participant.</li>
-            <li><strong><a href="https://alpenblick-resort.com/ski" target="_blank" rel="noopener">Alpen Blick</a></strong> — on-mountain at Ikenotaira, which has the best beginner terrain in Myoko. For two people drilling turns, terrain quality arguably beats hotel prestige.</li>
-            <li>Other Fast Pass participants worth pricing: Akakura Hotel, Oyado Furuya, Kogakuro, Kogen Hotel Taizan, Akakura Park Hotel, Akakura Hotel Annex, MOC.</li>
-          </ul>
-          <p><strong>Not verified today:</strong> no Myoko property was found publishing January 2027 rates or confirmed availability. Treat any January 2027 price you see quoted as unverified until you have it in an email.</p>
-          <div class="callout">
-            <b>Timing nuance in your favour:</b> Chinese New Year 2027 falls in February, so 17–25 January sits just ahead of that surge. Japanese domestic and Australian demand still peaks in January, so this is a modest advantage, not a free pass.
-          </div>
-        </div>
-      </details>
-
-      <details id="d-local">
-        <summary>Local access <span class="badge b-check">Needs checking</span></summary>
-        <div class="details-body">
-          <p><strong>No 26/27 shuttle schedule exists.</strong> The <a href="https://myokotourism.com/winter-bus-service/" target="_blank" rel="noopener">Myoko Tourism winter bus page</a> prints dates without years, so it can only be read as the 25/26 pattern.</p>
-          <div class="tbl-scroll">
-            <table>
-              <thead><tr><th>Service</th><th>25/26 pattern</th><th>Price</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Mt Myoko Shuttle</strong> — Akakura ↔ Ikenotaira ↔ Suginohara</td><td>20 Dec – 22 Mar. No reservation, but tickets must be bought in advance at tourist offices or lift windows — <strong>not on the bus</strong>.</td><td class="num">¥1,000 one way</td></tr>
-                <tr><td><strong>Arai ↔ Akakura ↔ Madarao / Tangram</strong></td><td>8 Jan – 20 Mar. <strong>This link was postponed / suspended in 25/26.</strong> Do not plan a multi-resort day around it.</td><td class="num">Arai↔Akakura ¥2,000 · Akakura↔Kanko ¥500 · Akakura↔Madarao ¥2,000</td></tr>
-                <tr><td><strong>Snow Monkey Shuttle</strong></td><td>23 Dec – 9 Mar. Cash before boarding.</td><td class="num">Akakura ¥5,000 return · Arai ¥8,000 return</td></tr>
-                <tr><td><strong>Local city buses</strong></td><td>Year-round</td><td class="num">Myoko Kogen Stn → Suginohara ¥480 · → Seki Onsen ¥440</td></tr>
-                <tr><td><strong>Akakura village circulator</strong></td><td>Every 20 min, 08:00–22:00. The Myoko Kogen Stn ↔ Kumado free shuttle <strong>requires booking 2 days ahead</strong>, 0255-87-2125.</td><td class="num">Free</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ TRAINING ============ -->
-  <section id="training">
-    <div class="card">
-      <h2><span class="num">05</span> Training &amp; Skill Progress <span class="badge b-check">Needs input</span></h2>
-      <p class="sec-note">No training update has been shared yet, so this section is a baseline carried from your trip planning, not an assessment.</p>
-
-      <figure>
-        <img src="assets/img/training.jpg" alt="Beginner snowboarder practising linked turns on a wide gentle groomed slope with an instructor watching" width="900" height="675" loading="lazy">
-        <figcaption>Target picture for January: smooth linked S-turns on wide low-gradient groomers, both edges, at controlled speed.</figcaption>
+    <div class="fig-pair">
+      <figure class="fig">
+        <img src="assets/img/resort-village.jpg" alt="妙高高原溫泉村冬季夜景，木造旅館與雪道燈光">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>妙高高原溫泉村的典型冬夜氛圍。AI 生成示意圖。</figcaption>
       </figure>
-
-      <details id="d-level">
-        <summary>Current level estimate <span class="badge b-check">Needs checking</span></summary>
-        <div class="details-body">
-          <p><strong>Working estimate: beginner moving into lower-intermediate</strong>, based on your stated focus on smooth linked S-turns and your board choice. This is carried context, not a fresh assessment — <strong>send a training summary and it gets replaced with a real review.</strong></p>
-          <p>Your setup already reflects that level correctly: a Bataleon Mojo 157 is a 3/10 flex progression board, and Blaster AW FASE is a soft fast-entry binding. Nothing about the equipment is holding you back.</p>
-        </div>
-      </details>
-
-      <details id="d-focus">
-        <summary>What to focus on before January <span class="badge b-important">Important</span></summary>
-        <div class="details-body">
-          <p>With five months to go and no snow available, the honest priority is <strong>off-snow physical preparation</strong>, because that is the only thing you can actually change between now and December.</p>
-          <ul>
-            <li><strong>Single-leg strength and balance</strong> — snowboarding punishes weak glutes and ankles. Split squats, step-downs, calf raises.</li>
-            <li><strong>Rotational core control</strong> — your turns come from the hips, not the shoulders. Pallof press, cable rotations, dead bugs.</li>
-            <li><strong>Sustained low-crouch endurance</strong> — wall sits and isometric holds. Day 3 fatigue is what breaks technique.</li>
-            <li><strong>Ankle mobility</strong> — dorsiflexion range directly limits how much you can drive a toe edge.</li>
-            <li><strong>Falling practice, seriously</strong> — learning to go to forearms and roll rather than catching with a straight wrist prevents the single most common beginner injury.</li>
-          </ul>
-          <p>Your existing tennis and gym base is a genuine advantage here — the transferable gap is usually rotational control and single-leg endurance rather than general fitness.</p>
-        </div>
-      </details>
-
-      <details id="d-drills">
-        <summary>Suggested drills <span class="badge b-watch">Watch</span></summary>
-        <div class="details-body">
-          <ul>
-            <li><strong>Drill 1 — Bulgarian split squat, 3 × 8 each leg, twice weekly.</strong> Builds the single-leg strength that lets you hold an edge instead of skidding.</li>
-            <li><strong>Drill 2 — Pallof press, 3 × 12 each side.</strong> Trains resisting rotation, which is exactly what your core does through a carve.</li>
-            <li><strong>Drill 3 — Wall sit progression, 3 × 45–90 s.</strong> Directly maps to the riding stance you will hold for hours on day 3.</li>
-            <li><strong>Bonus — balance board or slackline, 10 min, three times weekly.</strong> Cheapest, highest-transfer purchase you can make before this trip.</li>
-          </ul>
-        </div>
-      </details>
-
-      <details id="d-course">
-        <summary>Myoko course recommendation <span class="badge b-confirmed">Recommended</span></summary>
-        <div class="details-body">
-          <p><strong>Book a full-day private with Escape Myoko on 19 January</strong> — the second day of your resort stay, once you have a warm-up day behind you and before fatigue sets in. Private, not group: at your level a two-person private is both cheaper per useful minute and better matched, since you and your wife may progress at different rates.</p>
-          <p><strong>Hold 21 January as an optional half-day follow-up.</strong> Decide on the mountain, based on how day 3 feels. Do not pre-book it.</p>
-          <div class="callout warn">
-            <b>Open question you should settle.</b> Your wider trip notes still rank <strong>Shiga Kogen ahead of Myoko</strong> for staged groomed progression and genuine slopeside access, with Myoko Suginohara as the alternative when powder, quiet and onsen matter more. This briefing series assumes Myoko. If Shiga is still genuinely in play, decide before you book a room — that is the one choice that invalidates everything downstream.
-          </div>
-        </div>
-      </details>
-
-      <details id="d-safety">
-        <summary>Gear &amp; safety notes <span class="badge b-important">Important</span></summary>
-        <div class="details-body">
-          <p><strong>Priority order for two beginners: helmet → impact shorts → wrist guards.</strong> Certified helmet only — look for <strong>ASTM F2040</strong> or <strong>CE EN1077</strong> on the label.</p>
-          <p><strong>Avalanche equipment is not required for this trip as planned.</strong> Akakura, Ikenotaira and Suginohara are all lift-served, in-bounds, patrolled terrain. It only becomes relevant if you hire a guide for sidecountry, which is not appropriate at your level this season.</p>
-          <p><strong>Boot fitting is still the highest-leverage unfinished item.</strong> Your own plan is boot fit first, binding size from the actual boot, then professional mounting with boots present — and UK 9.5 sits right at the FASE binding-size crossover, so it must be checked with the physical boot. Get this done before shops fill up in October.</p>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- ============ GEAR ============ -->
-  <section id="gear">
-    <div class="card">
-      <h2><span class="num">06</span> Gear &amp; Gadget Watch <span class="badge b-important">Buying window open</span></h2>
-      <p class="sec-note">You are in the August–October arrival window: 2027 lines are landing now with full size runs. The next real discount window is March 2027 — after your trip.</p>
-
-      <figure>
-        <img src="assets/img/gear.jpg" alt="Flat lay of snowboard, bindings, helmet, goggles, boots, gloves, action camera and travel duffel on snow" width="900" height="675" loading="lazy">
-        <figcaption>The kit list that actually matters for a first Japan week — protection and camera before hardgoods upgrades.</figcaption>
+      <figure class="fig">
+        <img src="assets/img/weather-snow.jpg" alt="雪山上降雪與被雪覆蓋的樹木">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>妙高以日本海側豪雪聞名。現時 8 月無任何積雪數據，12 月起會加入雪況追蹤。</figcaption>
       </figure>
-
-      <details id="d-gear-new">
-        <summary>New or interesting gear <span class="badge b-confirmed">Directly relevant</span></summary>
-        <div class="details-body">
-          <p><strong>Bataleon made its biggest lineup change in years for 2027</strong> — 8 new models, 9 retired, bindings down from 14 to 12 (<a href="https://snowboardingprofiles.com/2027-bataleon-snowboards-lineup-overview" target="_blank" rel="noopener">Snowboarding Profiles</a>, <a href="https://www.evo.com/blogs/reviews/snowboard-gear-preview" target="_blank" rel="noopener">evo</a>).</p>
-          <ul>
-            <li><strong>The Mojo is brand new for 2027</strong> and is Bataleon's dedicated beginner / progression all-mountain board — flex 3/10, 3D Directional Twin, low camber, medium 3BT uplift, Bi-Ax glass, Hyper Glide S base. Sizes 149 / 151 / 154 / <strong>157</strong> / 159W / 162W. It is the direct successor to the retired Chaser and deliberately omits the carbon of the higher-end boards.</li>
-            <li><strong>Blaster AW FASE returns unchanged for 2027.</strong> The fast-entry range expands with Ghost FASE, Women's Ghost FASE and Women's Blaster AW FASE. Retired: Astro Asymwrap, Blaster Heelwrap, Chaos Asymwrap, Etna Heelwrap, Donna Asymwrap.</li>
-            <li><strong>Women's Mojo is also new</strong> — 138–152, flex 3/10, medium camber, described as one of the most approachable women's boards Bataleon makes. <strong>This is the obvious matching board for your wife.</strong> Retail ~US$459.95.</li>
-            <li>Bataleon's own site publishes no 2027 prices yet, while 2026 models are discounted 40%+ (Goliath+ $419.95 from $699.95). Third-party 2027 pricing is live at evo.</li>
-          </ul>
-          <div class="callout">
-            <b>Verdict on your setup: no change needed.</b> A Mojo 157 with Blaster FASE is a coherent, genuinely beginner-appropriate pairing — soft board, fast-entry binding, forgiving 3BT base. If your Mojo is a 2027 model, you already own the current-year board.
-          </div>
-        </div>
-      </details>
-
-      <details id="d-gear-beginner">
-        <summary>Beginner-friendly picks <span class="badge b-watch">Watch</span></summary>
-        <div class="details-body">
-          <p><strong>Helmets — MIPS vs WaveCel is now a real head-to-head.</strong> Anon's WaveCel line (Oslo, Windham) is the main non-MIPS alternative, using a cellular crumple structure. Anon Oslo WaveCel is 448 g at $234.95; Anon Windham WaveCel $279.90; Anon Prime MIPS $339.90; Anon Rodan $209.90.</p>
-          <p><strong>MIPS at beginner budget:</strong> Giro Ledge FS MIPS ~$124.95 · Smith Method MIPS $87–160 · Oakley Mod 1 Pro MIPS ~$206. 2027 model-year helmets are already in shops (Smith Level MIPS, MSRP $250).</p>
-          <p><strong>Action cameras — current market, August 2026:</strong></p>
-          <div class="tbl-scroll">
-            <table>
-              <thead><tr><th>Camera</th><th>Why it matters here</th><th>Price</th></tr></thead>
-              <tbody>
-                <tr><td><strong>DJI Osmo Action 6</strong></td><td><strong>Best fit for Japanese January light.</strong> 1/1.1" sensor with variable f/2.0–f/4.0 aperture — the single most relevant spec for flat grey overcast and night skiing.</td><td class="num">US$369–379 · HK$3,349 at Fortress HK</td></tr>
-                <tr><td><strong>GoPro MAX2</strong></td><td>8K/30 360, 4K/90 single-lens, 195 g. The invisible-selfie-stick follow-cam look for Instagram and Douyin.</td><td class="num">MSRP $499.99, discounted to <strong>$299.99</strong> mid-2026 — outstanding value</td></tr>
-                <tr><td><strong>Insta360 X5</strong></td><td>8K 360, dual 1/1.28" sensors, 185-min battery, replaceable lenses, IPX8. A snow-specific bundle exists.</td><td class="num">US$549.99 standard; dipped to $434.99 in June sales</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="callout warn">
-            <b>Not researched today, flagged honestly:</b> impact shorts, wrist guards and back protectors by model; heated gear; riding wearables; comms devices. These categories move slowly and there is no reason to wait for a 26/27 release — but I have not verified specific products, so nothing is recommended by name yet.
-          </div>
-        </div>
-      </details>
-
-      <details id="d-gear-verdict">
-        <summary>Buy / rent / skip <span class="badge b-confirmed">Recommendation</span></summary>
-        <div class="details-body">
-          <ul>
-            <li><strong>Buy now, through October:</strong> boots (with professional fitting), helmets for both of you, impact shorts, wrist guards, goggles with a low-light lens. Full 2027 size runs exist right now.</li>
-            <li><strong>Buy on clearance:</strong> 2026 model-year boards and outerwear are 40%+ off today and are functionally identical technology. This is the value play for your wife's board if you go the Women's Mojo route.</li>
-            <li><strong>Rent in Myoko:</strong> your wife's board and bindings if she is still deciding on size or stance, and outerwear if you would rather not carry it. Expect in-store collection, not hotel delivery.</li>
-            <li><strong>Skip entirely:</strong> avalanche safety kit, any mega-pass, and hardgoods upgrades to your own setup. Also skip waiting for a discount — the next one lands in March 2027.</li>
-          </ul>
-          <div class="tbl-scroll">
-            <table>
-              <thead><tr><th>Window</th><th>What happens</th><th>Discount</th></tr></thead>
-              <tbody>
-                <tr><td>Mar–Jun</td><td>Current-season clearance — best prices of the year</td><td class="num">up to 60–80%</td></tr>
-                <tr><td><strong>Aug–Oct — you are here</strong></td><td>New model-year gear arrives, full size run</td><td class="num">full price</td></tr>
-                <tr><td>Oct–Dec</td><td>Peak full-price season; Black Friday is the one in-season event</td><td class="num">minimal</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </details>
     </div>
-  </section>
 
-  <!-- ============ ACTIONS ============ -->
-  <section id="actions">
-    <div class="card">
-      <h2><span class="num">07</span> Action Items</h2>
-      <p class="sec-note">Ticks are saved in this browser against today's briefing date.</p>
-
-      <div class="progress-row">
-        <span class="progress-label">0 of 7 done</span>
-        <span class="progress-bar"><span class="progress-fill"></span></span>
-        <button class="btn-reset" type="button">Reset</button>
+    <details class="acc" open>
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-calendar"/></svg>26/27 營業日期：現時只有兩個雪場確認<span class="badge b-ok"><svg class="ic"><use href="#i-check"/></svg>今日新增</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p class="lede">好消息：今日多了一個確認日期的雪場，而且兩個都完整覆蓋 1月17–25日。</p>
+        <div class="card-grid cols-2">
+          <div class="dcard">
+            <div class="dcard-head"><h5>Madarao Kogen</h5><span class="badge badge-flat b-ok"><svg class="ic"><use href="#i-check"/></svg>已公佈</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-calendar"/></svg>營業期</dt><dd><strong>2026年12月12日（六）– 2027年3月28日（日）</strong></dd>
+              <dt><svg class="ic"><use href="#i-clock"/></svg>纜車時間</dt><dd>第1纜車 8:30–16:30，夜滑 16:30–21:00；第2四人 8:30–16:15，夜滑至 20:30</dd>
+              <dt><svg class="ic"><use href="#i-info"/></svg>備註</dt><dd>官方註明會因積雪與天氣調整</dd>
+            </dl>
+            <p class="fit">對我們的意義：1月中屬全山纜車全開期，包括夜滑。斑尾雪質好、51 條雪道，但下山路線偏長，對初學者要挑對雪道。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Myoko Suginohara</h5><span class="badge badge-flat b-watch"><svg class="ic"><use href="#i-eye"/></svg>暫定</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-calendar"/></svg>營業期</dt><dd><strong>2026年12月19日 – 2027年3月28日</strong>（暫定）</dd>
+              <dt><svg class="ic"><use href="#i-mountain"/></svg>特色</dt><dd>日本最長滑走距離 8.5 km，寬闊緩坡多</dd>
+              <dt><svg class="ic"><use href="#i-info"/></svg>備註</dt><dd>頁面同時仍顯示「25/26 已結束」，屬過渡狀態</dd>
+            </dl>
+            <p class="fit">對我們的意義：長緩坡最適合練 <span class="en">S-Turn</span> 節奏與 <span class="en">carving</span> 起步，是我們水平最合適的雪場之一。</p>
+          </div>
+        </div>
+        <div class="note note-flag">
+          <svg class="ic"><use href="#i-alert"/></svg>
+          <p>其餘五個雪場（<span class="en">Akakura Onsen</span>、<span class="en">Akakura Kanko</span>、<span class="en">Ikenotaira</span>、<span class="en">Seki Onsen</span>、<span class="en">Tangram</span>）仍未公佈 26/27 營業期。以往開季集中在 12月中至下旬，1月中必定全面營運，所以這不影響行程決定，只影響「哪日去哪個雪場」的細排。</p>
+        </div>
       </div>
+    </details>
 
-      <ul class="checklist">
-        <li>
-          <input type="checkbox" id="a1">
-          <label for="a1"><span class="due">By 31 August 2026 · Urgent</span><strong>Book accommodation.</strong> Shortlist Akakura Kanko Hotel and Alpen Blick. Get the cancellation deadline in writing before paying anything. This is the only genuinely time-critical item.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="a2">
-          <label for="a2"><span class="due">By 31 August 2026 · Important</span><strong>Settle the Shiga Kogen vs Myoko question</strong> before the room is booked. Your own notes still rank Shiga ahead for staged groomed progression.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="a3">
-          <label for="a3"><span class="due">September 2026 · Important</span><strong>Get the professional boot fit done</strong> and confirm FASE binding size with the physical boot — UK 9.5 sits on the crossover. Then mount with boots present.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="a4">
-          <label for="a4"><span class="due">By 30 September 2026</span><strong>Decide the JR Pass question.</strong> Exchange Order prices change for purchases from 1 October. For Tokyo–Myoko round trip only, skip it.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="a5">
-          <label for="a5"><span class="due">Now through October 2026</span><strong>Buy the gear you actually need</strong> while full 2027 size runs exist: helmets, impact shorts, wrist guards, low-light goggle lens. Next discount is March 2027.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="a6">
-          <label for="a6"><span class="due">Early October 2026 · Watch</span><strong>Re-check the Mt Myoko ticket shop</strong> and each resort site for the 26/27 season and lift-pass launch.</label>
-        </li>
-        <li>
-          <input type="checkbox" id="a7">
-          <label for="a7"><span class="due">Any time · Needed from you</span><strong>Send a training summary</strong> for you and your wife so the level estimate and lesson recommendation stop being carried assumptions.</label>
-        </li>
-      </ul>
-    </div>
-  </section>
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-shield"/></svg>Akakura Onsen 官網被入侵，暫停瀏覽<span class="badge b-import"><svg class="ic"><use href="#i-alert"/></svg>重要</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p>今日讀取 <span class="en">akakura-ski.com</span> 時，整個網站已換成一頁公告，內容大意是：網站發現<strong>不正常入侵（不正アクセス）</strong>，為安全起見暫時停止瀏覽，正進行復原，請耐心等待。</p>
+        <div class="note note-warn">
+          <svg class="ic"><use href="#i-lock"/></svg>
+          <div>
+            <p><strong>實際影響：</strong>在官網完全復原之前，不要在該網站輸入信用卡或個人資料。</p>
+            <p>要買 <span class="en">Akakura Onsen</span> 的票，改用它自己指定的第三方平台：<span class="en">Rakuten Ticket</span>、<span class="en">Asoview</span>、<span class="en">Pass Market</span>。要查詢可直接打電話 <span class="en">0255-87-2125</span>（雪場支配人）。</p>
+          </div>
+        </div>
+        <p>同一頁公告亦是今日 <strong>9月1日早割券開售</strong>這條消息的來源，詳情見下面「票務與通行證」一節。</p>
+      </div>
+    </details>
 
-  <!-- ============ WATCHLIST ============ -->
-  <section id="watchlist">
-    <div class="card">
-      <h2><span class="num">08</span> Watchlist</h2>
-      <p class="sec-note">Nothing here needs action today. These are the dates the information itself is expected to appear.</p>
-      <div class="tbl-scroll">
-        <table>
-          <thead><tr><th>Item</th><th>Expected</th><th>Where to check</th></tr></thead>
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-mountain"/></svg>七個雪場現況一覽<svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <div class="card-grid cols-2">
+          <div class="dcard">
+            <div class="dcard-head"><h5>Akakura Onsen</h5><span class="badge badge-flat b-import">網站暫停</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-info"/></svg>現況</dt><dd>官網因入侵事件暫停；25/26 已於 2026年3月31日 16:00 結束；接駁巴士預約暫停</dd>
+              <dt><svg class="ic"><use href="#i-ticket"/></svg>票務</dt><dd>26/27 早割券 <strong>9月1日</strong>開售</dd>
+            </dl>
+            <p class="fit">初學者評價：緩坡多、雪道寬、溫泉街步行可達纜車，是我們最有可能住的一區。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Akakura Kanko</h5><span class="badge badge-flat b-none">無重大更新</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-info"/></svg>現況</dt><dd>網站營運面板仍是 25/26（2025年12月19日–2026年5月6日）</dd>
+              <dt><svg class="ic"><use href="#i-bed"/></svg>住宿</dt><dd>山上 <span class="en">Akakura Kanko Hotel</span> 可 ski-in／ski-out</dd>
+            </dl>
+            <p class="fit">初學者評價：中上段偏斜，但下段與 <span class="en">Akakura Onsen</span> 連通，票可共用。適合有教練陪同時挑戰。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Ikenotaira Onsen</h5><span class="badge badge-flat b-watch"><svg class="ic"><use href="#i-eye"/></svg>首選練習區</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-info"/></svg>現況</dt><dd>由 <span class="en">Alpen Blick Resort</span> 營運，仍未公佈 26/27</dd>
+              <dt><svg class="ic"><use href="#i-mountain"/></svg>地形</dt><dd>3 km 緩坡大道，最寬處達 450 m</dd>
+            </dl>
+            <p class="fit">初學者評價：<strong>七個雪場中最適合我們現在的水平</strong>。450 m 寬度可以兩人並排練，不用怕撞人。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Myoko Suginohara</h5><span class="badge badge-flat b-ok"><svg class="ic"><use href="#i-check"/></svg>日期已出</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-info"/></svg>現況</dt><dd>26/27 暫定 12月19日–3月28日</dd>
+              <dt><svg class="ic"><use href="#i-ticket"/></svg>票務</dt><dd>屬 <span class="en">Ikon Pass</span> 目的地（7 日／Base 5 日）</dd>
+            </dl>
+            <p class="fit">初學者評價：8.5 km 長緩坡，練節奏一流。但滑一趟很長，體力要夠。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Seki Onsen</h5><span class="badge badge-flat b-none">無重大更新</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-info"/></svg>現況</dt><dd>25/26 已於 2026年4月12日結束；未公佈 26/27</dd>
+              <dt><svg class="ic"><use href="#i-mountain"/></svg>規模</dt><dd>只有 2 條吊椅，粉雪愛好者聖地</dd>
+            </dl>
+            <p class="fit">初學者評價：<strong>今次不建議去</strong>。無壓雪、樹林粉雪為主，超出現時水平。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Madarao / Tangram</h5><span class="badge badge-flat b-ok"><svg class="ic"><use href="#i-check"/></svg>今日更新</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-info"/></svg>現況</dt><dd><span class="en">Madarao</span> 26/27：12月12日–3月28日；<span class="en">Tangram</span> 網站仍為過渡內容</dd>
+              <dt><svg class="ic"><use href="#i-ticket"/></svg>票務</dt><dd>兩者季票互通；亦屬 <span class="en">NAGANO 7</span> 成員</dd>
+            </dl>
+            <p class="fit">初學者評價：<span class="en">Tangram</span> 有溫和的家庭雪道，<span class="en">Madarao</span> 較有挑戰。要留意兩者離妙高高原站約 40 分鐘車程，屬另一個交通圈。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ============================= TICKETS ============================== -->
+<section class="section" id="tickets">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-ticket"/></svg></span><span class="section-num">03</span>纜車票、通行證與訂票</h2>
+    <p class="section-sub">今日最大變化在這一節。結論沒有改變：<strong>散買日票</strong>，但現在多了一個要在 9月1日行動的窗口。</p>
+  </div>
+  <div class="toolbar"><button class="btn-ghost" data-toggle-all="tickets"><svg class="ic ic-sm"><use href="#i-expand"/></svg><span>全部展開</span></button></div>
+  <div class="section-body">
+
+    <details class="acc" open>
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-clock"/></svg>9月1日：Akakura Onsen 早割券開售<span class="badge b-import"><svg class="ic"><use href="#i-alert"/></svg>重要</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p class="lede">官方公告原文重點：2026-2027 賽季早割券<strong>預定 9月1日（星期二）開始發售</strong>，可於 <span class="en">Rakuten Ticket</span>、<span class="en">Asoview</span>、<span class="en">Pass Market</span> 三個平台搜尋雪場名稱購買。</p>
+        <div class="note">
+          <svg class="ic"><use href="#i-info"/></svg>
+          <div>
+            <p><strong>公告未寫明的部分（要 9月1日自己核對）：</strong>早割券的實際價格、券種（1日券／回數券／季票）、有效期，以及有沒有 <span class="en">Akakura Onsen + Akakura Kanko</span> 共通券的早割版本。</p>
+            <p>我會在 9月1日的簡報自動追這一項。</p>
+          </div>
+        </div>
+        <h4 class="blk"><svg class="ic"><use href="#i-scale"/></svg>要不要買？</h4>
+        <p>視乎券種。如果早割只有<strong>季票</strong>，對只滑 4 日的我們不划算，跳過。如果有<strong>早割 1 日券或回數券</strong>（日本雪場常見做法，通常比現場價便宜 15–30%），那就值得買 4 張，因為 1 月中是旺季正價期。</p>
+        <p>另外一點：我們仍未決定住哪一區。買了 <span class="en">Akakura Onsen</span> 的票就等於某程度上鎖定了住宿區域，所以<strong>先訂住宿、再買票</strong>這個次序不要倒轉。</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-money"/></svg>Madarao 季票與 NAGANO 7：兩者都不划算<span class="badge b-ok"><svg class="ic"><use href="#i-check"/></svg>已有結論</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p>今日 <span class="en">Madarao</span> 一次公佈了兩個通行證方案。兩個都查清楚了，兩個都不要買。</p>
+
+        <h4 class="blk"><svg class="ic"><use href="#i-ticket"/></svg>Madarao 全山共通季票（Mountain Pass）</h4>
+        <p class="small muted tight">早割期：2026年9月1日–10月31日。含 <span class="en">Tangram</span> 纜車。另需 IC 卡保證金 ¥500。購買後不可取消退款。可用期由 2026年12月12日起。</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>券種</th><th>正價</th><th>早割價</th></tr></thead>
           <tbody>
-            <tr><td>Akakura Onsen, Akakura Kanko, Ikenotaira, Seki Onsen 26/27 season dates</td><td class="num">Oct–Nov 2026</td><td><a href="https://akakura-ski.com/" target="_blank" rel="noopener">akakura-ski</a>, <a href="https://akr-ski.com/" target="_blank" rel="noopener">akr-ski</a>, <a href="https://alpenblick-resort.com/ski" target="_blank" rel="noopener">alpenblick</a>, <a href="http://sekionsen.jp/" target="_blank" rel="noopener">sekionsen</a></td></tr>
-            <tr><td>Mt Myoko All Mountain + Mt.Myoko+ 3 Day Pass on sale</td><td class="num">Oct 2026 · early-bird closes 30 Nov</td><td><a href="https://mountmyoko.axess.shop/en/Products/Tickets" target="_blank" rel="noopener">mountmyoko.axess.shop</a></td></tr>
-            <tr><td>26/27 day-ticket prices, all resorts</td><td class="num">Oct–Nov 2026</td><td>Each resort's lift page</td></tr>
-            <tr><td>Arai Mountain Resort 26/27 dates and prices</td><td class="num">Oct–Nov 2026</td><td><a href="https://www.lottehotel.com/arai-resort/ja.html" target="_blank" rel="noopener">lottehotel.com</a></td></tr>
-            <tr><td>Mt Myoko Shuttle + Arai/Madarao shuttle timetables</td><td class="num">Late Nov – mid Dec 2026</td><td><a href="https://myokotourism.com/winter-bus-service/" target="_blank" rel="noopener">myokotourism.com</a></td></tr>
-            <tr><td>Narita/Haneda ↔ Myoko winter shuttle schedule and fares</td><td class="num">Oct–Nov 2026</td><td><a href="https://myoko.jp/tokyo-myoko-shuttle/" target="_blank" rel="noopener">myoko.jp</a>, <a href="https://www.myokoshuttle.com/" target="_blank" rel="noopener">myokoshuttle.com</a></td></tr>
-            <tr><td>Myoko Snowsports, Canyons, Yodel 26/27 lesson prices</td><td class="num">Sep–Nov 2026</td><td><a href="https://myokosnowsports.com/akakura/snowsports-school/" target="_blank" rel="noopener">myokosnowsports.com</a></td></tr>
-            <tr><td>First meaningful Myoko snowfall and opening confirmations</td><td class="num">Late Nov – mid Dec 2026</td><td>Resort sites; Myoko Tourism</td></tr>
-            <tr><td>JR Pass post-1-Oct-2026 prices</td><td class="num">1 Oct 2026</td><td><a href="https://japanrailpass.net/en/purchase/price/" target="_blank" rel="noopener">japanrailpass.net</a></td></tr>
-            <tr><td>Bataleon 2027 official retail prices on the brand site</td><td class="num">Sep–Oct 2026</td><td><a href="https://bataleon.com/" target="_blank" rel="noopener">bataleon.com</a></td></tr>
+            <tr><td>大人（中學生以上）</td><td>¥77,000</td><td><strong>¥68,000</strong></td></tr>
+            <tr><td>長者（55 歲以上）</td><td>¥70,000</td><td>¥62,000</td></tr>
+            <tr><td>小學生（6–12 歲）</td><td>¥36,500</td><td>¥32,500</td></tr>
+            <tr><td>幼童（5 歲以下）</td><td>¥9,000</td><td>¥8,000</td></tr>
           </tbody>
-        </table>
+        </table></div>
+        <p>另有一個「斑尾全山 + 焼額山 + 奧志賀」加大版：大人正價 ¥95,000／早割 ¥85,000。這個版本涵蓋 <span class="en">Shiga Kogen</span> 兩個區域，日後如果把行程改成妙高＋志賀兩地才值得再看。</p>
+
+        <h4 class="blk"><svg class="ic"><use href="#i-money"/></svg>NAGANO 7 Powder Dream Pass</h4>
+        <p>長野北部七個雪場共通季票：<span class="en">Shiga Kogen</span>、<span class="en">Nozawa Onsen</span>、<span class="en">Madarao</span>、<span class="en">Ryuoo</span>、<span class="en">Tangram</span>、<span class="en">Togakushi</span>、<span class="en">Snow Resort Romance no Kamisama</span>（26/27 新加入）。</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>期別</th><th>發售期</th><th>大人</th><th>高中生以下</th></tr></thead>
+          <tbody>
+            <tr><td>超早割</td><td>10月1日–10月31日（網上）</td><td>¥140,000</td><td>¥110,000</td></tr>
+            <tr><td>早割</td><td>11月1日–11月30日（網上）</td><td>¥150,000</td><td>¥115,000</td></tr>
+            <tr><td>正價</td><td>12月1日–1月31日</td><td>¥160,000</td><td>¥120,000</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small muted">選銀行轉帳可減 ¥2,000（僅超早割及早割期）。妙高地區的雪場<strong>不在</strong>這個通行證範圍內。</p>
+
+        <div class="note note-ok">
+          <svg class="ic"><use href="#i-scale"/></svg>
+          <div>
+            <p><strong>結論：兩個都跳過。</strong>4 日滑雪散買日票約 ¥27,000–32,000／人。最便宜的季票方案（<span class="en">Madarao</span> 早割 ¥68,000）也要滑到 9–10 日才回本，而 <span class="en">NAGANO 7</span> 要 20 日以上。</p>
+            <p>不過 <span class="en">NAGANO 7</span> 這條消息有另一重意義：它證明 <span class="en">Shiga Kogen</span> 與 <span class="en">Madarao／Tangram</span> 屬同一票務生態。如果日後想把「妙高 vs 志賀」的取捨改成兩地都去，這個通行證就要重新計。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-alert"/></svg>Mt Myoko 官方票務店仍然空白<span class="badge b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p>妙高地區的官方共通票網店（<span class="en">Mt Myoko</span> 全山票）今日仍然<strong>零產品上架</strong>，26/27 尚未開賣。</p>
+        <dl class="kv" style="margin-bottom:16px">
+          <dt><svg class="ic"><use href="#i-clock"/></svg>歷史規律</dt><dd>約 10 月開賣，早鳥截止日 11月30日</dd>
+          <dt><svg class="ic"><use href="#i-money"/></svg>25/26 參考價</dt><dd><span class="en">All Mountain</span> 早鳥 ¥95,000／正價 ¥115,000</dd>
+        </dl>
+        <p>同樣結論：對 4 日行程不划算。列在這裏只為追蹤 26/27 是否有新的<strong>短期共通券</strong>（例如 3 日或 5 日券），那種才有機會比散買便宜。</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-plane"/></svg>Ikon Pass 與 Mountain Collective<span class="badge b-none">無變化</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <ul class="clean">
+          <li><strong><span class="en">Ikon Pass</span> 26/27 已開賣</strong>，包含 <span class="en">Myoko Suginohara</span>（7 日）及 <span class="en">Lotte Arai</span>。<span class="en">Base Pass</span> 5 日版本 US$1,019 起，全 <span class="en">Ikon</span> US$1,449 起。</li>
+          <li><strong><span class="en">Mountain Collective</span> 26/27 的日本目的地只有 <span class="en">Niseko</span></strong>，與妙高無關，可以完全不理。</li>
+        </ul>
+        <div class="note note-ok"><svg class="ic"><use href="#i-check"/></svg><p><strong>結論不變：不買任何跨國大通行證。</strong>US$1,019 折合約 ¥150,000 以上，遠超我們 4 日的散票成本，而且我們只滑一個地區。</p></div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ======================== TRAVEL & LOGISTICS ======================== -->
+<section class="section" id="travel">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-train"/></svg></span><span class="section-num">04</span>交通與住宿物流</h2>
+    <p class="section-sub">住宿是整個行程唯一真正緊急的一項。交通有一個 10月1日的加價期限要留意。</p>
+  </div>
+  <div class="toolbar"><button class="btn-ghost" data-toggle-all="travel"><svg class="ic ic-sm"><use href="#i-expand"/></svg><span>全部展開</span></button></div>
+  <div class="section-body">
+
+    <div class="fig-pair">
+      <figure class="fig">
+        <img src="assets/img/travel-rail.jpg" alt="日本新幹線列車停靠雪中月台">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>Tokyo → Joetsu-Myoko 新幹線段示意。AI 生成圖。</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/img/accommodation.jpg" alt="雪場旅館房間望向雪山的窗景">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>妙高溫泉旅館典型房型示意。AI 生成圖。</figcaption>
+      </figure>
+    </div>
+
+    <details class="acc" open>
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-bed"/></svg>住宿：本週要下單<span class="badge b-urgent"><svg class="ic"><use href="#i-alert"/></svg>緊急</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p class="lede">1月中下旬是妙高最旺的檔期。距出發 148 天，好房、可取消房、家庭房會由現在起逐步消失，而不是到 12 月才突然滿。</p>
+        <div class="card-grid cols-2">
+          <div class="dcard">
+            <div class="dcard-head"><h5>Akakura Kanko Hotel</h5><span class="badge badge-flat b-watch">首選 A</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-mountain"/></svg>位置</dt><dd>山腰，可 ski-in／ski-out</dd>
+              <dt><svg class="ic"><use href="#i-cap"/></svg>英語</dt><dd>較強，外國客多</dd>
+              <dt><svg class="ic"><use href="#i-money"/></svg>2027年1月價</dt><dd class="muted">未有實際報價</dd>
+            </dl>
+            <p class="fit">優點：早上不用搭車，對初學者省很多體力。缺點：晚餐選擇少，離溫泉街要接駁。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Alpen Blick Resort（Ikenotaira）</h5><span class="badge badge-flat b-watch">首選 B</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-mountain"/></svg>位置</dt><dd>緊貼 <span class="en">Ikenotaira</span> 緩坡大道</dd>
+              <dt><svg class="ic"><use href="#i-snow"/></svg>地形</dt><dd>3 km 緩坡、最寬 450 m — 七場中最適合我們</dd>
+              <dt><svg class="ic"><use href="#i-money"/></svg>2027年1月價</dt><dd class="muted">未有實際報價</dd>
+            </dl>
+            <p class="fit">優點：地形最配合現時水平，練習成本最低。缺點：夜生活與餐廳選擇比 <span class="en">Akakura</span> 少。</p>
+          </div>
+        </div>
+        <div class="note note-warn">
+          <svg class="ic"><use href="#i-alert"/></svg>
+          <div>
+            <p><strong>建議動作（本週）：</strong>在 <span class="en">Booking.com</span> 或旅館官網訂一間<strong>可免費取消</strong>的房，先鎖定日期。之後有更好選擇再改，成本是零。</p>
+            <p>現在不下單、等到有「最佳價」才訂，1 月旺季的實際結果通常是價格更高或只剩差房。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-train"/></svg>Tokyo → Myoko Kogen 路線<span class="badge b-ok"><svg class="ic"><use href="#i-check"/></svg>已確認</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <ol class="clean">
+          <li><strong><span class="en">Tokyo</span> → <span class="en">Joetsu-Myoko</span></strong>：北陸新幹線 <span class="en">Hakutaka</span>，約 1小時50分–2小時</li>
+          <li><strong><span class="en">Joetsu-Myoko</span> → <span class="en">Myoko Kogen</span></strong>：<span class="en">Echigo Tokimeki Railway Myoko Haneuma Line</span>，約 20 分鐘</li>
+          <li><strong><span class="en">Myoko Kogen</span> 站 → 旅館</strong>：各區接駁巴士或的士，5–20 分鐘</li>
+        </ol>
+        <p>全程門到門約 <strong>2小時20分至2小時30分</strong>，加轉車緩衝實際計 3 小時較安全。帶雪具的話，轉車時間要多留 10 分鐘。</p>
+        <div class="note note-flag">
+          <svg class="ic"><use href="#i-alert"/></svg>
+          <div>
+            <p><strong>10月1日：JR Pass 換票證（Exchange Order）價格調整。</strong>如果打算用 <span class="en">JR Pass</span>，10月1日前後的價差要自己核對。</p>
+            <p>坦白說：這條路線來回只用兩次新幹線，<span class="en">JR Pass</span> 大機率不划算，散買指定席更便宜。但我暫時<strong>未能取得 <span class="en">Tokyo</span>–<span class="en">Joetsu-Myoko</span> 的實際票價</strong>（官方頁面以圖片顯示價格），所以未能給你確切數字比較。這一項已列入行動清單。</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-phone"/></svg>Akakura Onsen 接駁巴士預約暫停<span class="badge b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p>官網公告提到接駁巴士預約<strong>一時休止</strong>（暫時停止）。以 8 月而言這屬淡季正常安排，未必與網站入侵事件有關。</p>
+        <p>對我們沒有即時影響 — 1 月的接駁通常在 11–12 月才開放預約。但如果最後決定住 <span class="en">Akakura Onsen</span> 區，這一項要在 11 月重新核對。</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- =========================== MOUNTAIN MAPS ========================== -->
+<section class="section" id="maps">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-map"/></svg></span><span class="section-num">05</span>雪場地圖</h2>
+    <p class="section-sub">今日從官方網站取得 7 個雪場中的 6 份地圖檔，已存入 Google Drive 的 <code>images/maps/</code>。全部地圖的季度標示都要留意 — 見下方說明。</p>
+  </div>
+  <div class="section-body">
+
+    <div class="note note-flag">
+      <svg class="ic"><use href="#i-alert"/></svg>
+      <div>
+        <p><strong>全部 7 份地圖現時都標記為「需核對」。</strong>原因：檔案本身沒有印上 26/27 季度，或檔名／頁面資料仍是 2025-26。日本雪場慣例是在 11–12 月才換上新季地圖，所以現在拿到的都是上一季版本。</p>
+        <p>雪道格局年復年變化很小，用來規劃「哪條雪道適合我們」完全夠用。但纜車營運範圍與雪道開放狀況要以 12 月的新版為準。</p>
       </div>
     </div>
-  </section>
 
-  <!-- ============ SOURCES ============ -->
-  <section id="sources">
-    <div class="card">
-      <h2><span class="num">09</span> Source &amp; Confidence Notes</h2>
-      <p class="sec-note">All sources checked 22 August 2026. Confidence reflects how directly the source states the value, not how much I like the answer.</p>
+    <div class="map-grid">
 
-      <ul class="sources">
-        <li><a href="https://www.princehotels.co.jp/ski/myoko/winter/" target="_blank" rel="noopener">Prince Hotels — Myoko Suginohara</a> <span class="conf c-high">High</span> <span class="meta">First-party operator; 26/27 dates quoted verbatim and flagged provisional by the operator itself.</span></li>
-        <li><a href="https://mountmyoko.axess.shop/en/Products/Tickets" target="_blank" rel="noopener">Mt Myoko official ticket shop</a> <span class="conf c-high">High</span> <span class="meta">First-party seller; an empty product list is direct evidence nothing is on sale.</span></li>
-        <li><a href="https://akakura-ski.com/" target="_blank" rel="noopener">Akakura Onsen official</a> <span class="conf c-high">High</span> <span class="meta">Page carries its own update date of 2 Apr 2026. High for the absence of 26/27 info and for 25/26 prices.</span></li>
-        <li><a href="https://akr-ski.com/" target="_blank" rel="noopener">Akakura Kanko official</a> <span class="conf c-med">Mixed</span> <span class="meta">High for absence of winter info; low for pricing, since none is published at all.</span></li>
-        <li><a href="https://www.ikenotaira.jp/huyu.php" target="_blank" rel="noopener">Ikenotaira Alpen Blick</a> <span class="conf c-med">Med-High</span> <span class="meta">First-party terrain and price detail; year labelling on the page is not always explicit.</span></li>
-        <li><a href="http://sekionsen.jp/" target="_blank" rel="noopener">Seki Onsen official</a> <span class="conf c-med">Mixed</span> <span class="meta">High for the closure notice; low for anything forward-looking — the site is minimal.</span></li>
-        <li><a href="https://www.lottehotel.com/arai-resort/ja.html" target="_blank" rel="noopener">Lotte / Arai Mountain Resort</a> <span class="conf c-med">Medium</span> <span class="meta">First-party but 26/27 content absent; lift prices came from a partner school page labelled to a prior season.</span></li>
-        <li><a href="https://www.ikonpass.com/en/destinations/myoko-suginohara-ski-resort" target="_blank" rel="noopener">Ikon Pass — destinations &amp; shop</a> <span class="conf c-high">High</span> <span class="meta">First-party live 26/27 commerce; day allocations and USD prices read directly from the pages.</span></li>
-        <li><a href="https://mountaincollective.com/" target="_blank" rel="noopener">Mountain Collective</a> <span class="conf c-high">High</span> <span class="meta">First-party; 26/27 on-sale banner and price tiers read directly. Japan = Niseko only.</span></li>
-        <li><a href="https://japowproject.com/en/tickets/season-passes/mt-myoko" target="_blank" rel="noopener">Japow Project — Mt Myoko pass prices</a> <span class="conf c-med">Medium</span> <span class="meta">Reseller-style site; pages are headed 2026/27 while carrying 25/26 figures. Do not quote as 26/27.</span></li>
-        <li><a href="https://escapemyoko.com/myoko-snowboard-lessons/" target="_blank" rel="noopener">Escape Myoko</a> <span class="conf c-high">High</span> <span class="meta">First-party school, page dated 13 Jul 2026, prices explicitly headed "Lesson Pricing 26/27".</span></li>
-        <li><a href="https://myokosnowsports.com/akakura/snowsports-school/" target="_blank" rel="noopener">Myoko Snowsports</a> <span class="conf c-med">Medium</span> <span class="meta">First-party but stale — the Suginohara page still advertises 2025-2026 bookings as open.</span></li>
-        <li><a href="https://gomyoko.com/lessons/" target="_blank" rel="noopener">Canyons Myoko / Go Myoko</a> <span class="conf c-low">Low-Med</span> <span class="meta">Prices published without a season label; likely 2023/24. Indicative only.</span></li>
-        <li><a href="http://yodelsnow.com/lessonmenu.html" target="_blank" rel="noopener">Yodel Snow School</a> <span class="conf c-med">Medium</span> <span class="meta">Detailed first-party price list, but no season label anywhere on the page.</span></li>
-        <li><a href="https://myokotourism.com/winter-bus-service/" target="_blank" rel="noopener">Myoko Tourism — winter bus service</a> <span class="conf c-med">Med-High</span> <span class="meta">Official tourism body, reliable on pattern and price, but dates are printed without years so they cannot be read as 26/27.</span></li>
-        <li><a href="https://myoko.jp/tokyo-myoko-shuttle/" target="_blank" rel="noopener">Myoko Snow Transfer</a> <span class="conf c-med">Med-High</span> <span class="meta">Operator site with an explicit 25/26 date range; 26/27 simply absent.</span></li>
-        <li><a href="https://www.myokoshuttle.com/" target="_blank" rel="noopener">MKK Shuttle</a> <span class="conf c-low">Low-Med</span> <span class="meta">Operator site, but season-agnostic and vague on dates and most prices.</span></li>
-        <li><a href="https://www.echigo-tokimeki.co.jp/timetable/" target="_blank" rel="noopener">Echigo Tokimeki Railway</a> <span class="conf c-med">Mixed</span> <span class="meta">High for the 14 Mar 2026 revision date; fares themselves unverified — published only as image-only PDFs.</span></li>
-        <li><a href="https://www.jreast.co.jp/press/2025/20251212_ho02.pdf" target="_blank" rel="noopener">JR East — Hokuriku Shinkansen revision release</a> <span class="conf c-high">High</span> <span class="meta">Official operator press release for the 14 Mar 2026 revision.</span></li>
-        <li><a href="https://japanrailpass.net/en/purchase/price/" target="_blank" rel="noopener">JAPAN RAIL PASS — types and prices</a> <span class="conf c-med">Mixed</span> <span class="meta">High for the existence of a 1 Oct 2026 price change; low for figures — the tables render as images and could not be extracted.</span></li>
-        <li><a href="https://snowboardingprofiles.com/2027-bataleon-snowboards-lineup-overview" target="_blank" rel="noopener">Snowboarding Profiles — 2027 Bataleon lineup</a> <span class="conf c-med">Med-High</span> <span class="meta">Detailed catalog-derived specs dated 13 Jul 2026, corroborated by evo and by live 2027 retail SKUs.</span></li>
-        <li><a href="https://www.evo.com/blogs/reviews/snowboard-gear-preview" target="_blank" rel="noopener">evo — 26/27 gear preview &amp; Bataleon retail</a> <span class="conf c-high">High</span> <span class="meta">Major retailer with 2027 SKUs and prices actually listed for sale.</span></li>
-        <li><a href="https://bataleon.com/products/bataleon-2627-mojo-mens-snowboard" target="_blank" rel="noopener">Bataleon official — 2027 Mojo</a> <span class="conf c-med">Medium</span> <span class="meta">First-party, but the page rendered no price, sizes or ship date.</span></li>
-        <li><a href="https://whitelines.com/snowboard-gear/reviews/best-buys/best-snowboard-helmets.html" target="_blank" rel="noopener">Whitelines — best snowboard helmets</a> <span class="conf c-med">Medium</span> <span class="meta">Reputable reviewer, but the roundup is the 2025-2026 edition; treat prices as current street rather than 26/27 MSRP.</span></li>
-        <li><a href="https://investor.gopro.com/press-releases/press-release-details/2026/GoPro-Elevates-Award-Winning-MAX2-360-Camera-Image-Quality-with-Powerful-New-Firmware-Update/default.aspx" target="_blank" rel="noopener">GoPro investor relations — MAX2</a> <span class="conf c-high">High</span> <span class="meta">First-party; the $299.99 price is explicitly flagged by GoPro as a limited-time promotion.</span></li>
-        <li><a href="https://store.insta360.com/product/x5" target="_blank" rel="noopener">Insta360 official store — X5</a> <span class="conf c-high">High</span> <span class="meta">First-party pricing.</span></li>
-        <li><a href="https://www.fortress.com.hk/en/product/osmo-action-6/p/BP_14022294?variant=14022307" target="_blank" rel="noopener">Fortress Hong Kong — DJI Osmo Action 6</a> <span class="conf c-med">Med-High</span> <span class="meta">First-party HK retail price, useful because you buy locally.</span></li>
-        <li><a href="https://www.ptoski.com/learn/end-of-season-ski-sale-guide" target="_blank" rel="noopener">PTO Ski — gear retail calendar</a> <span class="conf c-med">Medium</span> <span class="meta">Retailer commentary, but the Aug–Oct arrival and Mar–May clearance pattern is corroborated across many independent sources.</span></li>
-      </ul>
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-shield"/></svg><span>官網暫停瀏覽<br>未能取得地圖檔</span></div></div>
+        <div class="map-meta">
+          <h5>Akakura Onsen</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line">官網因入侵事件暫停，未有可取得的地圖頁或檔案。待網站復原後重取。</p>
+          <div class="map-actions"><span class="btn-link disabled"><svg class="ic"><use href="#i-download"/></svg>暫無檔案</span></div>
+        </div>
+      </article>
 
-      <div class="callout stop">
-        <b>Explicit gaps in today's briefing.</b> No Tokyo → Myoko rail fare and no JR Pass figures (both published only as image-only PDFs). No verified January 2027 accommodation availability or rates. No direct fetch of the Alpen Blick site — its "not announced" status is inferred. Epic Pass 26/27 Japan access unverified. Impact shorts, wrist guards, back protectors, heated gear, wearables and comms devices not researched. <strong>No snow conditions or snowfall data exist yet — it is August.</strong>
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-map"/></svg><span>已取得 WEBP<br>1300 × 1564</span></div></div>
+        <div class="map-meta">
+          <h5>Akakura Kanko</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line">官方 ゲレンデマップ 已下載。頁面營運面板仍為 25/26（2025年12月19日–2026年5月6日）。</p>
+          <div class="map-actions">
+            <a class="btn-link" href="https://akr-ski.com/slope/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>官方地圖頁</a>
+            <a class="btn-link" href="https://akr-ski.com/wp-content/themes/akakurakanko/images/slope-map.webp?01" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>原始檔</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-map"/></svg><span>已取得 WEBP<br>1358 × 1920</span></div></div>
+        <div class="map-meta">
+          <h5>Ikenotaira Onsen</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line">由 <span class="en">Alpen Blick</span> 官方發佈，檔名標示 2025-26。地圖藝術本身無印季度。</p>
+          <div class="map-actions">
+            <a class="btn-link" href="https://alpenblick-resort.com/ski" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>官方地圖頁</a>
+            <a class="btn-link" href="https://alpenblick-resort.com/wp-content/uploads/2026/02/SkiAreaMap_2025-26_JP.webp" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>原始檔</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-map"/></svg><span>已取得 PNG<br>790 × 809</span></div></div>
+        <div class="map-meta">
+          <h5>Myoko Suginohara</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line"><span class="en">Prince Hotels</span> 官方 coursemap 資產。無可見季度標示；頁面已公佈 26/27 開季日但營運列仍寫 25/26 已結束。</p>
+          <div class="map-actions">
+            <a class="btn-link" href="https://www.princehotels.co.jp/ski/myoko/winter/coursemap/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>官方地圖頁</a>
+            <a class="btn-link" href="https://www.princehotels.co.jp/image.jsp?id=498726" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>原始檔</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-map"/></svg><span>已取得 JPEG<br>680 × 354</span></div></div>
+        <div class="map-meta">
+          <h5>Seki Onsen</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line">官方 course map 底圖。舊式頁面把雪道名稱以 HTML 疊在圖上，所以沒有一張完整合成地圖。</p>
+          <div class="map-actions">
+            <a class="btn-link" href="http://sekionsen.jp/course.html" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>官方地圖頁</a>
+            <a class="btn-link" href="http://sekionsen.jp/course/images/map_photo_01.jpg" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>原始檔</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-file"/></svg><span>已取得 PDF<br>B4 單頁 · 3.7 MB</span></div></div>
+        <div class="map-meta">
+          <h5>Madarao Kogen</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line">官方 B4 單頁 PDF，檔名標示 2025-26。雪場已公佈 26/27 營業期，但可下載地圖仍是上一季檔案。</p>
+          <div class="map-actions">
+            <a class="btn-link" href="https://www.madarao.jp/ski/course" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>官方地圖頁</a>
+            <a class="btn-link" href="https://www.madarao.jp/system/wp-content/uploads/2025/09/map2025_2026_sizeB4_20250909.pdf" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>原始 PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="map-card">
+        <div class="map-thumb"><div class="map-ph"><svg class="ic"><use href="#i-map"/></svg><span>已取得 JPEG<br>1030 × 617</span></div></div>
+        <div class="map-meta">
+          <h5>Tangram Ski Circus</h5>
+          <p class="map-line"><span class="badge badge-flat b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span></p>
+          <p class="map-line">頁面主 ゲレンデマップ。網站同時保留 2026年3月的雪況資料，屬過渡狀態。</p>
+          <div class="map-actions">
+            <a class="btn-link" href="https://www.tangram.jp/ski/ski/map.php" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg>官方地圖頁</a>
+            <a class="btn-link" href="https://www.tangram.jp/ski/ski/images/map/map.jpg" target="_blank" rel="noopener"><svg class="ic"><use href="#i-file"/></svg>原始檔</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note">
+      <svg class="ic"><use href="#i-lock"/></svg>
+      <div>
+        <p><strong>為甚麼卡片內沒有直接顯示地圖圖片：</strong>這些地圖是各雪場的版權素材，而這個 GitHub repo 是公開的。原始檔已完整存入你的 <span class="en">Google Drive</span> <code>Myoko2027 Assets Folder/images/maps/</code>（私人），網頁只提供官方連結。</p>
+        <p>如果你想在網頁直接看到地圖縮圖，最乾淨的做法是把 repo 改為 private — 講一聲我就改，之後每日簡報都會直接嵌入地圖。</p>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
+<!-- =========================== TRAINING =============================== -->
+<section class="section" id="training">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-trend"/></svg></span><span class="section-num">06</span>訓練與技術進度</h2>
+    <p class="section-sub">距出發 148 天。這是能否在 4 日內真正享受妙高的最大變數 — 比任何裝備或票務都重要。</p>
+  </div>
+  <div class="section-body">
+
+    <div class="note note-flag">
+      <svg class="ic"><use href="#i-info"/></svg>
+      <div>
+        <p><strong>提醒：你未有提供最新訓練更新。</strong>現時的水平估算（初級／進步中）仍是沿用之前的資料。</p>
+        <p>下次上完雪或做完 dryland 訓練後，簡單講幾句就夠 — 例如「今日練了 30 分鐘 heel edge，右轉仍然會 catch edge」。我會據此更新水平估算、下階段訓練計劃，以及在妙高應該報甚麼級別的課。</p>
+      </div>
+    </div>
+
+    <div class="fig-pair">
+      <figure class="fig">
+        <img src="assets/img/lesson-coaching.jpg" alt="滑雪教練在緩坡上指導兩名初學者">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>妙高私人教學的典型情境：緩坡、一對二、慢速反覆練。AI 生成圖。</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/img/training.jpg" alt="單板滑雪者在寬闊緩坡上練習轉彎">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>目標畫面：在寬緩坡上連續、可控的 <span class="en">S-Turn</span>。AI 生成圖。</figcaption>
+      </figure>
+    </div>
+
+    <div class="card-grid cols-2">
+      <div class="dcard">
+        <div class="dcard-head"><h5>建議：現在到 12 月的重點</h5><span class="badge badge-flat b-watch">陸上訓練</span></div>
+        <ul class="clean mb-0">
+          <li><strong>單腳平衡</strong> — 每邊 60 秒 × 3 組，閉眼加難度。直接對應 <span class="en">edge control</span>。</li>
+          <li><strong>深蹲與側向弓步</strong> — 4 日連續滑雪最累的是大腿與臀部，不是心肺。</li>
+          <li><strong>足踝活動度</strong> — 決定你能不能穩定壓 <span class="en">toe edge</span>。每日 5 分鐘。</li>
+          <li><strong>核心抗旋轉</strong> — <span class="en">Pallof press</span> 或側平板。上身穩定，轉彎才乾淨。</li>
+        </ul>
+      </div>
+      <div class="dcard">
+        <div class="dcard-head"><h5>妙高課程建議</h5><span class="badge badge-flat b-watch">初級進階 / 私人課</span></div>
+        <p class="tight">以現時水平，建議第 1 日<strong>報半日私人課</strong>（兩人共用一位教練），把 <span class="en">S-Turn</span> 與速度控制修正好，之後 3 日自己練。</p>
+        <p class="tight">不建議報團體課 — 團體課節奏由最慢的人決定，4 日行程浪費不起。</p>
+        <p class="fit">現時唯一公佈 26/27 價格的學校是 <span class="en">Escape Myoko</span>：每位教練每節 ¥30,000–59,000。以兩人共用計，半日私人課約 ¥15,000／人。</p>
+      </div>
+    </div>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-cap"/></svg>妙高滑雪學校比較<svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>學校</th><th>26/27 價格</th><th>英語</th><th>備註</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Escape Myoko</strong></td><td>¥30,000–59,000／教練／節</td><td>強</td><td>唯一已公佈 26/27 價格</td></tr>
+            <tr><td><strong>Myoko Snowsports</strong></td><td class="muted">未公佈</td><td>強</td><td>有 <span class="en">Super 6</span> 小組課，位於 <span class="en">Akakura</span></td></tr>
+            <tr><td><strong>Canyons / Go Myoko</strong></td><td class="muted">未公佈</td><td>強</td><td>外國人經營，課程選擇多</td></tr>
+            <tr><td><strong>Yodel Snow</strong></td><td class="muted">未公佈</td><td>中等</td><td>日式經營，價格通常較低</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small muted mb-0">私人課旺季（1 月）通常在 11–12 月就滿。決定住宿區之後就可以開始問價，不用等。</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ============================== GEAR ================================ -->
+<section class="section" id="gear">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-package"/></svg></span><span class="section-num">07</span>裝備與 gadget 市場觀察</h2>
+    <p class="section-sub">2027 年款雪板陣容已陸續公佈。你現時計劃的配置不需要改。</p>
+  </div>
+  <div class="section-body">
+
+    <div class="fig-pair">
+      <figure class="fig">
+        <img src="assets/img/gear.jpg" alt="雪板、固定器與雪靴平鋪擺放">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>初學者進階配置示意。AI 生成圖。</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/img/boot-fitting.jpg" alt="雪靴店內量度腳型">
+        <figcaption><svg class="ic"><use href="#i-image"/></svg>Boot fitting 是本月最應該做的一件裝備事。AI 生成圖。</figcaption>
+      </figure>
+    </div>
+
+    <details class="acc" open>
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-snow"/></svg>Bataleon 2027 陣容：Mojo 全新登場<span class="badge b-watch"><svg class="ic"><use href="#i-eye"/></svg>觀察</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <div class="card-grid cols-2">
+          <div class="dcard">
+            <div class="dcard-head"><h5>Bataleon Mojo（全新）</h5><span class="badge badge-flat b-ok">值得考慮</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-gauge"/></svg>硬度</dt><dd>3／10 — 軟，適合初學至初級進階</dd>
+              <dt><svg class="ic"><use href="#i-mountain"/></svg>定位</dt><dd>專為初學者設計的 all-mountain 板</dd>
+              <dt><svg class="ic"><use href="#i-snow"/></svg>尺碼</dt><dd>尺碼表包含 157，正合你計劃的長度</dd>
+            </dl>
+            <p class="fit">女款 <span class="en">Women's Mojo</span> 亦是全新型號，US$459.95。</p>
+          </div>
+          <div class="dcard">
+            <div class="dcard-head"><h5>Blaster AW / FASE</h5><span class="badge badge-flat b-none">無變化</span></div>
+            <dl class="kv">
+              <dt><svg class="ic"><use href="#i-package"/></svg>2027 年款</dt><dd>與上一代基本無變化</dd>
+              <dt><svg class="ic"><use href="#i-boot"/></svg>尺碼注意</dt><dd>UK 9.5 正好落在 <span class="en">FASE</span> 尺碼分界點</dd>
+            </dl>
+            <p class="fit">因為無改版，等到 11–12 月的季末／季初促銷再買，價格會更好。</p>
+          </div>
+        </div>
+        <div class="note note-ok">
+          <svg class="ic"><use href="#i-check"/></svg>
+          <p><strong>結論：你計劃的配置（<span class="en">Bataleon Mojo 157</span> + <span class="en">FASE Blaster</span>）不需要改。</strong>2027 年款反而讓 <span class="en">Mojo</span> 成為更明確的初學者選擇。現在不用急買 — 先做 boot fitting。</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-boot"/></svg>優先做：boot fitting<span class="badge b-import"><svg class="ic"><use href="#i-alert"/></svg>重要</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p class="lede">雪靴是整套裝備裏唯一<strong>不能靠讀評測解決</strong>的一件。而它對進度的影響比雪板大得多。</p>
+        <ul class="clean">
+          <li><strong>先量腳，再決定板與固定器尺碼。</strong>你的預計尺碼 UK 9–9.5，而 9.5 正好在 <span class="en">FASE</span> 的分界點 — 量清楚才知道要哪一個。</li>
+          <li><strong>在香港找店試穿。</strong>不要等到妙高才租，租來的靴鬆緊不合會直接拖慢學習。</li>
+          <li><strong>兩人一起去。</strong>太太的腳型與尺碼同樣要量。</li>
+        </ul>
+        <p class="mb-0">這一項不用等任何消息，本月就可以做完。</p>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary><svg class="ic ic-sm sum-ic"><use href="#i-shield"/></svg>未研究的項目 — 坦白說明<span class="badge b-check"><svg class="ic"><use href="#i-eye"/></svg>需核對</span><svg class="ic ic-sm chev"><use href="#i-chevron"/></svg></summary>
+      <div class="acc-body">
+        <p>以下項目我今日<strong>未有做研究</strong>，所以沒有給你建議。列出來是為了你知道缺口在哪：</p>
+        <ul class="clean mb-0">
+          <li>防撞短褲、護腕、背部護具（初學者最常受傷的三個部位）</li>
+          <li>發熱手套與發熱鞋墊</li>
+          <li>穿戴裝置與雪場通訊器材</li>
+          <li>行動相機（<span class="en">GoPro</span>／<span class="en">Insta360</span>）2027 年款</li>
+        </ul>
+        <p class="small muted" style="margin-top:14px;margin-bottom:0">如果你想我某一項先做，講一聲，下一日的簡報就會加進去。</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ============================= ACTIONS ============================== -->
+<section class="section" id="actions">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-checks"/></svg></span><span class="section-num">08</span>行動清單</h2>
+    <p class="section-sub">勾選狀態會存在你的瀏覽器，明日的簡報仍會記得。</p>
+  </div>
+  <div class="section-body">
+    <div class="progress-row">
+      <div class="progress-track"><div class="progress-fill" id="pfill"></div></div>
+      <span class="progress-label" id="plabel">0 / 8 已完成</span>
+      <button class="btn-reset" id="preset"><svg class="ic ic-sm"><use href="#i-refresh"/></svg>重設</button>
+    </div>
+
+    <ul class="checklist" id="checklist">
+      <li><input type="checkbox" id="a1" data-k="a1"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-alert"/></svg>本週 · 緊急</div>
+        <div class="chk-text"><strong>訂一間可免費取消的房</strong>，鎖定 2027年1月17–25日。<span class="en">Akakura Kanko Hotel</span> 或 <span class="en">Alpen Blick</span> 二選一。這是整個行程唯一真正有時間壓力的事。</div>
+      </div></li>
+      <li><input type="checkbox" id="a2" data-k="a2"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-clock"/></svg>9月1日</div>
+        <div class="chk-text">核對 <strong><span class="en">Akakura Onsen</span> 早割券</strong>的券種與價格。如果有早割 1 日券或回數券就買 4 張；如果只有季票就跳過。經 <span class="en">Rakuten Ticket</span>／<span class="en">Asoview</span>／<span class="en">Pass Market</span> 購買，不要用官網。</div>
+      </div></li>
+      <li><input type="checkbox" id="a3" data-k="a3"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-boot"/></svg>本月</div>
+        <div class="chk-text">兩人一起去做 <strong>boot fitting</strong>，量準腳型與尺碼。這件事不用等任何消息，而且會決定雪板與固定器尺碼。</div>
+      </div></li>
+      <li><input type="checkbox" id="a4" data-k="a4"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-scale"/></svg>需要你決定</div>
+        <div class="chk-text"><strong>妙高 vs 志賀高原，要不要重新想一次？</strong>你之前的筆記把 <span class="en">Shiga Kogen</span> 排在妙高之前（分段緩坡進度更好）。今日的 <span class="en">NAGANO 7</span> 消息顯示志賀與 <span class="en">Madarao／Tangram</span> 同屬一個票務生態。講一聲要不要我做一份正式比較。</div>
+      </div></li>
+      <li><input type="checkbox" id="a5" data-k="a5"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-trend"/></svg>下次練習後</div>
+        <div class="chk-text">給我一個<strong>訓練更新</strong>，一兩句就夠。我會更新水平估算、下階段計劃，以及妙高應報甚麼級別的課。</div>
+      </div></li>
+      <li><input type="checkbox" id="a6" data-k="a6"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-money"/></svg>10月1日前</div>
+        <div class="chk-text">確認 <strong><span class="en">JR Pass</span> 換票證加價</strong>對我們有沒有影響。大機率不划算（只坐兩程新幹線），但我需要 <span class="en">Tokyo</span>–<span class="en">Joetsu-Myoko</span> 的實際票價才能給你確切數字。</div>
+      </div></li>
+      <li><input type="checkbox" id="a7" data-k="a7"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-cap"/></svg>訂好住宿後</div>
+        <div class="chk-text">向 <strong><span class="en">Escape Myoko</span></strong> 及 <strong><span class="en">Myoko Snowsports</span></strong> 詢問 1 月中的半日私人課檔期。1 月旺季的私人課通常 11–12 月就滿。</div>
+      </div></li>
+      <li><input type="checkbox" id="a8" data-k="a8"><div class="chk-body">
+        <div class="chk-due"><svg class="ic"><use href="#i-lock"/></svg>由你決定</div>
+        <div class="chk-text"><strong>要不要把 <span class="en">Myoko2027</span> repo 改為 private？</strong>改了之後，雪場地圖與外部圖片就可以直接嵌在網頁上看，不用逐個開官方連結。</div>
+      </div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ WATCHLIST ============================= -->
+<section class="section" id="watch">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-eye"/></svg></span><span class="section-num">09</span>觀察清單</h2>
+    <p class="section-sub">未到行動時機，但每日會自動追蹤的項目。</p>
+  </div>
+  <div class="section-body">
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>項目</th><th>現況</th><th>要等甚麼</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Akakura Onsen 官網</strong></td><td>因入侵事件暫停瀏覽</td><td>復原公告 · 每日追</td></tr>
+        <tr><td><strong>Akakura Onsen 早割券內容</strong></td><td>只知 9月1日開售</td><td>券種與價格 · 9月1日</td></tr>
+        <tr><td><strong>Mt Myoko 全山共通票</strong></td><td>官方票務店零產品</td><td>26/27 上架 · 約 10 月</td></tr>
+        <tr><td><strong>其餘 5 個雪場 26/27 日期</strong></td><td>未公佈</td><td>官方公告 · 10–11 月</td></tr>
+        <tr><td><strong>2027年1月住宿實價</strong></td><td>未有任何實際報價</td><td>訂房平台開放 1 月房價</td></tr>
+        <tr><td><strong>Tokyo–Joetsu-Myoko 票價</strong></td><td>官方以圖片顯示，未能讀取</td><td>需人手核對或用訂票平台</td></tr>
+        <tr><td><strong>JR Pass 換票證新價</strong></td><td>10月1日調整</td><td>新價表 · 10月1日</td></tr>
+        <tr><td><strong>26/27 雪場地圖新版</strong></td><td>7 份全部標「需核對」</td><td>新季地圖上載 · 11–12 月</td></tr>
+        <tr><td><strong>滑雪學校 26/27 價格</strong></td><td>只有 Escape Myoko 公佈</td><td>其餘 3 間公佈 · 9–10 月</td></tr>
+        <tr><td><strong>妙高積雪數據</strong></td><td>8 月，無數據</td><td>開季後 · 12 月起</td></tr>
+        <tr><td><strong>Epic Pass 日本目的地</strong></td><td>未核實</td><td>需要時再查</td></tr>
+        <tr><td><strong>護具與發熱裝備</strong></td><td>未研究</td><td>你指示後開始</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ============================= SOURCES ============================== -->
+<section class="section" id="sources">
+  <div class="section-head">
+    <h2 class="section-title"><span class="section-icon"><svg class="ic"><use href="#i-book"/></svg></span><span class="section-num">10</span>來源與可信度</h2>
+    <p class="section-sub">全部於 <strong>2026年8月22日</strong>直接由官方網站讀取。<span class="c-high conf">高</span>＝官方明文；<span class="c-mid conf">中</span>＝官方但過渡／不完整；<span class="c-low conf">低</span>＝未能核實。</p>
+  </div>
+  <div class="section-body">
+    <div class="srcs">
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://akakura-ski.com/" target="_blank" rel="noopener">Akakura Onsen 官方網站</a><span class="src-why">入侵公告、9月1日早割券開售、聯絡電話</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://www.madarao.jp/11200" target="_blank" rel="noopener">Madarao 26/27 營業預定</a><span class="src-why">12月12日–3月28日、各纜車營業時間</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://www.madarao.jp/9290" target="_blank" rel="noopener">Madarao 早割季票</a><span class="src-why">Mountain Pass 全部券種價格、早割期</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://powderdreampass.com/" target="_blank" rel="noopener">NAGANO 7 Powder Dream Pass</a><span class="src-why">三個價格期別、7 個雪場名單</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://www.princehotels.co.jp/ski/myoko/winter/" target="_blank" rel="noopener">Prince Hotels · Myoko Suginohara</a><span class="src-why">26/27 暫定營業期</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://mountmyoko.axess.shop/en/Products/Tickets" target="_blank" rel="noopener">Mt Myoko 官方票務店</a><span class="src-why">確認 26/27 未上架（零產品）</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://www.ikonpass.com/en/destinations/myoko-suginohara-ski-resort" target="_blank" rel="noopener">Ikon Pass · Suginohara</a><span class="src-why">26/27 日數與價格</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://mountaincollective.com/" target="_blank" rel="noopener">Mountain Collective</a><span class="src-why">26/27 日本只有 Niseko</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://escapemyoko.com/myoko-snowboard-lessons/" target="_blank" rel="noopener">Escape Myoko</a><span class="src-why">26/27 私人課價格範圍</span></div><span class="conf c-high">高</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://japanrailpass.net/en/purchase/price/" target="_blank" rel="noopener">JR Pass 官方價格頁</a><span class="src-why">10月1日換票證調價（數字為圖片，未能讀取）</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://akr-ski.com/slope/" target="_blank" rel="noopener">Akakura Kanko 雪道圖</a><span class="src-why">地圖檔、營運面板仍為 25/26</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://alpenblick-resort.com/ski" target="_blank" rel="noopener">Alpen Blick · Ikenotaira</a><span class="src-why">地圖檔（標示 2025-26）</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://www.tangram.jp/ski/ski/map.php" target="_blank" rel="noopener">Tangram 雪道圖</a><span class="src-why">地圖檔、過渡期內容</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="http://sekionsen.jp/course.html" target="_blank" rel="noopener">Seki Onsen 課程圖</a><span class="src-why">地圖底圖、25/26 已於 4月12日結束</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://snowboardingprofiles.com/2027-bataleon-snowboards-lineup-overview" target="_blank" rel="noopener">Snowboarding Profiles · Bataleon 2027</a><span class="src-why">Mojo 全新型號、硬度、尺碼、價格</span></div><span class="conf c-mid">中</span></div>
+      <div class="src"><svg class="ic"><use href="#i-link"/></svg><div class="src-main"><a href="https://www.ikenotaira.jp/huyu.php" target="_blank" rel="noopener">Ikenotaira 官方觀光頁</a><span class="src-why">3 km 緩坡、450 m 寬度</span></div><span class="conf c-mid">中</span></div>
+    </div>
+
+    <hr class="divider">
+
+    <h4 class="blk"><svg class="ic"><use href="#i-alert"/></svg>今日的資料缺口 — 坦白列出</h4>
+    <ul class="clean mb-0">
+      <li><strong>無 <span class="en">Tokyo</span>–<span class="en">Joetsu-Myoko</span> 實際票價。</strong>官方頁面以圖片顯示，無法讀取。</li>
+      <li><strong>無 <span class="en">JR Pass</span> 具體數字。</strong>同上，只知 10月1日調價這件事。</li>
+      <li><strong>無 2027年1月住宿實價。</strong>訂房平台尚未開放該檔期，或未能取得。</li>
+      <li><strong>無 <span class="en">Akakura Onsen</span> 地圖檔。</strong>官網暫停瀏覽。</li>
+      <li><strong>無積雪數據。</strong>現時 8 月，全部雪場休季。</li>
+      <li><strong><span class="en">Epic Pass</span> 日本目的地未核實。</strong></li>
+      <li><strong>護具、發熱裝備、穿戴裝置、通訊器材、行動相機未研究。</strong></li>
+    </ul>
+  </div>
+</section>
 
 </main>
 
+<button class="totop" id="totop" aria-label="返回頂部"><svg class="ic"><use href="#i-up"/></svg></button>
+
 <footer>
-  <p><strong>Myoko 2027 Daily Briefing · Briefing 001 · Saturday 22 August 2026</strong>, generated 12:27 HKT.</p>
-  <p>Archived copy: <a href="archive/2026-08-22.html">archive/2026-08-22.html</a> · Machine-readable: <a href="data/latest.json">data/latest.json</a></p>
-  <p>Assets stored in the Google Drive folder <em>Myoko2027 Assets Folder</em>. Images are AI-generated illustrations, not photographs of the resorts.</p>
-  <p>Prices in the 25/26 baseline columns are prior-season figures shown for planning reference only, not current offers. Verify anything you are about to pay for.</p>
+  <div class="wrap">
+    <p><strong>Myoko 2027 每日簡報</strong> · 2026年8月22日（星期六）· 香港時間</p>
+    <p>每日早上 8:00（<span class="en">Asia/Hong_Kong</span>）自動更新。<code>index.html</code> 每日覆寫，舊版存於 <code>archive/</code>。圖片與資料同步至 <span class="en">Google Drive</span> 的 <span class="en">Myoko2027 Assets Folder</span>。</p>
+    <p class="muted">所有資訊以官方網站為準，並會隨雪季推進而改變。決定前請自行再核對一次。頁內圖片除官方連結外，均為 AI 生成的示意圖，非實景照片。</p>
+  </div>
 </footer>
 
-<button class="totop" type="button" aria-label="Back to top">↑</button>
 <script src="script.js"></script>
 </body>
 </html>
