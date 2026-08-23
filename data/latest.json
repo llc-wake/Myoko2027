@@ -1,6 +1,6 @@
 {
   "date": "2026-08-23",
-  "version": "v5",
+  "version": "v7",
   "sections": [
     "01",
     "02",
@@ -10,9 +10,7 @@
     "06",
     "07"
   ],
-  "gear_items": 41,
-  "gear_images": 41,
-  "sources": 44,
+  "sources": 39,
   "fx": {
     "JPY_HKD": 0.0493,
     "USD_HKD": 7.8,
@@ -20,11 +18,13 @@
     "note": "Xe 2026-08-23 mid-market 0.04931509, recheck before payment"
   },
   "changes": [
-    "v7: sections 07 training / 08 gear / 09 gear watch / 10 packing / 11 actions removed on Lawrence's request",
-    "sources section renumbered 12 -> 07, so numbering runs 01-07 with no gap",
-    "sources table trimmed from 44 to 34 entries: gear brand and camera sources removed, trip-related sources kept",
-    "gear + packing to be rebuilt later as separate modules; data files kept (gear-watch.json, gear/archive, data/training)",
-    "earlier today: FX rechecked on Xe, Akakura early-bird 1 Sep countdown added, mobile/desktop overflow fixes"
+    "v7.1: new section 5.2 arrival plan (17-18 Jan 2027) added under 05 travel; old 5.2/5.3/5.4 renumbered to 5.3 Tokyo->Myoko / 5.4 hotel facilities / 5.5 local food",
+    "arrival plan verified against current (Aug 2026) official timetables: NO 22:30 Keisei Skyliner exists on Sat/holiday table - nearest 22:20->23:09, 22:40->23:28, last 23:00->23:48",
+    "Hokuriku Shinkansen Hakutaka 551 arrives Nagano 08:03 (not 08:06); Shinano Railway Kita-Shinano 09:23->Myoko-Kogen 10:08, fare Y850",
+    "80-minute wait at Nagano documented; alternative Kagayaki 501 (Ueno 06:22 -> Nagano 07:36 -> 07:45 -> Myoko-Kogen 08:31) recorded as accordion with 9-min transfer risk",
+    "Keisei-Ueno hotel still TBC - Lawrence will confirm; selection criteria (5-8 min walk to JR Ueno, late check-in after 23:30, elevator) noted on page",
+    "sources 34 -> 39: Keisei Skyliner tc timetable, JR East Hakutaka 551 stop list, JR East Nagano Kita-Shinano timetable, Shinano Railway timetable page, Ekitan Ueno->Nagano fares",
+    "added .sub-h CSS rule for sub-block headings"
   ],
   "archive": "archive/2026-08-23.html",
   "repo": "https://github.com/llc-wake/Myoko2027",
@@ -38,5 +38,21 @@
     "reader": "fetch_training.py",
     "records": 0
   },
-  "sources_total": 34
+  "sources_total": 39,
+  "arrival_plan": {
+    "2027-01-17": [
+      "20:20 NRT T1 landing",
+      "~22:20 or 22:40 Keisei Skyliner NRT T1 -> Keisei-Ueno (no 22:30 service)",
+      "~23:35 hotel check-in near Keisei-Ueno (TBC)"
+    ],
+    "2027-01-18": [
+      "06:10 walk Keisei-Ueno -> JR Ueno",
+      "06:34 Hakutaka 551 -> Nagano 08:03",
+      "09:23 Shinano Railway Kita-Shinano -> Myoko-Kogen 10:08",
+      "~10:20 Lime Resort free shuttle -> luggage drop"
+    ],
+    "cost_per_person_jpy": 11670,
+    "cost_two_people_jpy": 23340,
+    "status": "planned, rechecked daily; Jan 2027 timetable published around mid-Dec 2026"
+  }
 }

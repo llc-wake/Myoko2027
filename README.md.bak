@@ -30,7 +30,7 @@
 | 02 | 五日計劃 | `#plan` | Day 1–5 雪場安排與備案 |
 | 03 | 雪場 | `#resorts` | 各雪場初學者適合度、纜車、雪道 |
 | 04 | 山圖 / 雪道圖 | `#maps` | 4 張地圖（只放實際會去的雪場），縮圖 + lightbox |
-| 05 | 交通住宿 | `#travel` | 5.1 住宿基地 / **5.2 抵日首兩日行程 Arrival plan（17–18 Jan 2027）** / 5.3 Tokyo → Myoko 到達交通 / 5.4 酒店設施 / 5.5 區内飲食 |
+| 05 | 交通住宿 | `#travel` | 新幹線、接送巴士、Lime Resort |
 | 06 | 票券課程 | `#tickets` | 早鳥票、纜車票、英文教學課程 |
 | 07 | 資料來源 | `#sources` | 每條來源 + 核對日期 + 信心度 |
 
@@ -143,7 +143,7 @@ python3 build_index.py          # → myoko-repo/index.html
 | `b3.py` | §01 今日重點 — `.upd` 卡（變動／為何重要／下一步 三段式 + `.fchip` 數字 chip） |
 | `b4.py` | §02 五日計劃 — `<ol class="pl">` 逐日垂直時間線（`.pl-*`，唔可以用 `.tl-*`，會同 p4 的交通時間線撞名） |
 | `b5.py` | §03 雪場資料表（含繁中名 `.rname-zh`）＋ 初級雪道逐條 `.run` 卡（5 個雪場約 32 條） |
-| `p4.py` | §04 山圖（4 張）＋ §05 5.1住宿 / 5.2 抵日首兩日行程 / 5.3 交通 / 5.4 設施 / 5.5 飲食（子標題用 `.sub-h`）|
+| `p4.py` | §04 山圖（4 張）＋ §05 交通與住宿 |
 | `p5.py` | §06 票券課程 ＋ §07 訓練與進度 |
 | `p6.py` | §08 裝備（按 rider） |
 | `p7.py` | §09 裝備快訊 ＋ §10 行李清單 |
@@ -183,9 +183,9 @@ Fragment map:
 | `b3.py` | 01 today's key updates |
 | `b4.py` | 02 five-day plan (`.pl-*`, never `.tl-*`) |
 | `b5.py` | 03 resorts + beginner run cards |
-| `p4.py` | 04 mountain maps (4) + 05 blocks: 5.1 base / **5.2 arrival plan 17-18 Jan 2027** / 5.3 Tokyo->Myoko transport / 5.4 hotel facilities / 5.5 local food (sub-headings use `.sub-h`) |
+| `p4.py` | 04 mountain maps (4) + 05 base / transport / facilities / food blocks |
 | `p5.py` | 06 tickets & lessons (5 resorts only) — section 07 removed in v7 |
-| `p8.py` | 07 sources summary (renumbered from 12), writes `sources.html` (39 trip-related sources), runs the HKD post-pass |
+| `p8.py` | 07 sources summary (renumbered from 12), writes `sources.html` (34 trip-related sources), runs the HKD post-pass |
 | ~~`p6.py` / `p7.py`~~ | retired in v7 (gear dashboard / gear magazine / packing) — kept in workspace only |
 
 ### v5 rules
@@ -201,18 +201,6 @@ Fragment map:
 - **Training log is a Google Form -> Google Sheet.** Run `tools/fetch_training.py` with
   `api_credentials=["gws"]` before each build; section 07 renders the saved records statically
   and keeps a copy-paste fallback in 7.3. Never build an in-page form that only writes to the browser.
-## Arrival plan (added 2026-08-23, section 5.2)
-
-Lawrence’s planned first two days, now stored on the page so it is not lost:
-
-- **17/1 (Sun)** 20:20 land NRT T1 → Keisei Skyliner NRT T1 → Keisei-Ueno → hotel near Keisei-Ueno (**hotel TBC**, Lawrence will confirm).
-  There is **no 22:30 Skyliner** on the Sat/holiday table — nearest are 22:20→23:09, 22:40→23:28, last 23:00→23:48.
-- **18/1 (Mon)** 06:10 walk to JR Ueno → Hokuriku Shinkansen **Hakutaka 551** 06:34 → Nagano **08:03** (not 08:06) → Shinano Railway Kita-Shinano 09:23 → Myoko-Kogen 10:08 → Lime Resort free shuttle ~10:20, luggage drop.
-- Cost per person 17–18/1 ≈ ¥11,670; two people ≈ ¥23,340 (reserved seats).
-- Alternative recorded in an accordion: **Kagayaki 501** Ueno 06:22 → Nagano 07:36, connect 07:45 → Myoko-Kogen 08:31 (9-min transfer risk, hotel shuttle only from 09:00).
-
-**Standing daily duty:** re-verify all three rail legs each run (Skyliner Sat/holiday times, Hakutaka 551 stop times, Kita-Shinano 09:23 service) and flag any change. The January 2027 timetable is only published around **mid-Dec 2026**; until then everything on 5.2 is marked as reference only.
-
 - **Sources live in `sources.html`.** The main page shows only a small summary card.
 - **Traditional Chinese, HK style.** Check for simplified slips (`会`/`會`, `内`/`內`) after
   every edit.

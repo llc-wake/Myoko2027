@@ -1789,3 +1789,10 @@ body.srcpage .src-why { min-width: 200px; }
 /* 2026-08-23 fix: narrow kv-1 cards (lesson price rows) overflowed by 10px */
 .kv-1 > div { grid-template-columns: minmax(0,150px) minmax(0,1fr); }
 .kv-1 > div *, .kv-2 > div * { overflow-wrap: anywhere; min-width: 0; }
+
+/* ---------- arrival-plan day sub-heading -------------------------------- */
+.sub-h {
+  margin: 20px 0 10px; font-size: 15px; font-weight: 800;
+  color: var(--navy-700); letter-spacing: .01em; line-height: 1.5;
+  padding-left: 12px; border-left: 3px solid var(--ice-300);
+}
