@@ -22,7 +22,7 @@
 
 ---
 
-## 頁面結構 Page structure（12 節）
+## 頁面結構 Page structure（v7：7 節）
 
 | # | 區段 | 錨點 | 內容 |
 |---|------|------|------|
@@ -32,12 +32,10 @@
 | 04 | 山圖 / 雪道圖 | `#maps` | 4 張地圖（只放實際會去的雪場），縮圖 + lightbox |
 | 05 | 交通住宿 | `#travel` | 新幹線、接送巴士、Lime Resort |
 | 06 | 票券課程 | `#tickets` | 早鳥票、纜車票、英文教學課程 |
-| 07 | 出發前要練成的技術 | `#training` | 7.1 訓練記錄（Google Form/Sheet）· 7.2 十項技術 · 7.3 備用模板 |
-| 08 | 裝備 | `#gear` | 按 rider 分開的適合度判斷 |
-| 09 | 裝備快訊 | `#watch` | Gear magazine（累積式，不刪舊項） |
-| 10 | 行李清單 | `#packing` | 按 owner（Lawrence／Anson／共用）分 |
-| 11 | 行動清單 | `#actions` | 可勾選的待辦，含截止日 |
 | 12 | 資料來源 | `#sources` | 每條來源 + 核對日期 + 信心度 |
+
+
+> **v7（2026-08-23，Lawrence 指示）**：原第 07（訓練技術）、08（裝備狀況）、09（裝備快訊）、10（行李清單）、11（行動清單）**已從本頁移除**，不要再重建。裝備與行李未來做成獨立模組（裝備想做成遊戲角色裝備位的介面；行李需要真正可保存的進度記錄）。節號保留原樣（… 06 之後直接 12），除非 Lawrence 另有指示。舊 fragment `p6.py` / `p7.py` 與 `p5.py.bak7` 仍保留於 workspace，`data/gear-watch.json`、`gear/archive/`、`data/training/` 與 `tools/fetch_training.py` 也保留，隨時可以拿回用。
 
 ### 山圖 Maps
 
@@ -134,7 +132,7 @@ assets/maps/                      雪道圖 thumb + large（頁面只引用 4 �
 （`edit` 對長 CJK 字串經常失敗；一律用 Python `io.open` + `str.replace`）。
 
 ```bash
-cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p6.py p7.py p8.py > build_index.py
+cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p8.py > build_index.py
 python3 build_index.py          # → myoko-repo/index.html
 ```
 
@@ -169,7 +167,7 @@ python3 build_index.py          # → myoko-repo/index.html
 ## v5 build pipeline (2026-08-22)
 
 ```
-cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p6.py p7.py p8.py > build_index.py && python3 build_index.py
+cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p8.py > build_index.py && python3 build_index.py
 ```
 
 `build_index.py` is a SNAPSHOT of the fragments. After editing any fragment you MUST
@@ -186,10 +184,9 @@ Fragment map:
 | `b4.py` | 02 five-day plan (`.pl-*`, never `.tl-*`) |
 | `b5.py` | 03 resorts + beginner run cards |
 | `p4.py` | 04 mountain maps (4) + 05 base / transport / facilities / food blocks |
-| `p5.py` | 06 tickets & lessons (5 resorts only) + 07 skills to master before the trip |
-| `p6.py` | 08 gear dashboard by rider (7 categories) |
-| `p7.py` | 09 gear magazine (product photos + credit) + 10 packing checklist |
-| `p8.py` | 11 grouped action list + 12 sources summary, writes `sources.html`, runs the HKD post-pass |
+| `p5.py` | 06 tickets & lessons (5 resorts only) — section 07 removed in v7 |
+| `p8.py` | 12 sources summary (section 11 removed in v7), writes `sources.html`, runs the HKD post-pass |
+| ~~`p6.py` / `p7.py`~~ | retired in v7 (gear dashboard / gear magazine / packing) — kept in workspace only |
 
 ### v5 rules
 

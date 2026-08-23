@@ -1,7 +1,15 @@
 {
   "date": "2026-08-23",
   "version": "v5",
-  "sections": 12,
+  "sections": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "12"
+  ],
   "gear_items": 41,
   "gear_images": 41,
   "sources": 44,
@@ -12,11 +20,11 @@
     "note": "Xe 2026-08-23 mid-market 0.04931509, recheck before payment"
   },
   "changes": [
-    "FX rechecked on Xe (JPY 0.04931509 -> kept 0.0493)",
-    "new top item: Akakura Onsen early-bird tickets open 1 Sep 2026, third-party platforms only",
-    "training log connected but still 0 responses - flagged as an action item",
-    "mobile fix: packing rows no longer collapse at 390px (conflicting late CSS rule was overriding the mobile grid)",
-    "desktop fix: narrow kv-1 price rows no longer overflow by 10px"
+    "v7: sections 07 training / 08 gear / 09 gear watch / 10 packing / 11 actions removed on Lawrence's request",
+    "gear + packing to be rebuilt later as separate modules; data files kept (gear-watch.json, gear/archive, data/training)",
+    "section 12 sources kept unchanged; image-policy note updated to reflect the gear removal",
+    "build pipeline now cat b1 b2 b3 b4 b5 p4 p5 p8 (p6.py / p7.py retired)",
+    "earlier today: FX rechecked on Xe, Akakura early-bird 1 Sep countdown added, mobile/desktop overflow fixes"
   ],
   "archive": "archive/2026-08-23.html",
   "repo": "https://github.com/llc-wake/Myoko2027",
