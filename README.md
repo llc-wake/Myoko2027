@@ -167,7 +167,9 @@ python3 build_index.py          # → myoko-repo/index.html
 ## v5 build pipeline (2026-08-22)
 
 ```
-cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p8.py > build_index.py && python3 build_index.py
+cat b1.py b2.py b3.py b4.py b5.py p4.py p5.py p8.py > build_index.py \
+  && python3 build_index.py \
+  && python3 split_pages.py
 ```
 
 `build_index.py` is a SNAPSHOT of the fragments. After editing any fragment you MUST
@@ -183,8 +185,8 @@ Fragment map:
 | `b3.py` | 01 today's key updates |
 | `b4.py` | 02 five-day plan (`.pl-*`, never `.tl-*`) |
 | `b5.py` | 03 resorts + beginner run cards |
-| `p4.py` | 04 mountain maps (4) + 05 blocks: 5.1 base / **5.2 arrival plan 17-18 Jan 2027** / 5.3 Tokyo->Myoko transport / 5.4 hotel facilities / 5.5 local food (sub-headings use `.sub-h`) |
-| `p5.py` | 06 tickets & lessons (5 resorts only) — section 07 removed in v7 |
+| `p4.py` | 04 mountain maps (4) + 05 blocks: 5.1 base / **5.2 arrival plan 17-18 Jan 2027** (absorbed the old 5.3 route block) / 5.3 hotel facilities / 5.4 local food (sub-headings use `.sub-h`) |
+| `p5.py` | 06 tickets: 6.1 lift tickets (5 resorts) / **6.2 cross-resort pass watch** / 6.3 English lesson comparison / 6.4 recommendation |
 | `p8.py` | 07 sources summary (renumbered from 12), writes `sources.html` (39 trip-related sources), runs the HKD post-pass |
 | ~~`p6.py` / `p7.py`~~ | retired in v7 (gear dashboard / gear magazine / packing) — kept in workspace only |
 
@@ -223,3 +225,50 @@ Deploy `myoko-preview` and probe at 1440px and 390px: image `naturalWidth===0`,
 `scrollWidth-clientWidth>3` overflow (ignoring `overflow-x:auto`, `.tbl-wrap`, `.src-wrap`),
 unresolved `svg use` hrefs, stray thin lines, and `grep -o '%s' index.html | wc -l == 0`.
 `script.js` must never contain the literal `localStorage` / `sessionStorage` / `indexedDB`.
+
+## v8 multi-page split (2026-08-23)
+
+Lawrence found the single long-scroll page overwhelming, so the build now emits **one page
+per section**. `split_pages.py` runs **after** `build_index.py` and slices the monolith:
+
+| page | content |
+| --- | --- |
+| `index.html` | hero + trip summary + **01 今日重點** + a card grid linking every other section |
+| `plan.html` | 02 五日計劃 |
+| `resorts.html` | 03 雪場 |
+| `maps.html` | 04 山圖 |
+| `travel.html` | 05 交通住宿 |
+| `tickets.html` | 06 票券課程 |
+| `refs.html` | 07 來源摘要 |
+| `sources.html` | full 39-source table (written directly by `p8.py`, not by the splitter) |
+
+What the splitter does: keeps `<head>` + SVG sprite on every page, rebuilds the topbar as 7
+page links with a server-side `class="active"`, rewrites every in-page `href="#section"` to
+`page.html#section`, adds a prev/next `.pager` to each subpage, adds the `.navcards` grid to
+`index.html`, and gives each page its own `<title>`. The full monolith is kept at
+`/home/user/workspace/index_monolith.html`.
+
+**Archive stays a single file.** `python3 archive_day.py YYYY-MM-DD` writes
+`archive/<date>.html` from the monolith with `../` asset prefixes, so an old briefing is still
+one scroll.
+
+## Cross-resort pass watch (standing daily duty, added 2026-08-23)
+
+Check every run whether a pass covering **all four Myoko resorts** (赤倉溫泉 Akakura Onsen ·
+赤倉觀光 Akakura Kanko · 池之平 Ikenotaira / Alpen Blick · 妙高杉之原 Myoko Suginohara) is on
+sale for 26/27. **Kurohime Kogen is deliberately excluded** — it is on the Nagano/Iizuna side
+and never appears in a Mt Myoko pass; Day 1 is always a separate ticket.
+
+Sources to re-check: `myokotourism.com/season-passes/`, `mountmyoko.axess.shop`,
+`myokocompletepass.com`, `akakura-ski.com` / `akr-ski.com` (Akakura 共通券), Ikon Pass.
+
+Status 2026-08-23: **nothing on sale for 26/27.** Best candidate is the **Mt Myoko + 3 Day
+Pass** (25/26 ¥30,000, 3 non-consecutive days, adds Arai / Madarao / Tangram and includes the
+Mt Myoko Shuttle) but at 25/26 pricing three single days ≈ ¥21,500, so single-day tickets stay
+cheaper. Watch dates: **1 Sep 2026** (Akakura Onsen early-bird), **1 Oct 2026** (All Mountain
+season pass), **late Dec 2026** (3 Day Pass). Report any change in section 01.
+
+### QA after the split
+
+Probe **all 8 pages** (7 + `sources.html`) at 1440px and 390px, and confirm the 7 topbar nav
+links plus every pager link resolve to a real file.
