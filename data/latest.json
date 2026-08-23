@@ -9,12 +9,14 @@
     "JPY_HKD": 0.0493,
     "USD_HKD": 7.8,
     "EUR_HKD": 9.1,
-    "note": "Xe 2026-08-22, recheck before payment"
+    "note": "Xe 2026-08-23 mid-market 0.04931509, recheck before payment"
   },
   "changes": [
-    "training log is now permanent: Google Form -> Google Sheet, read by the daily run",
-    "section 07 rebuilt: 7.1 training log (form button + saved records), 7.2 ten skills, 7.3 paste-back fallback",
-    "fetch_training.py reads the response Sheet into data/training/*.json before each build"
+    "FX rechecked on Xe (JPY 0.04931509 -> kept 0.0493)",
+    "new top item: Akakura Onsen early-bird tickets open 1 Sep 2026, third-party platforms only",
+    "training log connected but still 0 responses - flagged as an action item",
+    "mobile fix: packing rows no longer collapse at 390px (conflicting late CSS rule was overriding the mobile grid)",
+    "desktop fix: narrow kv-1 price rows no longer overflow by 10px"
   ],
   "archive": "archive/2026-08-23.html",
   "repo": "https://github.com/llc-wake/Myoko2027",
