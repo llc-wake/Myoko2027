@@ -1148,7 +1148,7 @@ figure.fig figcaption .ic { display: inline-block; vertical-align: -3px; margin-
   line-height: 1.5; padding-top: 2px;
 }
 .upd-k .ic { flex: 0 0 auto; color: var(--blue-600); }
-.upd-t { min-width: 0; font-size: 15.5px; line-height: 1.75; color: var(--text-soft); }
+.upd-t { min-width: 0; font-size: 15.5px; line-height: 1.8; color: var(--text-soft); }
 .upd-t > *:first-child { margin-top: 0; }
 .upd-t > *:last-child { margin-bottom: 0; }
 .upd-t b { color: var(--navy-800); }
@@ -1160,7 +1160,16 @@ figure.fig figcaption .ic { display: inline-block; vertical-align: -3px; margin-
 ul.tight { margin: 0; padding-left: 20px; }
 ul.tight li { margin: 0 0 5px; line-height: 1.72; }
 ul.tight li:last-child { margin-bottom: 0; }
-@media (min-width: 1000px) { .upd-grid { grid-template-columns: repeat(2, 1fr); } }
+/* one update per row: two narrow columns wrapped long CJK lines badly (2026-08-24) */
+.upd-grid { grid-template-columns: 1fr; gap: 22px; }
+@media (min-width: 1000px) {
+  .upd { padding: 24px 30px 26px; }
+  .upd-title { font-size: 1.26rem; }
+  .upd-row { grid-template-columns: 132px minmax(0, 1fr); gap: 10px 26px; padding: 15px 0; }
+  /* cap the measure so a full-width card still reads at ~40 CJK chars per line */
+  .upd-t { max-width: 46em; font-size: 16px; }
+  .upd-do { padding: 15px 18px; }
+}
 @media (max-width: 640px) {
   .upd { padding: 16px 16px 18px; }
   .upd-row { grid-template-columns: 1fr; gap: 5px; }

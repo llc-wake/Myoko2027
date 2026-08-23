@@ -282,3 +282,12 @@ unreadable. **Never rely on inherited colour inside a dark panel.** QA probe: wa
 with a text node, compare its computed colour luminance against the first non-transparent
 ancestor background, and flag contrast < 2.6 (translucent white chips over the navy hero are
 known false positives).
+
+### 01 今日重點 layout (2026-08-24)
+
+`.upd-grid` is now **one card per row** at every width. The old two-column grid at
+`min-width:1000px` left each body text column only ~200px wide, so long Traditional Chinese
+sentences wrapped after a handful of characters and the cards had very uneven heights.
+Full-width cards get `132px` label column + `.upd-t { max-width: 46em }` so a line still lands
+around 40 CJK characters instead of running the full 1100px. Do **not** put the updates back
+into a multi-column grid.
