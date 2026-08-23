@@ -8,7 +8,7 @@
     "04",
     "05",
     "06",
-    "12"
+    "07"
   ],
   "gear_items": 41,
   "gear_images": 41,
@@ -21,9 +21,9 @@
   },
   "changes": [
     "v7: sections 07 training / 08 gear / 09 gear watch / 10 packing / 11 actions removed on Lawrence's request",
+    "sources section renumbered 12 -> 07, so numbering runs 01-07 with no gap",
+    "sources table trimmed from 44 to 34 entries: gear brand and camera sources removed, trip-related sources kept",
     "gear + packing to be rebuilt later as separate modules; data files kept (gear-watch.json, gear/archive, data/training)",
-    "section 12 sources kept unchanged; image-policy note updated to reflect the gear removal",
-    "build pipeline now cat b1 b2 b3 b4 b5 p4 p5 p8 (p6.py / p7.py retired)",
     "earlier today: FX rechecked on Xe, Akakura early-bird 1 Sep countdown added, mobile/desktop overflow fixes"
   ],
   "archive": "archive/2026-08-23.html",
@@ -37,5 +37,6 @@
     "shared_with": "lawrence@wake.hk (Editor)",
     "reader": "fetch_training.py",
     "records": 0
-  }
+  },
+  "sources_total": 34
 }

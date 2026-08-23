@@ -32,10 +32,10 @@
 | 04 | 山圖 / 雪道圖 | `#maps` | 4 張地圖（只放實際會去的雪場），縮圖 + lightbox |
 | 05 | 交通住宿 | `#travel` | 新幹線、接送巴士、Lime Resort |
 | 06 | 票券課程 | `#tickets` | 早鳥票、纜車票、英文教學課程 |
-| 12 | 資料來源 | `#sources` | 每條來源 + 核對日期 + 信心度 |
+| 07 | 資料來源 | `#sources` | 每條來源 + 核對日期 + 信心度 |
 
 
-> **v7（2026-08-23，Lawrence 指示）**：原第 07（訓練技術）、08（裝備狀況）、09（裝備快訊）、10（行李清單）、11（行動清單）**已從本頁移除**，不要再重建。裝備與行李未來做成獨立模組（裝備想做成遊戲角色裝備位的介面；行李需要真正可保存的進度記錄）。節號保留原樣（… 06 之後直接 12），除非 Lawrence 另有指示。舊 fragment `p6.py` / `p7.py` 與 `p5.py.bak7` 仍保留於 workspace，`data/gear-watch.json`、`gear/archive/`、`data/training/` 與 `tools/fetch_training.py` 也保留，隨時可以拿回用。
+> **v7（2026-08-23，Lawrence 指示）**：原第 07（訓練技術）、08（裝備狀況）、09（裝備快訊）、10（行李清單）、11（行動清單）**已從本頁移除**，不要再重建。裝備與行李未來做成獨立模組（裝備想做成遊戲角色裝備位的介面；行李需要真正可保存的進度記錄）。節號已順序化：原第 12 節（資料來源）現在是第 **07** 節。來源表也已刪去裝備、相機類來源（44 → 34 條），只留行程相關。舊 fragment `p6.py` / `p7.py` 與 `p5.py.bak7` 仍保留於 workspace，`data/gear-watch.json`、`gear/archive/`、`data/training/` 與 `tools/fetch_training.py` 也保留，隨時可以拿回用。
 
 ### 山圖 Maps
 
@@ -185,7 +185,7 @@ Fragment map:
 | `b5.py` | 03 resorts + beginner run cards |
 | `p4.py` | 04 mountain maps (4) + 05 base / transport / facilities / food blocks |
 | `p5.py` | 06 tickets & lessons (5 resorts only) — section 07 removed in v7 |
-| `p8.py` | 12 sources summary (section 11 removed in v7), writes `sources.html`, runs the HKD post-pass |
+| `p8.py` | 07 sources summary (renumbered from 12), writes `sources.html` (34 trip-related sources), runs the HKD post-pass |
 | ~~`p6.py` / `p7.py`~~ | retired in v7 (gear dashboard / gear magazine / packing) — kept in workspace only |
 
 ### v5 rules
