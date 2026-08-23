@@ -272,3 +272,13 @@ season pass), **late Dec 2026** (3 Day Pass). Report any change in section 01.
 
 Probe **all 8 pages** (7 + `sources.html`) at 1440px and 390px, and confirm the 7 topbar nav
 links plus every pager link resolve to a real file.
+
+### Contrast rule (2026-08-24)
+
+`.note` callouts now set `color: var(--text)` explicitly, and `.cost-panel .note` overrides the
+dark panel's white text (`b`, `strong`, `.hkd`, `.en` included). Reason: a `.note` nested inside
+the dark `.cost-panel` inherited `color:#fff` on a light `--ice-100` background and was
+unreadable. **Never rely on inherited colour inside a dark panel.** QA probe: walk every element
+with a text node, compare its computed colour luminance against the first non-transparent
+ancestor background, and flag contrast < 2.6 (translucent white chips over the navy hero are
+known false positives).

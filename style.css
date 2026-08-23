@@ -346,6 +346,7 @@ a:hover { border-bottom-color: var(--blue-600); }
   border-radius: var(--radius-sm); padding: 18px 20px; margin: 18px 0;
   font-size: 15.5px; line-height: 1.78;
   border-left: 4px solid var(--ice-400); background: var(--ice-100);
+  color: var(--text);
 }
 .note .ic { width: 20px; height: 20px; margin-top: 3px; color: var(--blue-600); }
 .note p { margin: 0; }
@@ -1422,6 +1423,15 @@ b .hkd, strong .hkd, .fchip-v .hkd { font-weight: 500; }
 .cost-panel .kv > div > span { color: rgba(255,255,255,.72); }
 .cost-panel .kv > div > b { color: #fff; }
 .cost-panel .hkd { color: rgba(255,255,255,.7); }
+
+/* callouts nested inside a dark cost panel must NOT inherit white text */
+.cost-panel .note,
+.cost-panel .note p,
+.cost-panel .note li { color: var(--text); }
+.cost-panel .note b,
+.cost-panel .note strong { color: var(--navy-900); }
+.cost-panel .note .hkd { color: var(--text-mute); }
+.cost-panel .note .en { color: var(--navy-900); }
 
 /* generic key/value grid variants */
 .kv-1 { grid-template-columns: 1fr; }
