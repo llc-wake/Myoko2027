@@ -296,3 +296,13 @@ into a multi-column grid.
 Verified today: **Hakutaka 551 does not terminate at Nagano** — it continues 飯山 08:16 → **上越妙高 08:27**. えちごトキめき鉄道 妙高はねうまライン **2348M 上越妙高 08:38 → 妙高高原 09:17** carries no 土・休日運休 marker, so it runs on Monday 18 Jan 2027. Fare 上越妙高→妙高高原 ¥790; Ueno→Myoko-Kogen total ¥10,040 vs the Nagano route ¥8,887 (+¥1,153 per person, +¥2,306 for two) and it **arrives 51 minutes earlier with an 11-minute same-station transfer instead of an 80-minute wait at Nagano**.
 
 The Nagano route remains the primary plan in 5.2 until Lawrence confirms. When he does, swap the main block in `p4.py` and demote Nagano to the accordion. Re-verify both routes every run.
+
+## Economy mode (2026-08-24, Lawrence's instruction)
+
+The site is finished, so a normal day must be a **light check, not a rebuild**.
+
+- **Daily checks only:** cross-resort pass pages, the three arrival rail legs, Ikenotaira 超早割 / Akakura Onsen 早割 sale status, and the JPY→HKD rate. English schools, hotel & food, mountain maps and resort spec pages move to a **weekly (Monday)** check unless a daily source points at them.
+- **Nothing changed → change nothing.** No rebuild, no deploy, no QA sweep, no archive file, no commit, no Drive upload. Reply with a 3–5 line no-change note. FX is only rewritten if it moved more than 1%.
+- **Something changed →** edit only the affected fragments, rebuild, deploy **once**, and QA only the changed pages plus `index.html` at 1440px and 390px in a single browser snippet. The full 8-page desktop + mobile sweep runs on **Mondays** or after a CSS / template / `split_pages.py` change.
+- **Per-run caps:** 1 `deploy_website` call, ≤2 browser sessions, no subagents, no image generation, no research fan-out.
+- **Credit report is mandatory.** Every reply ends with a `### Credit 用量` section read from `pplx analytics computer usage get --scope user --datasets credit_usage --time-range 7d` (`api_credentials=["pplx-sdk"]`). The warehouse lags by a day, so report the most recent completed UTC day (= the previous run's cost, 1 credit = 1 US cent, plus the HKD equivalent) and say today's figure comes in tomorrow's briefing. Flag any normal update above ~1,500 credits and propose what to trim.
