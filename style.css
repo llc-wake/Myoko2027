@@ -1112,8 +1112,9 @@ figure.fig figcaption .ic { display: inline-block; vertical-align: -3px; margin-
 .upd-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
 
 /* ---------- 01 今日重點 -------------------------------------------------- */
-.upd-grid { display: grid; gap: 20px; }
+.upd-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 .upd {
+  min-width: 0; overflow-wrap: anywhere;
   background: #fff; border: 1px solid var(--grey-200);
   border-left: 4px solid var(--slate);
   border-radius: var(--radius-md); box-shadow: var(--shadow-sm);
@@ -1161,7 +1162,10 @@ ul.tight { margin: 0; padding-left: 20px; }
 ul.tight li { margin: 0 0 5px; line-height: 1.72; }
 ul.tight li:last-child { margin-bottom: 0; }
 /* one update per row: two narrow columns wrapped long CJK lines badly (2026-08-24) */
-.upd-grid { grid-template-columns: 1fr; gap: 22px; }
+.upd-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .upd-facts { min-width: 0; }
+  .fchip { flex-wrap: wrap; }
+  .fchip-v { white-space: normal; overflow-wrap: anywhere; }
 @media (min-width: 1000px) {
   .upd { padding: 24px 30px 26px; }
   .upd-title { font-size: 1.26rem; }

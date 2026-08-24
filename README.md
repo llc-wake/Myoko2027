@@ -187,7 +187,7 @@ Fragment map:
 | `b5.py` | 03 resorts + beginner run cards |
 | `p4.py` | 04 mountain maps (4) + 05 blocks: 5.1 base / **5.2 arrival plan 17-18 Jan 2027** (absorbed the old 5.3 route block) / 5.3 hotel facilities / 5.4 local food (sub-headings use `.sub-h`) |
 | `p5.py` | 06 tickets: 6.1 lift tickets (5 resorts) / **6.2 cross-resort pass watch** / 6.3 English lesson comparison / 6.4 recommendation |
-| `p8.py` | 07 sources summary (renumbered from 12), writes `sources.html` (39 trip-related sources), runs the HKD post-pass |
+| `p8.py` | 07 sources summary (renumbered from 12), writes `sources.html` (44 trip-related sources), runs the HKD post-pass |
 | ~~`p6.py` / `p7.py`~~ | retired in v7 (gear dashboard / gear magazine / packing) — kept in workspace only |
 
 ### v5 rules
@@ -240,7 +240,7 @@ per section**. `split_pages.py` runs **after** `build_index.py` and slices the m
 | `travel.html` | 05 交通住宿 |
 | `tickets.html` | 06 票券課程 |
 | `refs.html` | 07 來源摘要 |
-| `sources.html` | full 39-source table (written directly by `p8.py`, not by the splitter) |
+| `sources.html` | full 44-source table (written directly by `p8.py`, not by the splitter) |
 
 What the splitter does: keeps `<head>` + SVG sprite on every page, rebuilds the topbar as 7
 page links with a server-side `class="active"`, rewrites every in-page `href="#section"` to
@@ -262,11 +262,10 @@ and never appears in a Mt Myoko pass; Day 1 is always a separate ticket.
 Sources to re-check: `myokotourism.com/season-passes/`, `mountmyoko.axess.shop`,
 `myokocompletepass.com`, `akakura-ski.com` / `akr-ski.com` (Akakura 共通券), Ikon Pass.
 
-Status 2026-08-23: **nothing on sale for 26/27.** Best candidate is the **Mt Myoko + 3 Day
+Status 2026-08-24: **still no cross-resort pass on sale for 26/27**, but the first 26/27 Myoko ticket has appeared — **Ikenotaira / Alpen Blick 超早割 1-day ¥5,100** (¥4,600 + ¥500 refundable IC deposit) on スノーナビ, on sale **1–30 Sep 2026 only**, ¥5,200 from October, any-day validity, non-refundable. Snownavi’s Myoko category otherwise lists only Madarao.  Best candidate is the **Mt Myoko + 3 Day
 Pass** (25/26 ¥30,000, 3 non-consecutive days, adds Arai / Madarao / Tangram and includes the
 Mt Myoko Shuttle) but at 25/26 pricing three single days ≈ ¥21,500, so single-day tickets stay
-cheaper. Watch dates: **1 Sep 2026** (Akakura Onsen early-bird), **1 Oct 2026** (All Mountain
-season pass), **late Dec 2026** (3 Day Pass). Report any change in section 01.
+cheaper. Watch dates: **1 Sep 2026** (two purchases: Akakura Onsen early-bird **and** the Ikenotaira 超早割 1-day, September only), **1 Oct 2026** (All Mountain season pass), **27 Dec 2026** (Mt Myoko + 3 Day Pass). Report any change in section 01.
 
 ### QA after the split
 
@@ -291,3 +290,9 @@ sentences wrapped after a handful of characters and the cards had very uneven he
 Full-width cards get `132px` label column + `.upd-t { max-width: 46em }` so a line still lands
 around 40 CJK characters instead of running the full 1100px. Do **not** put the updates back
 into a multi-column grid.
+
+### Joetsu-Myoko arrival option (2026-08-24, awaiting decision)
+
+Verified today: **Hakutaka 551 does not terminate at Nagano** — it continues 飯山 08:16 → **上越妙高 08:27**. えちごトキめき鉄道 妙高はねうまライン **2348M 上越妙高 08:38 → 妙高高原 09:17** carries no 土・休日運休 marker, so it runs on Monday 18 Jan 2027. Fare 上越妙高→妙高高原 ¥790; Ueno→Myoko-Kogen total ¥10,040 vs the Nagano route ¥8,887 (+¥1,153 per person, +¥2,306 for two) and it **arrives 51 minutes earlier with an 11-minute same-station transfer instead of an 80-minute wait at Nagano**.
+
+The Nagano route remains the primary plan in 5.2 until Lawrence confirms. When he does, swap the main block in `p4.py` and demote Nagano to the accordion. Re-verify both routes every run.
