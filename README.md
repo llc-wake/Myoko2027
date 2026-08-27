@@ -306,3 +306,15 @@ The site is finished, so a normal day must be a **light check, not a rebuild**.
 - **Something changed →** edit only the affected fragments, rebuild, deploy **once**, and QA only the changed pages plus `index.html` at 1440px and 390px in a single browser snippet. The full 8-page desktop + mobile sweep runs on **Mondays** or after a CSS / template / `split_pages.py` change.
 - **Per-run caps:** 1 `deploy_website` call, ≤2 browser sessions, no subagents, no image generation, no research fan-out.
 - **Credit report is mandatory.** Every reply ends with a `### Credit 用量` section read from `pplx analytics computer usage get --scope user --datasets credit_usage --time-range 7d` (`api_credentials=["pplx-sdk"]`). The warehouse lags by a day, so report the most recent completed UTC day (= the previous run's cost, 1 credit = 1 US cent, plus the HKD equivalent) and say today's figure comes in tomorrow's briefing. Flag any normal update above ~1,500 credits and propose what to trim. The same section must also carry 2–4 bullets titled **今日如何節省** — concretely how the run was kept cheap (weekly-only sources skipped, yesterday’s verified data reused, one batched browser snippet, QA limited to changed pages, no rebuild on a no-change day) **and** what was still fully checked, so it is visible that nothing decision-relevant was sacrificed. If a corner was cut that could matter, say so and name the day it will be covered.
+
+## Cadence (2026-08-27, replaces the daily run)
+
+The daily 08:00 HKT briefing was cancelled — it cost ~6,200 credits a day while nothing changed. New schedule, all at 08:00 HKT:
+
+| Period | When | Cron |
+| --- | --- | --- |
+| Sep–Dec 2026 | 1st of each month | `0 0 1 9-12 *` (`bb117a3f`) |
+| Dec 2026 | plus the 15th and 27th | `0 0 15,27 12 *` (`1af6c70a`) |
+| Jan 2027 | every Monday | `0 0 * 1 1` (`cfefd539`) |
+
+Because runs are infrequent, each one is a **full** check (passes, three rail legs, both early-bird sales, the four English schools, the four mountain maps, MKK shuttle, FX) — but still batched, ≤1 deploy, ≤3 browser sessions, no subagents, no image generation. The 1 Sep / 1 Oct / 27 Dec runs land exactly on the three ticket sale dates. The `### Credit 用量` report stays mandatory.
