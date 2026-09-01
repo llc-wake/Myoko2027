@@ -1,102 +1,89 @@
 {
- "date": "2026-08-24",
- "version": "v8.1",
- "sections": [
-  "01",
-  "02",
-  "03",
-  "04",
-  "05",
-  "06",
-  "07"
- ],
- "sources": 44,
- "fx": {
-  "JPY_HKD": 0.0494,
-  "USD_HKD": 7.8,
-  "EUR_HKD": 9.1,
-  "note": "Xe 2026-08-24 mid-market 0.04935189, recheck before payment"
- },
- "changes": [
-  "NEW ARRIVAL OPTION (headline, awaiting Lawrence's decision): Hakutaka 551 continues past Nagano 08:03 to Iiyama 08:16 and Joetsu-Myoko 08:27; ETR Myoko Haneuma Line 2348M Joetsu-Myoko 08:38 -> Myoko-Kogen 09:17 (no Sat/holiday-suspension marker, so it runs Mon 18 Jan). Arrives 51 min earlier, 11-min same-station transfer, +Y1,153/person (Y10,040 vs Y8,887). Nagano route stays the main plan until confirmed.",
-  "Ikenotaira / Alpen Blick 26/27 super early-bird 1-day ticket now ON SALE LIST at lift-ticket.jp: Y5,100 (Y4,600 ticket + Y500 refundable IC deposit), sells 1-30 Sep 2026 only, Y5,200 from October, any-day validity, no window exchange, non-refundable. Added to 6.1 and to the 6.2 watch calendar (1 Sep now covers two purchases).",
-  "Cross-resort pass watch: still nothing on sale for 26/27 - myokotourism.com unchanged (All Mountain Y115,000 'Available from October 1st' + compulsory bus Y20,000; Mt Myoko + 3 Day Y30,000 'AVAILABLE FROM DEC 27TH', all dates 25/26), mountmyoko.axess.shop zero products, snownavi Myoko category only Ikenotaira (1) and Madarao (1).",
-  "Akakura Onsen 26/27 early-bird sales still start 1 Sep 2026 via Rakuten Ticket / Asoview / Pass Market; akakura-ski.com still down after the security incident. Countdown: 8 days.",
-  "Go Myoko / Canyons private lesson prices confirmed: AM Y42,000, PM 13:30-16:00 Y32,000, full day 09:00-15:00 Y70,000. Yodel /lessons is 404 (use lessonmenu.html); escapemyoko.com/lessons/ is 404 (use /myoko-ski-snowboard-lessons/).",
-  "MKK Mt Myoko Shuttle 26/27 unchanged: Y1,100 flat per segment, pay on board, 19 Dec 2026 - 24 Mar 2027, star trips end 28 Feb.",
-  "Sources 39 -> 44 (lift-ticket.jp item + Myoko category, ETR timetable, ETR fare table, Jorudan).",
-  "Mobile fix: 01 card grid switched to minmax(0,1fr) and fact chips now wrap at 390px, so no horizontal overflow."
- ],
- "archive": "archive/2026-08-24.html",
- "repo": "https://github.com/llc-wake/Myoko2027",
- "training": {
-  "method": "Google Form -> Google Sheet",
-  "form": "https://docs.google.com/forms/d/e/1FAIpQLSeLAHz8UONjJiR4PbydRET2NGqAT2LRgrC7Te6PLS9SSYJ2ig/viewform",
-  "form_edit": "https://docs.google.com/forms/d/1Qy8N5uhBoKAlQgjfwUW5d8DevcXXc_5m9okZzLl57yA/edit",
-  "sheet_id": "12mPcK7KE5qdhFh9XxN8xRg1W5V8n5rPtxGOX3KbTi_E",
-  "sheet_owner": "LChiurmit@gmail.com",
-  "shared_with": "lawrence@wake.hk (Editor)",
-  "reader": "fetch_training.py",
-  "records": 0
- },
- "sources_total": 44,
- "arrival_plan": {
-  "2027-01-17": [
-   "20:20 NRT T1 landing",
-   "~22:20 or 22:40 Keisei Skyliner NRT T1 -> Keisei-Ueno (no 22:30 service)",
-   "~23:35 hotel check-in near Keisei-Ueno (TBC)"
+  "date": "2026-09-01",
+  "version": "v8.1",
+  "sections": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07"
   ],
-  "2027-01-18": [
-   "06:10 walk Keisei-Ueno -> JR Ueno",
-   "06:34 Hakutaka 551 -> Nagano 08:03",
-   "09:23 Shinano Railway Kita-Shinano -> Myoko-Kogen 10:08",
-   "~10:20 Lime Resort free shuttle -> luggage drop"
+  "sources": 44,
+  "fx": {
+    "jpy_hkd": 0.04907,
+    "source": "Frankfurter",
+    "checked": "2026-09-01",
+    "stored_in_build": 0.0494,
+    "note": "moved 0.67% since 2026-08-26, below the 1% rewrite threshold"
+  },
+  "changes": [
+    "Ikenotaira / Alpen Blick 超早割 1-day now ON SALE (JPY 5,100 incl. refundable IC 500) — sells until 30 Sep 2026, JPY 5,200 from October",
+    "NEW: Akakura Kanko (Akakan) 超早割 1-day JPY 4,000 (list JPY 7,000) listed on lift-ticket.jp — sale window 10 Sep – 31 Oct 2026, JPY 4,500 from 1 Nov, valid opening day to 2027-03-31, non-refundable, no ticket exchange",
+    "Akakura Onsen 早割: official notice still says sale starts 1 Sep 2026, but no 26/27 product visible on Asoview / PassMarket / lift-ticket today; site still down after unauthorised access",
+    "Cross-resort pass: still nothing on sale for 26/27 (All Mountain from 1 Oct, 3 Day Pass from 27 Dec, axess.shop zero products)",
+    "Rail: Keisei Skyliner and Shinano Railway unchanged; JR East Hakutaka 551 page (Sep edition /2609/) still renders no timetable rows — source URL updated to the September edition",
+    "Schools: Go Myoko prices unchanged; Escape Myoko / Myoko Snowsports / Yodel pages still yield no text prices",
+    "MKK Mt Myoko Shuttle unchanged: JPY 1,100 flat, 19 Dec 2026 – 24 Mar 2027"
   ],
-  "cost_per_person_jpy": 11670,
-  "cost_two_people_jpy": 23340,
-  "status": "Nagano route still primary; Joetsu-Myoko route proposed 2026-08-24; Jan 2027 timetable published around mid-Dec 2026",
-  "alternative_joetsu_myoko": {
-   "legs": [
-    "06:34 Hakutaka 551 Ueno -> Joetsu-Myoko 08:27",
-    "08:38 ETR Myoko Haneuma Line 2348M -> Myoko-Kogen 09:17",
-    "~09:30 Lime Resort free shuttle -> luggage drop"
-   ],
-   "fare_per_person_jpy": 10040,
-   "fare_delta_per_person_jpy": 1153,
-   "transfer_minutes": 11,
-   "status": "proposed - waiting for Lawrence to confirm before it replaces the Nagano route"
+  "archive": "archive/2026-09-01.html",
+  "repo": "https://github.com/llc-wake/Myoko2027",
+  "training": {
+    "method": "Google Form -> Google Sheet",
+    "form": "https://docs.google.com/forms/d/e/1FAIpQLSeLAHz8UONjJiR4PbydRET2NGqAT2LRgrC7Te6PLS9SSYJ2ig/viewform",
+    "form_edit": "https://docs.google.com/forms/d/1Qy8N5uhBoKAlQgjfwUW5d8DevcXXc_5m9okZzLl57yA/edit",
+    "sheet_id": "12mPcK7KE5qdhFh9XxN8xRg1W5V8n5rPtxGOX3KbTi_E",
+    "sheet_owner": "LChiurmit@gmail.com",
+    "shared_with": "lawrence@wake.hk (Editor)",
+    "reader": "fetch_training.py",
+    "records": 0
+  },
+  "sources_total": 44,
+  "arrival_plan": {
+    "2027-01-17": [
+      "20:20 NRT T1 landing",
+      "~22:20 or 22:40 Keisei Skyliner NRT T1 -> Keisei-Ueno (no 22:30 service)",
+      "~23:35 hotel check-in near Keisei-Ueno (TBC)"
+    ],
+    "2027-01-18": [
+      "06:10 walk Keisei-Ueno -> JR Ueno",
+      "06:34 Hakutaka 551 -> Nagano 08:03",
+      "09:23 Shinano Railway Kita-Shinano -> Myoko-Kogen 10:08",
+      "~10:20 Lime Resort free shuttle -> luggage drop"
+    ],
+    "cost_per_person_jpy": 11670,
+    "cost_two_people_jpy": 23340,
+    "status": "Nagano route still primary; Joetsu-Myoko route proposed 2026-08-24; Jan 2027 timetable published around mid-Dec 2026",
+    "alternative_joetsu_myoko": {
+      "legs": [
+        "06:34 Hakutaka 551 Ueno -> Joetsu-Myoko 08:27",
+        "08:38 ETR Myoko Haneuma Line 2348M -> Myoko-Kogen 09:17",
+        "~09:30 Lime Resort free shuttle -> luggage drop"
+      ],
+      "fare_per_person_jpy": 10040,
+      "fare_delta_per_person_jpy": 1153,
+      "transfer_minutes": 11,
+      "status": "proposed - waiting for Lawrence to confirm before it replaces the Nagano route"
+    }
+  },
+  "pages": {
+    "index.html": "01 today (hub: hero + trip summary + card grid)",
+    "plan.html": "02",
+    "resorts.html": "03",
+    "maps.html": "04",
+    "travel.html": "05",
+    "tickets.html": "06",
+    "refs.html": "07 sources summary",
+    "sources.html": "full sources table"
+  },
+  "pass_watch": {
+    "checked": "2026-09-01",
+    "cross_resort_on_sale": false,
+    "next_dates": [
+      "2026-09-10 Akakan 超早割",
+      "2026-10-01 Mt Myoko All Mountain season pass",
+      "2026-12-27 Mt Myoko + 3 Day Pass"
+    ]
   }
- },
- "pages": {
-  "index.html": "01 today (hub: hero + trip summary + card grid)",
-  "plan.html": "02",
-  "resorts.html": "03",
-  "maps.html": "04",
-  "travel.html": "05",
-  "tickets.html": "06",
-  "refs.html": "07 sources summary",
-  "sources.html": "full sources table"
- },
- "pass_watch": {
-  "target_resorts": [
-   "Akakura Onsen",
-   "Akakura Kanko",
-   "Ikenotaira Alpen Blick",
-   "Myoko Suginohara"
-  ],
-  "excluded": "Kurohime Kogen (Nagano/Iizuna side, never in a Mt Myoko pass)",
-  "best_candidate": "Mt Myoko + 3 Day Pass",
-  "candidate_price_2526_jpy": 30000,
-  "single_day_equivalent_jpy": 21500,
-  "verdict": "single-day tickets still cheaper at 25/26 pricing",
-  "watch_dates": [
-   "2026-09-01 Akakura Onsen early-bird AND Ikenotaira super early-bird 1-day (Y5,100, September only)",
-   "2026-10-01 Mt Myoko All Mountain season pass on sale",
-   "2026-12-27 Mt Myoko + 3 Day Pass on sale"
-  ],
-  "checked": "2026-08-24",
-  "on_sale_2627": [
-   "Ikenotaira / Alpen Blick super early-bird 1-day Y5,100 (from 2026-09-01)"
-  ]
- }
 }
